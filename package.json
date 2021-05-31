@@ -1,0 +1,22 @@
+{
+  "name": "changeme-training",
+  "version": "0.0.9",
+  "description": "changeme Training",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/changeme/changeme-training.git"
+  },
+  "author": "changeme",
+  "scripts": {
+    "mdlint": "markdownlint --config .markdownlint.json content *.md",
+    "prepare": "husky install"
+  },
+  "bugs": {
+    "url": "https://github.com/changeme/changeme-training/issues"
+  },
+  "homepage": "https://github.com/changeme/changeme-training#readme",
+  "devDependencies": {
+    "husky": "6.0.0",
+    "markdownlint-cli": "0.27.1"
+  }
+}
