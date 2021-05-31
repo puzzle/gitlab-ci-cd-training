@@ -1,6 +1,3 @@
-# CHANGEME
-
-
 acendTraining:
   servicePort: 8080
   deployments:
@@ -8,7 +5,7 @@ acendTraining:
       name: acend
       replicaCount: 1
       image:
-        repository: quay.io/acend/hugo-training-template
+        repository: quay.io/puzzle/gitlab-ci-cd-training
         pullPolicy: Always
         tag: ""
         tagsuffix: ""
@@ -16,13 +13,13 @@ acendTraining:
         annotations: 
           kubernetes.io/ingress.class: nginx-public
         secretOverride: acend-wildcard
-        appname: hugo-training-template
+        appname: gitlab-ci-cd-training
         domain: training.acend.ch
     - 
       name: puzzle
       replicaCount: 1
       image:
-        repository: quay.io/acend/hugo-training-template
+        repository: quay.io/puzzle/gitlab-ci-cd-training
         pullPolicy: Always
         tag: ""
         tagsuffix: "-puzzle"
@@ -30,12 +27,12 @@ acendTraining:
         annotations: 
           kubernetes.io/ingress.class: nginx-public
         useDefaultSecret: true
-        appname: hugo-training-template
+        appname: gitlab-ci-cd-training
         domain: k8s.puzzle.ch
 
 
 
-nameOverride: "acend-hugo-template"
+nameOverride: "puzzle-gitlab-ci-cd-training"
 fullnameOverride: ""
 
 serviceAccount:

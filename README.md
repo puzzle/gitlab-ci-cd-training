@@ -1,6 +1,6 @@
-# CHANGEME Training
+# GitLab CI/CD Training
 
-CHANGEME Training Description
+GitLab CI/CD Training Description
 
 
 ## Content Sections
@@ -73,13 +73,13 @@ This is only rendered when `enabledModule` in `config.toml` **does not** contain
 Build the image:
 
 ```bash
-docker build <--build-arg TRAINING_HUGO_ENV=...> -t acend/changeme-training .
+docker build <--build-arg TRAINING_HUGO_ENV=...> -t puzzle/gitlab-ci-cd-training .
 ```
 
 Run it locally:
 
 ```bash
-docker run -i -p 8080:8080 acend/changeme-training
+docker run -i -p 8080:8080 puzzle/gitlab-ci-cd-training
 ```
 
 
@@ -119,31 +119,6 @@ Npm not installed? no problem
 export HUGO_VERSION=$(grep "FROM klakegg/hugo" Dockerfile | sed 's/FROM klakegg\/hugo://g' | sed 's/ AS builder//g')
 docker run --rm --interactive -v $(pwd):/src klakegg/hugo:${HUGO_VERSION}-ci /bin/bash -c "set -euo pipefail;npm install; npm run mdlint;"
 ```
-
-
-## How to setup an entire new Training
-
-* create an empty git repo
-* Copy the contents of this repo to it
-  * replace all CHANGEME
-    * `https://github.com/changeme/changeme-training` to your repo url
-    * `quay.io/acend/hugo-training-template` to your image registry url
-    * `acend/changeme-training` to your org and training
-    * `changeme/changeme-training` to your org and training
-    * `hugo-training-template` to your training
-    * `changeme-training` to your training
-    * `changeme Training` to your training name, eg. `Hugo Training`
-    * `acend-hugo-training-template-prod` to your prod deployment namespace
-    * `acend-hugo-training-template-test` to your test deployment namespace
-    * `acend-hugo-template` to your org and training
-    * check remaining `changeme`'s
-  * Configure all names, URLs and so on in the [build actions](.github/workflows/) and [values.yaml](./helm-chart/values.yaml)
-  * remove `How to setup an entire new Training` chapter from README.md
-  * adapt or remove not needed variants in the config folder
-* Create a container image Repo and make sure the secrets configured in the Github actions have access to the repo
-* Create two namespaces on your k8s cluster, make sure the secrets configured in the Github actions have access to the k8s Cluster and namespace or project in case of rancher
-  * Test namespace: used to deploy PR Environments
-  * Prod namespace: prod deployment
 
 
 ### Quota on Testnamespace

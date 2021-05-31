@@ -1,14 +1,3 @@
-# changeme 
-# Change the following parts to your current installation
-# - entire Docker Build steps accordingly to the amount of different versions or tags your building TRAINING_HUGO_ENV
-#   - Tags
-# - Helm Target Namespace
-# - Name of K8S Deployment to trigger and namespace
-# - Secrets
-#   - QUAYIO_USERNAME and QUAYIO_TOKEN must be set accordingly to your registry, existing users must have access to the repos
-#   - KUBECONFIG content of the Kubeconfig File, Account must have access to the k8s namespace. It's used in the helm steps
-#   - KUBECONFIG_BASE64 same as KUBECONFIG but Base64 encoded. It's used in the kubectl steps
-
 name: Publish Main Version
 
 on:
@@ -54,15 +43,13 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          # changeme
           tags: |
-            quay.io/acend/hugo-training-template:latest
+            quay.io/puzzle/gitlab-ci-cd-training:latest
       -
         name: Run vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          # changeme
-          image-ref: 'quay.io/acend/hugo-training-template:latest'
+          image-ref: 'quay.io/puzzle/gitlab-ci-cd-training:latest'
           format: 'table'
           output: 'trivy-results.txt'
           exit-code: '0'
@@ -84,16 +71,14 @@ jobs:
           build-args: |
             TRAINING_HUGO_ENV=puzzle
           push: true
-          # changeme
           tags: |
-            quay.io/acend/hugo-training-template:latest-puzzle
+            quay.io/puzzle/gitlab-ci-cd-training:latest-puzzle
       -
         name: 'Deploy Helm Release'
         uses: 'deliverybot/helm@v1'
         with:
           release: 'latest'
-          # changeme
-          namespace: 'acend-hugo-training-template-prod'
+          namespace: 'puzzle-gitlab-ci-cd-training-prod'
           version: '${{ github.sha }}'
           repository: 'https://acend.github.io/helm-charts/'
           chart: 'acend-training-chart'
@@ -111,13 +96,11 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG_BASE64 }}
         with:
-          # changeme
-          args: rollout restart deployment/latest-acend-hugo-template-acend --namespace acend-hugo-training-template-prod
+          args: rollout restart deployment/latest-puzzle-gitlab-ci-cd-training-acend --namespace puzzle-gitlab-ci-cd-training-prod
       -
         name: Redeploy puzzle Deployment
         uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG_BASE64 }}
         with:
-          # changeme
-          args: rollout restart deployment/latest-acend-hugo-template-puzzle --namespace acend-hugo-training-template-prod
+          args: rollout restart deployment/latest-puzzle-gitlab-ci-cd-training-puzzle --namespace puzzle-gitlab-ci-cd-training-prod

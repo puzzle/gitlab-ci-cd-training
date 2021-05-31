@@ -1,14 +1,3 @@
-# changeme 
-# Change the following parts to your current installation
-# - entire Docker Build steps accordingly to the amount of different versions or tags your building TRAINING_HUGO_ENV
-#   - Tags
-# - Helm Target Namespace
-# - Name of K8S Deployment to trigger and namespace
-# - URL that gets commented on the PR
-# - Secrets
-#   - QUAYIO_USERNAME and QUAYIO_TOKEN must be set accordingly to your registry, existing users must have access to the repos
-#   - KUBECONFIG_TEST content of the Kubeconfig File, Account must have access to the k8s namespace. It's used in the helm steps
-#   - KUBECONFIG_TEST_BASE64 same as KUBECONFIG but Base64 encoded. It's used in the kubectl steps
 name: Build Training and Publish
 
 on:
@@ -51,15 +40,13 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          # changeme
           tags: |
-            quay.io/acend/hugo-training-template:pr-${{ github.event.pull_request.number }}
+            quay.io/puzzle/gitlab-ci-cd-training:pr-${{ github.event.pull_request.number }}
       -
         name: Run vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          # changeme
-          image-ref: 'quay.io/acend/hugo-training-template:pr-${{ github.event.pull_request.number }}'
+          image-ref: 'quay.io/puzzle/gitlab-ci-cd-training:pr-${{ github.event.pull_request.number }}'
           format: 'table'
           output: 'trivy-results.txt'
           exit-code: '0'
@@ -81,16 +68,14 @@ jobs:
           build-args: |
             TRAINING_HUGO_ENV=puzzle
           push: true
-          # changeme
           tags: |
-            quay.io/acend/hugo-training-template:pr-${{ github.event.pull_request.number }}-puzzle
+            quay.io/puzzle/gitlab-ci-cd-training:pr-${{ github.event.pull_request.number }}-puzzle
       -
         name: 'Deploy Helm Release'
         uses: 'deliverybot/helm@v1'
         with:
           release: 'pr-${{ github.event.pull_request.number }}'
-          # changeme
-          namespace: 'acend-hugo-training-template-test'
+          namespace: 'puzzle-gitlab-ci-cd-training-test'
           version: '${{ github.sha }}'
           repository: 'https://acend.github.io/helm-charts/'
           chart: 'acend-training-chart'
@@ -108,23 +93,20 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG_TEST_BASE64 }}
         with:
-          # changeme
-          args: rollout restart deployment/pr-${{ github.event.pull_request.number }}-acend-hugo-template-acend --namespace acend-hugo-training-template-test
+          args: rollout restart deployment/pr-${{ github.event.pull_request.number }}-puzzle-gitlab-ci-cd-training-acend --namespace puzzle-gitlab-ci-cd-training-test
       -
         name: Redeploy Puzzle Deployment
         uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG_TEST_BASE64 }}
         with:
-          # changeme
-          args: rollout restart deployment/pr-${{ github.event.pull_request.number }}-acend-hugo-template-puzzle --namespace acend-hugo-training-template-test
+          args: rollout restart deployment/pr-${{ github.event.pull_request.number }}-puzzle-gitlab-ci-cd-training-puzzle --namespace puzzle-gitlab-ci-cd-training-test
       -
         name: Comment PR Environments in PR
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # changeme
           message: |
            PR Environments: 
-           * acend version <https://hugo-training-template-pr-${{ github.event.pull_request.number }}.training.acend.ch>
-           * puzzle version <https://hugo-training-template-pr-${{ github.event.pull_request.number }}.k8s.puzzle.ch>
+           * acend version <https://gitlab-ci-cd-training-pr-${{ github.event.pull_request.number }}.training.acend.ch>
+           * puzzle version <https://gitlab-ci-cd-training-pr-${{ github.event.pull_request.number }}.k8s.puzzle.ch>

@@ -1,20 +1,20 @@
 {
-  "name": "changeme-training",
+  "name": "gitlab-ci-cd-training",
   "version": "0.0.9",
-  "description": "changeme Training",
+  "description": "GitLab CI/CD Training",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/changeme/changeme-training.git"
+    "url": "git+https://github.com/puzzle/gitlab-ci-cd-training.git"
   },
-  "author": "changeme",
+  "author": "Puzzle ITC",
   "scripts": {
     "mdlint": "markdownlint --config .markdownlint.json content *.md",
     "prepare": "husky install"
   },
   "bugs": {
-    "url": "https://github.com/changeme/changeme-training/issues"
+    "url": "https://github.com/puzzle/gitlab-ci-cd-training/issues"
   },
-  "homepage": "https://github.com/changeme/changeme-training#readme",
+  "homepage": "https://github.com/puzzle/gitlab-ci-cd-training#readme",
   "devDependencies": {
     "husky": "6.0.0",
     "markdownlint-cli": "0.27.1"
