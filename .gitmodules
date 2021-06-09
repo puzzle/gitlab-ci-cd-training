@@ -8,3 +8,6 @@
 [submodule "themes/docsy-puzzle"]
 	path = themes/docsy-puzzle
 	url = https://github.com/puzzle/docsy-puzzle.git
+[submodule "themes/docsy-acend"]
+	path = themes/docsy-acend
+	url = https://github.com/puzzle/docsy-acend.git
