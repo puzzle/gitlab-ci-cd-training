@@ -78,7 +78,7 @@ jobs:
         uses: 'deliverybot/helm@v1'
         with:
           release: 'latest'
-          namespace: 'puzzle-gitlab-ci-cd-training-prod'
+          namespace: 'pitc-gitlab-ci-cd-training-prod'
           version: '${{ github.sha }}'
           repository: 'https://acend.github.io/helm-charts/'
           chart: 'acend-training-chart'
@@ -96,11 +96,11 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG_BASE64 }}
         with:
-          args: rollout restart deployment/latest-puzzle-gitlab-ci-cd-training-acend --namespace puzzle-gitlab-ci-cd-training-prod
+          args: rollout restart deployment/latest-puzzle-gitlab-ci-cd-training-acend --namespace pitc-gitlab-ci-cd-training-prod
       -
         name: Redeploy puzzle Deployment
         uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG_BASE64 }}
         with:
-          args: rollout restart deployment/latest-puzzle-gitlab-ci-cd-training-puzzle --namespace puzzle-gitlab-ci-cd-training-prod
+          args: rollout restart deployment/latest-puzzle-gitlab-ci-cd-training-puzzle --namespace pitc-gitlab-ci-cd-training-prod

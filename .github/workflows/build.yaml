@@ -75,7 +75,7 @@ jobs:
         uses: 'deliverybot/helm@v1'
         with:
           release: 'pr-${{ github.event.pull_request.number }}'
-          namespace: 'puzzle-gitlab-ci-cd-training-test'
+          namespace: 'pitc-gitlab-ci-cd-training-test'
           version: '${{ github.sha }}'
           repository: 'https://acend.github.io/helm-charts/'
           chart: 'acend-training-chart'
@@ -93,14 +93,14 @@ jobs:
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG_TEST_BASE64 }}
         with:
-          args: rollout restart deployment/pr-${{ github.event.pull_request.number }}-puzzle-gitlab-ci-cd-training-acend --namespace puzzle-gitlab-ci-cd-training-test
+          args: rollout restart deployment/pr-${{ github.event.pull_request.number }}-puzzle-gitlab-ci-cd-training-acend --namespace pitc-gitlab-ci-cd-training-test
       -
         name: Redeploy Puzzle Deployment
         uses: actions-hub/kubectl@master
         env:
           KUBE_CONFIG: ${{ secrets.KUBECONFIG_TEST_BASE64 }}
         with:
-          args: rollout restart deployment/pr-${{ github.event.pull_request.number }}-puzzle-gitlab-ci-cd-training-puzzle --namespace puzzle-gitlab-ci-cd-training-test
+          args: rollout restart deployment/pr-${{ github.event.pull_request.number }}-puzzle-gitlab-ci-cd-training-puzzle --namespace pitc-gitlab-ci-cd-training-test
       -
         name: Comment PR Environments in PR
         uses: marocchino/sticky-pull-request-comment@v2
