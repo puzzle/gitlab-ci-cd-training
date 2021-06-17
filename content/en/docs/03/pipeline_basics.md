@@ -16,7 +16,7 @@ The content of the git repository is ...
 
 Inside a job we want to define the work that is done. The easiest way is to add a command. You already used a command inside the `info` job.
 
-{{< highlight yaml "hl_lines=7" >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=7" >}}{{< readfile file="manifests/03.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 <!-- TODO 
 

@@ -7,13 +7,15 @@ sectionnumber: 4
 This lab shows how to use build options and properties.
 
 
-## Title 1
+## Task {{% param sectionnumber %}}.1: Global configuration
 
-{{% alert title="Note" color="primary" %}}
-Sample Note
-{{% /alert %}}
+<!-- TODO 
 
+* [ ] Build Options/Properties
+  * [ ] main/default Image
+  * [ ] execution rules
+  * [ ] Build Trigger / Branches
+    * könnte auch nur Theorie sein 
 
-```yaml
-echo "Hello World!"
-```
+-->
+
