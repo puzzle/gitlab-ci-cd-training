@@ -30,6 +30,8 @@ Let's create a minimal pipeline. Add the following content to the `.gitlab-ci.ym
 
 {{< highlight yaml >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
+Commit and push the changes.
+
 
 ### Stages
 
@@ -51,6 +53,20 @@ You just defined your first job. It's name is `info`.
 Jobs are ...
 
 <!-- TODO -->
+
+## Task {{% param sectionnumber %}}.3: Check pipeline execution
+
+Go to your GitLab project and find the pipelines under `CI/CD` --> `Pipelines`.
+
+
+<!-- TODO
+
+* [ ] status
+* [ ] jobs
+* [ ] logs
+
+ -->
+
 
 <!--
 ```yaml
