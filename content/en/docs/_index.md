@@ -6,6 +6,12 @@ menu:
     weight: 2
 ---
 
-## Lab Introduction
+[GitLab CI/CD](https://docs.gitlab.com/ee/ci/) is ...
 
-Test
+<!--
+
+TODO
+
+* [ ] basic GitLab CI/CD bli bla blu
+
+-->

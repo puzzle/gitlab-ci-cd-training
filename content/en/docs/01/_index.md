@@ -1,88 +1,18 @@
 ---
-title: "1. CHANGEME Sample Chapter"
+title: "1. Getting started"
 weight: 1
 sectionnumber: 1
 ---
 
-## Title 1
 
-{{% alert title="Note" color="primary" %}}
-Sample Note
-{{% /alert %}}
+## Task {{% param sectionnumber %}}.1: Create GitLab Project
 
-Sample code block:
-```bash
-echo "Hello World!"
-```
+* Create blank project
+* push test data
 
-{{% onlyWhen variant1 %}}
-This is only rendered when `enabledModule` in `config.toml` contains `variant1`.
-{{% /onlyWhen %}}
+or
 
-{{% onlyWhen variant2 %}}
-This is only rendered when `enabledModule` in `config.toml` contains `variant2`.
-{{% /onlyWhen %}}
-
-{{% onlyWhen variant1 variant2 %}}
-This is only rendered when `enabledModule` in `config.toml` contains `variant1` or `variant2`.
-{{% /onlyWhen %}}
-
-{{% onlyWhen variant9 %}}
-This is only rendered when `enabledModule` in `config.toml` contains `variant9`.
-{{% /onlyWhen %}}
-
-{{% onlyWhenNot variant1 %}}
-This is only rendered when `enabledModule` in `config.toml` **does not** contain `variant1`.
-{{% /onlyWhen %}}
-
-{{% onlyWhenNot variant2 %}}
-This is only rendered when `enabledModule` in `config.toml` **does not** contain `variant2`.
-{{% /onlyWhen %}}
-
-{{% onlyWhenNot variant1 variant2 %}}
-This is only rendered when `enabledModule` in `config.toml` **does not** contain `variant1` **nor** `variant2`.
-{{% /onlyWhen %}}
-
-{{% onlyWhenNot variant9 %}}
-This is only rendered when `enabledModule` in `config.toml` **does not** contain `variant9`.
-{{% /onlyWhen %}}
+* Import project
 
 
-## Title 2
 
-
-```yaml
-foo: bar
-```
-
-
-## Task 1.1: Fix Deployment
-
-
-```yaml
-foo: bar
-```
-
-
-## Task 1.2: Fix Release
-
-
-```yaml
-foo: bar
-```
-
-
-## Task 1.3: Fix Release again
-
-
-```yaml
-foo: bar
-```
-
-
-## Task 1.4: Fix Release again and again
-
-
-```yaml
-foo: bart
-```
