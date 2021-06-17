@@ -4,6 +4,8 @@ weight: 1
 sectionnumber: 1
 ---
 
+To get started we create a [git](https://git-scm.com/) repository holding an example application.
+
 
 ## Task {{% param sectionnumber %}}.1: Create GitLab Project
 
@@ -13,6 +15,3 @@ sectionnumber: 1
 or
 
 * Import project
-
-
-
