@@ -1,6 +1,7 @@
 stages:
   - info
   - build
+  - test
 
 info:
   stage: info
@@ -13,7 +14,7 @@ build_application:
   script:
     - ./gradlew assemble
 
-test:
+test_application:
   stage: test
   image: registry.access.redhat.com/ubi8/openjdk-11:latest
   script:
