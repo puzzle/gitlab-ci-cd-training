@@ -25,5 +25,13 @@ Inside a job we want to define the work that is done. The easiest way is to add 
 -->
 
 
-## Task {{% param sectionnumber %}}.1: Define scripts
+## Task {{% param sectionnumber %}}.3: Define scripts
 
+
+## Task {{% param sectionnumber %}}.4: Before and after scripts
+
+<!-- TODO
+* nur alt Theorie mit Beispiel 
+* [ ] https://docs.gitlab.com/ee/ci/yaml/#before_script
+* [ ] https://docs.gitlab.com/ee/ci/yaml/#after_script
+-->
