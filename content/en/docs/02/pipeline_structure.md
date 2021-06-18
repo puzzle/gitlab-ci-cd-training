@@ -56,7 +56,7 @@ Jobs are ...
 
 ## Task {{% param sectionnumber %}}.3: Check pipeline execution
 
-Go to your GitLab project and find the pipelines under `CI/CD` --> `Pipelines`.
+Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
 
 
 <!-- TODO
@@ -67,6 +67,7 @@ Go to your GitLab project and find the pipelines under `CI/CD` --> `Pipelines`.
 
  -->
 
+Do you find the expected echo string?
 
 <!--
 ```yaml
