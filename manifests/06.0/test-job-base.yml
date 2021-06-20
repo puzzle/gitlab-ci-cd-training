@@ -1,0 +1,5 @@
+test_application:
+  stage: test
+  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  script:
+    - ./gradlew check

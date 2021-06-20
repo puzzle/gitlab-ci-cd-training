@@ -1,0 +1,25 @@
+stages:
+  - info
+  - build
+  - test
+
+info:
+  stage: info
+  script:
+    - echo "This is your first stage (ツ)"
+
+build_application:
+  stage: build
+  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  script:
+    - ./gradlew assemble
+
+test_application:
+  stage: test
+  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  script:
+    - ./gradlew check
+  artifacts:
+    when: always
+    reports:
+      junit: build/test-results/test/**/TEST-*.xml
