@@ -1,7 +1,7 @@
 ---
-title: "12. Security"
-weight: 10
-sectionnumber: 10
+title: "13. Artifacts"
+weight: 11
+sectionnumber: 11
 ---
 
 GitLab offers a wide support for security issues. In this lab we will cover the GitLabs internal security templates first, and then we will show you how to include custom security tools into your pipeline. 
@@ -73,7 +73,7 @@ Commit and push the changes to trigger the pipeline
 {{% alert color="danger" %}}If you ever push a secret into a repository, **YOU MUST CONSIDER THIS SECRET AS INSECURE**. Remove the secret from the repository and change all related secrets!{{% /alert %}}
 
 
-## Task {{% param sectionnumber %}}.5 Custom security tooling
+## Task {{% param sectionnumber %}}.5 Custom security tooling lab
 
 In this section we'll show you how to use custom security tools in your pipeline. For this example we use Tivy, a local Docker image security scanner.
 
@@ -96,4 +96,5 @@ mkdir -p reports
 
 And commit and push the code to rerun the pipeline.
 
-{{< highlight yaml "hl_lines=46-48 51-52" >}}{{< readfile file="manifests/012.0/.gitlab-ci-complete.yml" >}}{{< /highlight >}}
+
+## Task {{% param sectionnumber %}}.5 Custom security tooling solution
