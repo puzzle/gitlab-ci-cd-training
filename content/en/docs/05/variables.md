@@ -40,7 +40,7 @@ Output:
 ```bash
 hello Foo Bar
 ```
-{{% alert color="primary" %}}Never store sensitive information like passwords directly in the gitlab-ci.yml file{{% /alert %}}
+{{% alert color="danger" %}}Never store sensitive information like passwords directly in the gitlab-ci.yml file{{% /alert %}}
 <!-- TODO -->
 
 ## Task {{% param sectionnumber %}}.2: Predefined Variables

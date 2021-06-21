@@ -1,0 +1,57 @@
+stages:
+  - info
+  - build
+  - test
+  - package
+  - deploy
+
+include:
+  - project: '${CI_PROJECT_ROOT_NAMESPACE}/${CI_PROJECT_NAME}'
+    file: 'templates/k8s.yml'
+
+
+variables:
+  IMAGE_HOST: 'quay.io'
+  IMAGE_REPOSITORY: 'puzzle'
+  IMAGE_NAME: 'example-spring-boot'
+
+info:
+  stage: info
+  script:
+    - echo "This is your first stage (ツ)"
+
+build_application:
+  stage: build
+  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  script:
+    - ./gradlew assemble
+
+test_application:
+  stage: test
+  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  script:
+    - ./gradlew check
+  artifacts:
+    when: always
+    reports:
+      junit: build/test-results/test/**/TEST-*.xml
+
+build_image:
+  stage: package
+  before_script:
+    - docker info
+  script:
+    - docker build --no-cache -t $IMAGE_NAME .
+    - IMAGE_PATH=$IMAGE_HOST/$IMAGE_REPOSITORY/$IMAGE_NAME:${CI_COMMIT_SHA:0:8}
+    - echo "docker image path is - $IMAGE_PATH"
+    - docker tag $IMAGE_NAME $IMAGE_PATH
+    #- docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
+    # - docker push $IMAGE_PATH
+
+deploy_to_k8s:
+  stage: deploy
+  extends: .kubectl
+  script:
+    - echo "deploy your stuff here with kubectl commands"
+    - kubectl version
+

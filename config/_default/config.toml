@@ -75,6 +75,7 @@ github_branch = "main"
 
 enabledModule = "base"
 
+
 # Enable Lunr.js offline search
 offlineSearch = true
 
