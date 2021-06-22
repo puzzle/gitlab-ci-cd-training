@@ -76,6 +76,7 @@ Now the pipeline should fail because the GitLab Secret Analyzer will find a priv
 
 Now remove the private key from the repository th execute the next steps.
 
+
 ## Task {{% param sectionnumber %}}.5 Custom security tooling
 
 In this section we'll show you how to use custom security tools in your pipeline. For this example we use Tivy, a local Docker image security scanner.
