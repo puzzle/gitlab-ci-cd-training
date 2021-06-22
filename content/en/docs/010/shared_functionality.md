@@ -26,7 +26,6 @@ You can’t use YAML anchors across different YAML files sourced by include. You
 In this lab we will show you how to extend a job with an other job from a shared template.
 Execute following tasks
 
-* Define a new stage named `deploy`
 * Define a new job named `deploy_to_k8s`
 * Include the repository template with the local keyword. Use the predefined Gitlab Enviorments variable to set the `project` field value
 * Extend the job with `.kubectl` from the template.
@@ -35,4 +34,4 @@ Execute following tasks
 
 ## Task {{% param sectionnumber %}}.3 Shared functionality solution
 
-{{< highlight yaml "hl_lines=6 8-10 51-56" >}}{{< readfile file="manifests/010.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=8-10 51-56" >}}{{< readfile file="manifests/010.0/.gitlab-ci.yml" >}}{{< /highlight >}}

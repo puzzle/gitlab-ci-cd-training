@@ -18,7 +18,7 @@ You can also use official Images from the software company developing the needed
 
 For tools and languages it is a good starting point to check the [Pre-Built CircleCI Docker Images](Pre-Built CircleCI Docker Image).
 
-{{% alert  color="primary" %}}
+{{% alert color="primary" %}}
 Using freely available Container Images is risky. Be aware of the security constraints.
 {{% /alert %}}
 
