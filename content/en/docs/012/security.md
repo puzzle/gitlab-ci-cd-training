@@ -13,7 +13,7 @@ In this lab we will show you how to extend a job with an other job from a shared
 Execute following tasks
 
 * Include the template `Security/SAST.gitlab-ci.yml`
-* Include the template `Security/Secret-Detection.gitlab-ci.yml`
+* Include the template `templates/Secret-Detection.yml` from the same repository
 * Include the template `Security/License-Scanning.gitlab-ci.yml`
 
 
@@ -68,6 +68,8 @@ nfMi31SimZmWG9AAAAHWNzY2hsYXR0ZXJAYy5zY2hsYXR0ZXItcHV6emxlAQIDBAU=
 ```
 
 Commit and push the changes to trigger the pipeline
+
+Now the pipeline should faile because the GitLab Secret Analyzer will find a private key inside our repository.
 <!-- TODO Check for ouput -->
 
 {{% alert color="danger" %}}If you ever push a secret into a repository, **YOU MUST CONSIDER THIS SECRET AS INSECURE**. Remove the secret from the repository and change all related secrets!{{% /alert %}}
