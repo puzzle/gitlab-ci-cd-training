@@ -56,13 +56,21 @@ Execute this script after the normal script.
 ```
 
 
-## Task {{% param sectionnumber %}}.1: Global pipeline configuration lab
+## Task {{% param sectionnumber %}}.2: Global pipeline configuration lab
 
 * Create the default job
 * Create a global timeout of 15 minutes
 * Add a retry number of 2 times to the `info` job
 
-## Task {{% param sectionnumber %}}.2: Global configuration
+
+## Task {{% param sectionnumber %}}.3: Global pipeline configuration solution
+
+{{% details title="job hint" mode-switcher="normalexpertmode" %}}
+
+{{< highlight yaml "hl_lines=12-13 17" >}}{{< readfile file="manifests/08.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+
+{{% /details %}}
+
 
 <!-- TODO 
 
