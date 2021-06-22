@@ -72,7 +72,7 @@ Commit and push the changes to trigger the pipeline
 Now the pipeline should fail because the GitLab Secret Analyzer will find a private key inside our repository.
 <!-- TODO Check for ouput -->
 
-{{% alert color="danger" %}}If you ever push a secret into a repository, **YOU MUST CONSIDER THIS SECRET AS INSECURE**. Remove the secret from the repository and change all related secrets!{{% /alert %}}
+{{% alert title="Warning" color="secondary" %}}If you ever push a secret into a repository, **YOU MUST CONSIDER THIS SECRET AS INSECURE**. Remove the secret from the repository and change all related secrets!{{% /alert %}}
 
 Now remove the private key from the repository th execute the next steps.
 

@@ -18,7 +18,7 @@ You can also use official Images from the software company developing the needed
 
 For tools and languages it is a good starting point to check the [Pre-Built CircleCI Docker Images](Pre-Built CircleCI Docker Image).
 
-{{% alert color="primary" %}}
+{{% alert title="Info" color="primary" %}}
 Using freely available Container Images is risky. Be aware of the security constraints.
 {{% /alert %}}
 
@@ -63,9 +63,9 @@ After committing the changes a new pipeline starts using the updated configurati
 
 Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
 
-The Java 11 application is build using the [Gradle Build Tool](https://gradle.org/)
+The Java 11 application is built using the [Gradle Build Tool](https://gradle.org/)
 
-See the Gradle build that should succeed.
+Check the Gradle build log and verify whether the build succeded or not.
 
 ```s
 Starting a Gradle Daemon (subsequent builds will be faster)
