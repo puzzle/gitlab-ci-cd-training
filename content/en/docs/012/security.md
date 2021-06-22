@@ -4,7 +4,7 @@ weight: 10
 sectionnumber: 10
 ---
 
-GitLab offers a wide support for security issues. In this lab we will cover the GitLabs internal security templates first, and then we will show you how to include custom security tools into your pipeline. 
+GitLab offers a wide support for security issues. In this lab we will cover the GitLabs internal security templates first, and then we will show you how to include custom security tools into your pipeline.
 
 
 ## Task {{% param sectionnumber %}}.2: Security Template Lab
