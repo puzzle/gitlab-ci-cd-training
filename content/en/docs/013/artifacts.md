@@ -95,6 +95,3 @@ mkdir -p reports
 ```
 
 And commit and push the code to rerun the pipeline.
-
-
-## Task {{% param sectionnumber %}}.5 Custom security tooling solution
