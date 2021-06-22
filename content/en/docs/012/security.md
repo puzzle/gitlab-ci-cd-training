@@ -69,11 +69,12 @@ nfMi31SimZmWG9AAAAHWNzY2hsYXR0ZXJAYy5zY2hsYXR0ZXItcHV6emxlAQIDBAU=
 
 Commit and push the changes to trigger the pipeline
 
-Now the pipeline should faile because the GitLab Secret Analyzer will find a private key inside our repository.
+Now the pipeline should fail because the GitLab Secret Analyzer will find a private key inside our repository.
 <!-- TODO Check for ouput -->
 
 {{% alert color="danger" %}}If you ever push a secret into a repository, **YOU MUST CONSIDER THIS SECRET AS INSECURE**. Remove the secret from the repository and change all related secrets!{{% /alert %}}
 
+Now remove the private key from the repository th execute the next steps.
 
 ## Task {{% param sectionnumber %}}.5 Custom security tooling
 
@@ -97,5 +98,8 @@ mkdir -p reports
 ```
 
 And commit and push the code to rerun the pipeline.
+
+
+## Task {{% param sectionnumber %}}.5 Custom security tooling solution
 
 {{< highlight yaml "hl_lines=46-48 51-52" >}}{{< readfile file="manifests/012.0/.gitlab-ci-complete.yml" >}}{{< /highlight >}}
