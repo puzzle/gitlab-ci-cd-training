@@ -35,4 +35,4 @@ Execute following tasks
 
 ## Task {{% param sectionnumber %}}.3 Shared functionality solution
 
-{{< highlight yaml "hl_lines=6 8-10 51-56" >}}{{< readfile file="manifests/011.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=6 8-10 51-56" >}}{{< readfile file="manifests/010.0/.gitlab-ci.yml" >}}{{< /highlight >}}

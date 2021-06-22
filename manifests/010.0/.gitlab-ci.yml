@@ -8,9 +8,6 @@ stages:
 include:
   - project: '${CI_PROJECT_ROOT_NAMESPACE}/${CI_PROJECT_NAME}'
     file: 'templates/k8s.yml'
-  - template: Security/SAST.gitlab-ci.yml # SAST Security Template https://docs.gitlab.com/ee/user/application_security/sast/ #12. Security scanning
-  - template: Security/Secret-Detection.gitlab-ci.yml #12. Security scanning
-  - template: Security/License-Scanning.gitlab-ci.yml
 
 
 variables:
