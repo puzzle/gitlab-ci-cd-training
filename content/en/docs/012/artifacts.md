@@ -1,7 +1,7 @@
 ---
-title: "13. Artifacts"
-weight: 11
-sectionnumber: 11
+title: "12. Artifacts"
+weight: 12
+sectionnumber: 12
 ---
 
 Jobs can output an archive of files and directories. This output is known as a job artifact.

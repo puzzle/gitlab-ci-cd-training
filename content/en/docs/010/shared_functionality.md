@@ -1,7 +1,7 @@
 ---
-title: "11. Shared functionality"
-weight: 9
-sectionnumber: 9
+title: "10. Shared functionality"
+weight: 10
+sectionnumber: 10
 ---
 
 Use `include` to include external YAML files in your CI/CD configuration. You can break down one long gitlab-ci.yml file into multiple files to increase readability, or reduce duplication of the same configuration in multiple places.

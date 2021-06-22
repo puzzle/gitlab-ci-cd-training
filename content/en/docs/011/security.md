@@ -1,7 +1,7 @@
 ---
-title: "12. Security"
-weight: 10
-sectionnumber: 10
+title: "11. Security"
+weight: 11
+sectionnumber: 11
 ---
 
 GitLab offers a wide support for security issues. In this lab we will cover the GitLabs internal security templates first, and then we will show you how to include custom security tools into your pipeline.
