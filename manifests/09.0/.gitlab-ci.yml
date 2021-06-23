@@ -6,12 +6,18 @@ stages:
   - deploy
 
 variables:
+  GIT_STRATEGY: "clone"
+  COMPILE: "false"
   IMAGE_HOST: 'quay.io'
   IMAGE_REPOSITORY: 'puzzle'
   IMAGE_NAME: 'example-spring-boot'
 
+default:
+  timeout: 5 minutes
+
 info:
   stage: info
+  retry: 2
   script:
     - echo "This is your first stage (ツ)"
 

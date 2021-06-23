@@ -9,7 +9,7 @@ Basics on working with GitLab CI/CD pipelines.
 
 ## Task {{% param sectionnumber %}}.1: Implicit data import
 
-The content of the git repository is ...
+The content of the git repository is implicit imported into the pipeline's workspace. So you don't have to clone anything.
 <!-- TODO -->
 
 ## Task {{% param sectionnumber %}}.2: Execute single commands
@@ -26,6 +26,18 @@ Inside a job we want to define the work that is done. The easiest way is to add 
 
 
 ## Task {{% param sectionnumber %}}.3: Define scripts
+
+You can split long commands into multiline commands to improve readability with `|` (literal) and `>` (folded)
+For example:
+
+```yaml
+job:
+  script:
+    - |
+      echo "First command line."
+      echo "Second command line."
+      echo "Third command line."
+```
 
 
 ## Task {{% param sectionnumber %}}.4: Before and after scripts

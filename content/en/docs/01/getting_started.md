@@ -23,7 +23,7 @@ To get started we create a [git](https://git-scm.com/) repository holding an exa
 
 Open GitLab and navigate to `Project` 🠒 `Import Project` and select `Repo by URL`
 
-* **Git repository URL**: https://github.com/appuio/example-spring-boot-helloworld
+* **Git repository URL**: https://github.com/appuio/example-spring-boot-helloworld.git
 * **Username & Password**: Leave empty
 * **Project URL**: < TODO >
 * **Visibility level**: Private

@@ -8,15 +8,17 @@ stages:
 include:
   - project: '${CI_PROJECT_ROOT_NAMESPACE}/${CI_PROJECT_NAME}'
     file: 'templates/k8s.yml'
-  - template: Security/SAST.gitlab-ci.yml # SAST Security Template https://docs.gitlab.com/ee/user/application_security/sast/ #12. Security scanning
-  - template: Security/Secret-Detection.gitlab-ci.yml #12. Security scanning
+  - project: '${CI_PROJECT_ROOT_NAMESPACE}/${CI_PROJECT_NAME}'
+    file: 'templates/Secret-Detection.yml'
+  - template: Security/SAST.gitlab-ci.yml
   - template: Security/License-Scanning.gitlab-ci.yml
-
 
 variables:
   IMAGE_HOST: 'quay.io'
   IMAGE_REPOSITORY: 'puzzle'
   IMAGE_NAME: 'example-spring-boot'
+  GIT_STRATEGY: "clone"
+  COMPILE: "false"
 
 info:
   stage: info
@@ -50,6 +52,14 @@ build_image:
     - docker tag $IMAGE_NAME $IMAGE_PATH
     #- docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
     # - docker push $IMAGE_PATH
+
+deploy_to_prod:
+  stage: deploy
+  when: manual
+  only:
+   - release
+  script:
+    - echo "Deployment triggered"
 
 deploy_to_k8s:
   stage: deploy
