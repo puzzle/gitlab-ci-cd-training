@@ -5,6 +5,16 @@ sectionnumber: 9
 ---
 
 
+{{% alert color="primary" %}}
+**GitLab References**
+
+[GitLab `only` / `except` keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#only--except)
+
+[GitLab `when` keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#when)
+
+[GitLab `allow_failure` keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#allow_failure)
+{{% /alert %}}
+
 
 ## Task {{% param sectionnumber %}}.1: Job control
 

@@ -9,14 +9,13 @@ Basics on working with GitLab CI/CD pipelines.
 {{% alert color="primary" %}}
 **GitLab References**
 
-[GitLab Variables](https://docs.gitlab.com/ee/ci/variables/)
+[GitLab script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#script)
 
-[GitLab script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#variables)
+[GitLab before_script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#before_script)
 
-[GitLab before_script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#variables)
-
-[GitLab after_script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#variables)
+[GitLab after_script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#after_script)
 {{% /alert %}}
+
 
 ## Task {{% param sectionnumber %}}.1: Implicit data import
 

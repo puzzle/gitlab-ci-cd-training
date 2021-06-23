@@ -75,25 +75,9 @@ Go to your GitLab project and check the pipelines under `CI/CD` 🠒 `Pipelines`
 
 Do you find the expected echo string?
 
-<!--
-```yaml
-#GitLab CI reference: https://docs.gitlab.com/ee/ci/yaml/
-#3. Gitlab Pipelines
-image: registry.puzzle.ch/docker.io/alpine:latest
 
-stages: #3. GitLab Stages
-  - info
+## Task {{% param sectionnumber %}}.4: Lab contents
 
-info: #3. GitLab Jobs
-  stage: info
-  script: #2. First Steps Scripts 
-    - echo "Hello World"
+At the end of this day you should have an fully working pipeline with several stages and jobs
 
-build:
-  stage: build
-
-build_container:
-  stage: build
-
-```
--->
+![Pipeline Complete](../complete_pipeline.png)

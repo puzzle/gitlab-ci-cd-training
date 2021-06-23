@@ -19,7 +19,7 @@ Execute following tasks
 
 ## Task {{% param sectionnumber %}}.3 Security Lab solution
 
-{{< highlight yaml "hl_lines=11-13" >}}{{< readfile file="manifests/011.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=11-14" >}}{{< readfile file="manifests/011.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 
 ## Task {{% param sectionnumber %}}.4 Let the pipeline fail
@@ -103,4 +103,4 @@ And commit and push the code to rerun the pipeline.
 
 ## Task {{% param sectionnumber %}}.5 Custom security tooling solution
 
-{{< highlight yaml "hl_lines=46-48 51-52" >}}{{< readfile file="manifests/011.0/.gitlab-ci-complete.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=48-50 53-54" >}}{{< readfile file="manifests/011.0/.gitlab-ci-complete.yml" >}}{{< /highlight >}}
