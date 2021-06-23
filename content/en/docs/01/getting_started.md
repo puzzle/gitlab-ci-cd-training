@@ -25,7 +25,7 @@ Open GitLab and navigate to `Project` 🠒 `Import Project` and select `Repo by 
 
 * **Git repository URL**: https://github.com/appuio/example-spring-boot-helloworld
 * **Username & Password**: Leave empty
-* **Project URL**: <TODO>
+* **Project URL**: < TODO >
 * **Visibility level**: Private
 
 And then click on `Create Project`
