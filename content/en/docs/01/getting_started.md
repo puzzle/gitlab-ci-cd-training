@@ -12,6 +12,8 @@ To get started we create a [git](https://git-scm.com/) repository holding an exa
 * Create blank project
 * push test data
 
+<!-- TODO  where to find the test data-->
+
 or
 
 * Import project

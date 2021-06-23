@@ -5,7 +5,7 @@ sectionnumber: 8
 ---
 
 Global pipeline configuration.
-There are differnt options for global pipeline configuration. This helps to reduce code duplication over different projects.
+There are different options for global pipeline configuration. This helps to reduce code duplication over different projects.
 
 
 ## Task {{% param sectionnumber %}}.1: Global pipeline configuration
@@ -29,7 +29,7 @@ These job keywords can be defined inside a `default:` section:
 
 default:
   before_script:
-    - "This will be executed as default if no other before scipt is set"
+    - "This will be executed as default if no other before script is set"
 
 job1:
   script:
@@ -47,7 +47,7 @@ job2:
 This produces following output:
 
 ```bash
-This will be executed as default if no other before scipt is set
+This will be executed as default if no other before script is set
 This script executes first. When it completes, the jobs `after_script` executes.
 
 This script executes before the script block
