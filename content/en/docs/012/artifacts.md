@@ -5,8 +5,22 @@ sectionnumber: 12
 ---
 
 Jobs can output an archive of files and directories. This output is known as a job artifact.
-
 You can download job artifacts by using the GitLab UI.
+
+Example of an artifact definition:
+
+```yaml
+pdf:
+  script: xelatex mycv.tex
+  artifacts:
+    paths:
+      - mycv.pdf
+    expire_in: 1 week
+```
+
+The `paths` keyword determines which files to add to the job artifacts. All paths to files and directories are relative to the repository where the job was created.
+
+The `expire_in` keyword determines how long GitLab keeps the job artifacts. You can also use the UI to keep job artifacts from expiring. If `expire_in` is not defined, the instance-wide setting is used.
 
 
 ## Task {{% param sectionnumber %}}.2: Artifacts Lab
