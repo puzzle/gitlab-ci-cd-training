@@ -9,10 +9,10 @@ CI/CD variables are a type of environment variable. You can use them to:
 Control the behavior of jobs and pipelines.
 
 * Store values you want to re-use.
-* Avoid hard-coding values in your .gitlab-ci.yml file.
-* You can use predefined CI/CD variables or define custom:
+* Avoid hard-coding values in your `.gitlab-ci.yml` file.
+* You can use predefined CI/CD variables or define custom variables:
 
-Variables in the .gitlab-ci.yml file.
+Variables in the `.gitlab-ci.yml` file.
 
 * Project CI/CD variables.
 * Group CI/CD variables.
@@ -29,17 +29,18 @@ In this lab we will talk about the variables in the gitlab-ci.yml file only
 {{% /alert %}}
 
 
+
 ## Task {{% param sectionnumber %}}.1: Define and access custom Variables
 
-To create a custom variable in the .gitlab-ci.yml file, define the variable and value with variables keyword in the top level section.
+To create a custom variable in the `.gitlab-ci.yml` file, define the variable and value with variables keyword in the top level section.
 
-Global variables are def
+Global variables can be defined in the variables section:
 ```yaml
 variables:
   FOO: BAR
 ```
 
-You can later reference this variable elswhere in your gitlab-ci.yml file. For example
+You can later reference this variable elsewhere in your `.gitlab-ci.yml` file. For example
 ```yaml
   - echo "Hello Foo ${FOO}"
 ```
@@ -48,13 +49,13 @@ Output:
 ```bash
 hello Foo Bar
 ```
-{{% alert color="danger" %}}Never store sensitive information like passwords directly in the gitlab-ci.yml file{{% /alert %}}
+{{% alert title="Warning" color="secondary" %}}Never store sensitive information like passwords directly in the `.gitlab-ci.yml` file. {{% /alert %}}
 <!-- TODO -->
 
 ## Task {{% param sectionnumber %}}.2: Predefined Variables
 
 
-There is a set of predefined GitLab Variables which you can reference in your gitlab-ci.yml script
+There is a set of predefined GitLab Variables which you can reference in your `.gitlab-ci.yml` script
 Each of this variable has the `CI_` prefix, such as:
 
 * `CI_COMMIT_BRANCH` The commit branch name. Available in branch pipelines, including pipelines for the default branch. Not available in merge request pipelines or tag pipelines.
@@ -67,10 +68,11 @@ https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
 
 ## Task {{% param sectionnumber %}}.2: Variables Lab
 
-Define following two global variables in your gitlab-ci.yml
+Define following two global variables in your `.gitlab-ci.yml`
 
 * GIT_STRATEGY = clone
 * COMPILE = false
+<!-- TODO explain what those variables are used for -->
 
 
 ## Task {{% param sectionnumber %}}.4 Variables solution

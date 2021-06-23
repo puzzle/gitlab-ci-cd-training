@@ -30,5 +30,5 @@ Open GitLab and navigate to `Project` 🠒 `Import Project` and select `Repo by 
 
 And then click on `Create Project`
 
-![Gitlab Import](../import_project.png)
 
+![Gitlab Import](../import_project.png)
