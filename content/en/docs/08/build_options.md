@@ -4,7 +4,7 @@ weight: 8
 sectionnumber: 8
 ---
 
-Global pipeline configuration.
+In this section we'll talk about global pipeline configuration.
 There are differnt options for global pipeline configuration. This helps to reduce code duplication over different projects.
 
 

@@ -4,6 +4,8 @@ weight: 9
 sectionnumber: 9
 ---
 
+In this section wel show you different options how to control the job execution. Sometimes some jobs will be used only in certain branches, or for example you will execute a stage only if the commit is tagged with a [Semver number](https://semver.org/).
+
 
 {{% alert color="primary" %}}
 **GitLab References**
