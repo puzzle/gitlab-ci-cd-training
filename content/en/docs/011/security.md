@@ -17,12 +17,14 @@ Execute following tasks
 * Include the template `Security/License-Scanning.gitlab-ci.yml`
 
 
-## Task {{% param sectionnumber %}}.3 Security Lab solution
+{{% details title="solution" mode-switcher="normalexpertmode" %}}
 
 {{< highlight yaml "hl_lines=11-14" >}}{{< readfile file="manifests/011.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
+{{% /details %}}
 
-## Task {{% param sectionnumber %}}.4 Let the pipeline fail
+
+## Task {{% param sectionnumber %}}.3 Let the pipeline fail
 
 To test the Secret Detection template we add a secret in our sample project. Create a new file in the root directory called `private_key` and copy following content in it.
 
@@ -77,7 +79,7 @@ Now the pipeline should fail because the GitLab Secret Analyzer will find a priv
 Now remove the private key from the repository th execute the next steps.
 
 
-## Task {{% param sectionnumber %}}.5 Custom security tooling
+## Task {{% param sectionnumber %}}.4 Custom security tooling
 
 In this section we'll show you how to use custom security tools in your pipeline. For this example we use [Trivy](https://github.com/aquasecurity/trivy), a local Docker image security scanner.
 
@@ -101,6 +103,8 @@ mkdir -p reports
 And commit and push the code to rerun the pipeline.
 
 
-## Task {{% param sectionnumber %}}.5 Custom security tooling solution
+{{% details title="solution" mode-switcher="normalexpertmode" %}}
 
 {{< highlight yaml "hl_lines=48-50 53-54" >}}{{< readfile file="manifests/011.0/.gitlab-ci-complete.yml" >}}{{< /highlight >}}
+
+{{% /details %}}
