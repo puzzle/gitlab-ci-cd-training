@@ -68,6 +68,7 @@ deploy_to_prod:
     - echo "Deployment triggered"
 
 deploy_to_k8s:
+  image: registry.puzzle.ch/docker.io/alpine:latest
   stage: deploy
   extends: .kubectl
   script:

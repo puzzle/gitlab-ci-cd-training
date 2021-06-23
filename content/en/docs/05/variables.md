@@ -18,7 +18,15 @@ Variables in the .gitlab-ci.yml file.
 * Group CI/CD variables.
 * Instance CI/CD variables.
 
-In this lab we will talk about the variables in the gitlab-ci.xml file only
+In this lab we will talk about the variables in the gitlab-ci.yml file only
+
+{{% alert color="primary" %}}
+**GitLab References**
+
+[GitLab Variables](https://docs.gitlab.com/ee/ci/variables/)
+
+[GitLab Variables keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#variables)
+{{% /alert %}}
 
 
 ## Task {{% param sectionnumber %}}.1: Define and access custom Variables
