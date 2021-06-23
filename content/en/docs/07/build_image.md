@@ -38,21 +38,23 @@ Create a new job with the following configuration which runs inside the new `pac
 
 -->
 
-Did you see the required variables inside the script? Add the following variables:
+Did you see the required variables inside the script? Also add the following variables to the variables block:
 
 * IMAGE_HOST: 'quay.io'
 * IMAGE_REPOSITORY: 'puzzle'
 * IMAGE_NAME: 'example-spring-boot'
 
-{{% alert title="Warning" color="secondary" %}}
-As mentioned in the Variables Lab sensitive Data like for example `DOCKER_USERNAME` and `DOCKER_PASSWORD` should never be stored as plain variable within a pipeline definition. Such variables can be defined on Projects, Groups and Instances in the Gitlab Webconsole (eg. Project Settings --> CICD --> Variables). During a pipeline run Gitlab will take care that sensitive data never shows up in logs and can be leaked in such a way.
-{{% /alert %}}
+{{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{% details title="job hint" mode-switcher="normalexpertmode" %}}
+The new stage is defined at the end of our `.gitlab-ci.yml`, we also need to add the package stage to the stage list and define the new variables.
 
-{{< highlight yaml "hl_lines=33-45" >}}{{< readfile file="manifests/07.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=5 10-12 35-45" >}}{{< readfile file="manifests/07.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
+
+{{% alert title="Warning" color="secondary" %}}
+As mentioned in the variables Lab sensitive Data like for example `DOCKER_USERNAME` and `DOCKER_PASSWORD` should never be stored as plain variable within a pipeline definition. Such variables can be defined on Projects, Groups and Instances in the Gitlab Webconsole (eg. Project Settings --> CICD --> Variables). During a pipeline run Gitlab will take care that sensitive data never shows up in logs and can be leaked in such a way.
+{{% /alert %}}
 
 
 ## Task {{% param sectionnumber %}}.2: Check the pipeline

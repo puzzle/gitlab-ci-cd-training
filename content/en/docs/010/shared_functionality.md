@@ -37,7 +37,8 @@ Execute following tasks
 * Extend the job with `.kubectl` from the template.
 * Add a script section in the job with following command `kubectl version`  
 
+{{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-## Task {{% param sectionnumber %}}.3 Shared functionality solution
+{{< highlight yaml "hl_lines=8-10 64-70" >}}{{< readfile file="manifests/010.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
-{{< highlight yaml "hl_lines=8-10 51-56" >}}{{< readfile file="manifests/010.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{% /details %}}
