@@ -49,7 +49,7 @@ Did you see the required variables inside the script? Add the following variable
 
 ## Task {{% param sectionnumber %}}.2: Check the pipeline
 
-Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
+Go to your GitLab project and check the pipelines under `CI/CD` 🠒 `Pipelines`.
 
 Check that the image build job was successful.
 

@@ -40,7 +40,7 @@ Use `allow_failure` when you want to let a job fail without impacting the rest o
 * Add a manual pipeline gate to make sure a manual action is required to execute this job
 * Add a script block with a simple `echo` command
 
-Commit and push these changes to the main branch and go to `CI/CD` --> `Pipelines` and check the pipeline status. You may notice that the job `deploy_to_prod` is not visible. This is because we add an execution rule for the `release` branch only. To fix this, we need to switch back to `Repository` --> `Branches` and create a new branch called `release`.
+Commit and push these changes to the main branch and go to `CI/CD` 🠒 `Pipelines` and check the pipeline status. You may notice that the job `deploy_to_prod` is not visible. This is because we add an execution rule for the `release` branch only. To fix this, we need to switch back to `Repository` 🠒 `Branches` and create a new branch called `release`.
 
 Now the pipeline should run again and we can see the newly created job. After the pipeline executed successfully, you may notive that the `deploy` step wasn't executet yet and isn't marked with a green tick. This is because we configured the job as a manual action. To trigger this job, we need to select the job and do it manually.
 
@@ -49,8 +49,9 @@ Now the pipeline should run again and we can see the newly created job. After th
 
 ## Task {{% param sectionnumber %}}.5: Job control solution
 
-<!-- TODO 
+{{% details title="solution" mode-switcher="normalexpertmode" %}}
 
+{{< highlight yaml "hl_lines=46-52" >}}{{< readfile file="manifests/09.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
--->
+{{% /details %}}
 

@@ -65,7 +65,7 @@ Execute this script after the normal script.
 
 ## Task {{% param sectionnumber %}}.3: Global pipeline configuration solution
 
-{{% details title="job hint" mode-switcher="normalexpertmode" %}}
+{{% details title="solution" mode-switcher="normalexpertmode" %}}
 
 {{< highlight yaml "hl_lines=12-13 17" >}}{{< readfile file="manifests/08.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 

@@ -67,4 +67,8 @@ Define following two global variables in your gitlab-ci.yml
 
 ## Task {{% param sectionnumber %}}.4 Variables solution
 
-{{< highlight yaml "hl_lines=5-8" >}}{{< readfile file="manifests/05.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{% details title="solution" mode-switcher="normalexpertmode" %}}
+
+{{< highlight yaml "hl_lines=5-7" >}}{{< readfile file="manifests/05.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+
+{{% /details %}}

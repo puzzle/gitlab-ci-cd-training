@@ -25,7 +25,7 @@ Filename
 GitLab CI reference: <https://docs.gitlab.com/ee/ci/yaml/>
 
 The pipeline has basically two parts, the header with global settings followed by the stages.
-Therefore are two basic concepts within the pipeline, jobs ans stages.
+Therefore are two basic concepts within the pipeline, jobs and stages.
 
 **Jobs**, which define what to do. For example, jobs that compile or test code.
 
@@ -43,10 +43,6 @@ Commit and push the changes.
 The global settings part contains stage definition.
 
 {{< highlight yaml "hl_lines=1-2" >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
-
-Stages are ...
-
-<!-- TODO -->
 
 
 ### Jobs
@@ -66,7 +62,7 @@ Jobs are
 
 ## Task {{% param sectionnumber %}}.3: Check pipeline execution
 
-Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
+Go to your GitLab project and check the pipelines under `CI/CD` 🠒 `Pipelines`.
 
 
 <!-- TODO
