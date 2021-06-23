@@ -6,10 +6,20 @@ sectionnumber: 3
 
 Basics on working with GitLab CI/CD pipelines.
 
+{{% alert color="primary" %}}
+**GitLab References**
+
+[GitLab script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#script)
+
+[GitLab before_script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#before_script)
+
+[GitLab after_script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#after_script)
+{{% /alert %}}
+
 
 ## Task {{% param sectionnumber %}}.1: Implicit data import
 
-The content of the git repository is ...
+The content of the git repository is implicit imported into the pipeline's workspace. So you don't have to clone anything.
 <!-- TODO -->
 
 ## Task {{% param sectionnumber %}}.2: Execute single commands
@@ -26,6 +36,18 @@ Inside a job we want to define the work that is done. The easiest way is to add 
 
 
 ## Task {{% param sectionnumber %}}.3: Define scripts
+
+You can split long commands into multiline commands to improve readability with `|` (literal) and `>` (folded)
+For example:
+
+```yaml
+job:
+  script:
+    - |
+      echo "First command line."
+      echo "Second command line."
+      echo "Third command line."
+```
 
 
 ## Task {{% param sectionnumber %}}.4: Before and after scripts

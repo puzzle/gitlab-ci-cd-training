@@ -9,14 +9,19 @@ include:
   - project: '${CI_PROJECT_ROOT_NAMESPACE}/${CI_PROJECT_NAME}'
     file: 'templates/k8s.yml'
 
-
 variables:
+  GIT_STRATEGY: "clone"
+  COMPILE: "false"
   IMAGE_HOST: 'quay.io'
   IMAGE_REPOSITORY: 'puzzle'
   IMAGE_NAME: 'example-spring-boot'
 
+default:
+  timeout: 5 minutes
+
 info:
   stage: info
+  retry: 2
   script:
     - echo "This is your first stage (ツ)"
 
@@ -48,7 +53,16 @@ build_image:
     #- docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
     # - docker push $IMAGE_PATH
 
+deploy_to_prod:
+  stage: deploy
+  when: manual
+  only:
+   - release
+  script:
+    - echo "Deployment triggered"
+
 deploy_to_k8s:
+  image: registry.puzzle.ch/docker.io/alpine:latest
   stage: deploy
   extends: .kubectl
   script:

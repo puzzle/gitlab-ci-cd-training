@@ -4,6 +4,12 @@ weight: 10
 sectionnumber: 10
 ---
 
+In this section we'll talk about how to include GitLab templates and other code snippets into your project.
+This helps you to avoid code duplications and gives you the ability to store, share and reuse your pipeline code. Even across different projects.
+
+
+## Task {{% param sectionnumber %}}.1: Include keyword
+
 Use `include` to include external YAML files in your CI/CD configuration. You can break down one long gitlab-ci.yml file into multiple files to increase readability, or reduce duplication of the same configuration in multiple places.
 
 

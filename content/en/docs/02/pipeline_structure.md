@@ -19,7 +19,9 @@ Create an empty `.gitlab-ci.yml` file in the root directory of your repository.
 GitLab CI reference: <https://docs.gitlab.com/ee/ci/yaml/>
 
 The pipeline has basically two parts, the header with global settings followed by the stages.
+
 There exist two basic concepts within the pipeline, jobs ans stages.
+
 
 **Jobs**, which define what to do. For example, jobs that compile or test code.
 
@@ -40,10 +42,6 @@ The global settings part contains stage definition.
 
 {{< highlight yaml "hl_lines=1-2" >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
-Stages are ...
-
-<!-- TODO -->
-
 
 ### Jobs
 
@@ -62,7 +60,7 @@ Jobs are
 
 ## Task {{% param sectionnumber %}}.3: Check pipeline execution
 
-Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
+Go to your GitLab project and check the pipelines under `CI/CD` 🠒 `Pipelines`.
 
 
 <!-- TODO
@@ -75,25 +73,9 @@ Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
 
 Do you find the expected echo string?
 
-<!--
-```yaml
-#GitLab CI reference: https://docs.gitlab.com/ee/ci/yaml/
-#3. Gitlab Pipelines
-image: registry.puzzle.ch/docker.io/alpine:latest
 
-stages: #3. GitLab Stages
-  - info
+## Task {{% param sectionnumber %}}.4: Lab contents
 
-info: #3. GitLab Jobs
-  stage: info
-  script: #2. First Steps Scripts 
-    - echo "Hello World"
+At the end of this day you should have an fully working pipeline with several stages and jobs
 
-build:
-  stage: build
-
-build_container:
-  stage: build
-
-```
--->
+![Pipeline Complete](../complete_pipeline.png)
