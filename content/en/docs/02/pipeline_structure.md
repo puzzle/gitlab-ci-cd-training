@@ -11,13 +11,7 @@ In this lab you will learn how to define and structure a delivery pipeline for G
 
 The GitLab CI/CD pipeline configuration has to be placed in a [YAML](https://en.wikipedia.org/wiki/YAML) file named `.gitlab-ci.yml`.
 
-Create an empty file:
-
-Place
-: At the root of your git repository with the example application source code.
-
-Filename
-: `.gitlab-ci.yml`
+Create an empty `.gitlab-ci.yml` file in the root directory of your repository.
 
 
 ## Task {{% param sectionnumber %}}.2: Create pipeline structure
@@ -25,7 +19,9 @@ Filename
 GitLab CI reference: <https://docs.gitlab.com/ee/ci/yaml/>
 
 The pipeline has basically two parts, the header with global settings followed by the stages.
-Therefore are two basic concepts within the pipeline, jobs and stages.
+
+There exist two basic concepts within the pipeline, jobs ans stages.
+
 
 **Jobs**, which define what to do. For example, jobs that compile or test code.
 
@@ -36,6 +32,8 @@ Let's create a minimal pipeline. Add the following content to the `.gitlab-ci.ym
 {{< highlight yaml >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 Commit and push the changes.
+
+Our first pipeline is pretty simple, it has one stage with one job, which only executes a script that echos something during the pipeline run.
 
 
 ### Stages

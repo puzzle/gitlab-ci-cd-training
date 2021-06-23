@@ -11,7 +11,7 @@ This lab covers packaging the application by building a Container Image.
 
 Image builds are done inside a package stage.
 
-Create a new job with the following configuration that runs inside the new `package` stage:
+Create a new job with the following configuration which runs inside the new `package` stage:
 
 * job name: `build_image`
 * before_script: `docker info`
@@ -21,8 +21,11 @@ Create a new job with the following configuration that runs inside the new `pack
   - IMAGE_PATH=$IMAGE_HOST/$IMAGE_REPOSITORY/$IMAGE_NAME:${CI_COMMIT_SHA:0:8}
   - echo "docker image path is - $IMAGE_PATH"
   - docker tag $IMAGE_NAME $IMAGE_PATH
+  # - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
   # - docker push $IMAGE_PATH
   ```
+
+  This Job builds the container image defined by the Dockerfile in your source code. In the real world, the resulting container image would now be pushed into a container registry for simplicity reasons, whe skip this step in our pipeline.
 
 <!-- TODO 
 
@@ -31,6 +34,7 @@ Create a new job with the following configuration that runs inside the new `pack
   tags:
     - mobiliar
     - build
+* [ ] Bestpractices secrets anhand DOCKER_USERNAME und DOCKER_PASSWORT erklären, wo abspeichern, damit die nicht ausgelesen werden können. Variables
 
 -->
 
@@ -39,6 +43,10 @@ Did you see the required variables inside the script? Add the following variable
 * IMAGE_HOST: 'quay.io'
 * IMAGE_REPOSITORY: 'puzzle'
 * IMAGE_NAME: 'example-spring-boot'
+
+{{% alert title="Warning" color="secondary" %}}
+As mentioned in the Variables Lab sensitive Data like for example `DOCKER_USERNAME` and `DOCKER_PASSWORD` should never be stored as plain variable within a pipeline definition. Such variables can be defined on Projects, Groups and Instances in the Gitlab Webconsole (eg. Project Settings --> CICD --> Variables). During a pipeline run Gitlab will take care that sensitive data never shows up in logs and can be leaked in such a way.
+{{% /alert %}}
 
 {{% details title="job hint" mode-switcher="normalexpertmode" %}}
 
