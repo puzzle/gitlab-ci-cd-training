@@ -19,7 +19,7 @@ Execute following tasks
 
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=11-14" >}}{{< readfile file="manifests/011.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=11-14" >}}{{< readfile file="manifests/11.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
@@ -105,6 +105,6 @@ And commit and push the code to rerun the pipeline.
 
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=48-50 53-54" >}}{{< readfile file="manifests/011.0/.gitlab-ci-complete.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=48-50 53-54" >}}{{< readfile file="manifests/11.0/.gitlab-ci-complete.yml" >}}{{< /highlight >}}
 
 {{% /details %}}

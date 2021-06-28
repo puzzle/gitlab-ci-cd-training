@@ -19,7 +19,7 @@ You can download job artifacts by using the GitLab UI.
 
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=59-63" >}}{{< readfile file="manifests/012.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=59-63" >}}{{< readfile file="manifests/12.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
