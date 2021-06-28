@@ -50,26 +50,20 @@ You just defined your first job. It's name is `info`.
 
 {{< highlight yaml "hl_lines=4-7" >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
-Jobs are
+Jobs are ...
 
-* Defined with constraints stating under what conditions they should be executed.
-* Top-level elements with an arbitrary name and must contain at least the script clause.
-* Not limited in how many can be defined.
+* top-level elements with an arbitrary name and must contain at least the script clause
+* defined with constraints stating under what conditions they should be executed
+* not limited in how many that can be defined
 
-<!-- TODO -->
 
 ## Task {{% param sectionnumber %}}.3: Check pipeline execution
 
-Go to your GitLab project and check the pipelines under `CI/CD` 🠒 `Pipelines`.
+Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
 
+The pipeline at the top of the table is the one that has been triggered by your latest commit.
 
-<!-- TODO
-
-* [ ] status
-* [ ] jobs
-* [ ] logs
-
- -->
+Clicking on the status or the pipeline number brings you to the pipeline detail view. This page has an overview and tabs for pipeline view, dependencies, jobs and test results. The tabs may vary depending on the version of your GitLab instance. The job logs are available on the job detail view.
 
 Do you find the expected echo string?
 

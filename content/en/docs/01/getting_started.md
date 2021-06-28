@@ -21,14 +21,13 @@ To get started we create a [git](https://git-scm.com/) repository holding an exa
 
 ## Task {{% param sectionnumber %}}.1: Create the GitLab Project
 
-Open GitLab and navigate to `Project` 🠒 `Import Project` and select `Repo by URL`
+Open GitLab and navigate to `Project` --> `Import Project` and select `Repo by URL`
 
 * **Git repository URL**: https://github.com/appuio/example-spring-boot-helloworld.git
 * **Username & Password**: Leave empty
-* **Project URL**: < TODO >
-* **Visibility level**: Private
-
-And then click on `Create Project`
-
+* **Project URL**: <!-- TODO -->
+* **Visibility Level**: Private
 
 ![Gitlab Import](../import_project.png)
+
+And then click on `Create project`

@@ -40,14 +40,14 @@ The `expire_in` keyword determines how long GitLab keeps the job artifacts. You 
 
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=59-63" >}}{{< readfile file="manifests/012.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=59-63" >}}{{< readfile file="manifests/12.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
 
 ## Task {{% param sectionnumber %}}.2 Artifacts Lab solution
 
-Go to your pipeline `CI/CD` 🠒 `Pipeline` and click on the ⋮ to see the downloadable artifacts.
+Go to your pipeline `CI/CD` --> `Pipeline` and click on the ⋮ to see the downloadable artifacts.
 Then download and open the junit test report.
 
 ![Download artifacts](../download_artifacts.png)
