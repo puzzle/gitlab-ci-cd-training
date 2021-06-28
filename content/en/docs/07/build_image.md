@@ -59,7 +59,7 @@ As mentioned in the variables Lab sensitive Data like for example `DOCKER_USERNA
 
 ## Task {{% param sectionnumber %}}.2: Check the pipeline
 
-Go to your GitLab project and check the pipelines under `CI/CD` 🠒 `Pipelines`.
+Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
 
 Check that the image build job was successful.
 

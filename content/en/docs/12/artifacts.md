@@ -26,7 +26,7 @@ You can download job artifacts by using the GitLab UI.
 
 ## Task {{% param sectionnumber %}}.2 Artifacts Lab solution
 
-Go to your pipeline `CI/CD` 🠒 `Pipeline` and click on the ⋮ to see the downloadable artifacts.
+Go to your pipeline `CI/CD` --> `Pipeline` and click on the ⋮ to see the downloadable artifacts.
 Then download and open the junit test report.
 
 ![Download artifacts](../download_artifacts.png)
