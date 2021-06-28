@@ -22,6 +22,13 @@ The `paths` keyword determines which files to add to the job artifacts. All path
 
 The `expire_in` keyword determines how long GitLab keeps the job artifacts. You can also use the UI to keep job artifacts from expiring. If `expire_in` is not defined, the instance-wide setting is used.
 
+{{% alert color="primary" %}}
+**GitLab References**
+
+[GitLab `artifacts` keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#artifacts)
+
+{{% /alert %}}
+
 
 ## Task {{% param sectionnumber %}}.2: Artifacts Lab
 
