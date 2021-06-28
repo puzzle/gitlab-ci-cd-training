@@ -6,9 +6,9 @@ stages:
   - deploy
 
 include:
-  - project: '${CI_PROJECT_ROOT_NAMESPACE}/${CI_PROJECT_NAME}'
+  - project: '${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}'
     file: 'templates/k8s.yml'
-  - project: '${CI_PROJECT_ROOT_NAMESPACE}/${CI_PROJECT_NAME}'
+  - project: '${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}'
     file: 'templates/Secret-Detection.yml'
   - template: Security/SAST.gitlab-ci.yml
   - template: Security/License-Scanning.gitlab-ci.yml
@@ -27,6 +27,9 @@ info:
 
 build_application:
   stage: build
+  tags:
+    - build
+    - mobiliar
   image: registry.access.redhat.com/ubi8/openjdk-11:latest
   script:
     - ./gradlew assemble
@@ -42,6 +45,12 @@ test_application:
       junit: build/test-results/test/**/TEST-*.xml
 
 build_image:
+  image: diemobiliar.azurecr.io/dlp-cicd-dockercli-image:254
+  tags:
+    - build
+    - mobiliar
+  services:
+    - docker:dind
   stage: package
   before_script:
     - docker info
@@ -65,7 +74,10 @@ deploy_to_k8s:
   image: registry.puzzle.ch/docker.io/alpine:latest
   stage: deploy
   extends: .kubectl
+  tags:
+    - build
+    - mobiliar
   script:
     - echo "deploy your stuff here with kubectl commands"
-    - kubectl version
+    - kubectl version --client --short
 
