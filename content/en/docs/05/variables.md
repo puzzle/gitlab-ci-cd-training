@@ -71,12 +71,13 @@ Define following two global variables in your `.gitlab-ci.yml`
 
 * GIT_STRATEGY = clone
 * COMPILE = false
-<!-- TODO explain what those variables are used for -->
 
-
-## Task {{% param sectionnumber %}}.4 Variables solution
+The `GIT_STRATEGY` defines how the git repository is fetched during a pipeline run; valid options are `clone`, `fetch` or `none`
+The `COMPILE` variable disable project compilation and dependency fetching for the security analyser.
 
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
+
+To define global variables within a pipeline, add the variables block to the `.gitlab-ci.yml`.
 
 {{< highlight yaml "hl_lines=5-7" >}}{{< readfile file="manifests/05.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 

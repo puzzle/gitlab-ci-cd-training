@@ -6,14 +6,14 @@ sectionnumber: 8
 
 
 In this section we'll talk about global pipeline configuration.
-There are differnt options for global pipeline configuration. This helps to reduce code duplication over different projects.
+There are different options for global pipeline configuration. This helps to reduce code duplication in your pipeline.
 
 
-## Task {{% param sectionnumber %}}.1: Global pipeline configuration
+## Task {{% param sectionnumber %}}.1: Global pipeline configuration default
 
-You can set global defaults for some keywords. Jobs that do not define one or more of the listed keywords use the value defined in the default: section.
+You can set global defaults for some keywords. Jobs that do not define one or more of the listed keywords use the value defined in the `default` section, therefore you can simply overwrite default values, by specifying the values explicitly in a job.
 
-These job keywords can be defined inside a `default:` section:
+There are a couple of default settings you can define inside a `default` section:
 
 * `after_script`
 * `artifacts`
@@ -25,6 +25,8 @@ These job keywords can be defined inside a `default:` section:
 * `services`
 * `tags`
 * `timeout`
+
+Let's have a look at an example
 
 ```yaml
 
@@ -59,22 +61,18 @@ Execute this script after the normal script.
 
 ## Task {{% param sectionnumber %}}.2: Global pipeline configuration lab
 
-* Create the default job
-* Create a global timeout of 15 minutes
-* Add a retry number of 2 times to the `info` job
+In this task you're going to configure several things for your pipeline.
 
+* Create the default section
+* Create a global timeout of 15 minutes.
+* Add a retry number of 2 times to the `info` job, this means, that the job will be retried to succeed twice.
 
-## Task {{% param sectionnumber %}}.3: Global pipeline configuration solution
 
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=12-13 17" >}}{{< readfile file="manifests/08.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=14-15 19" >}}{{< readfile file="manifests/08.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
 
-<!-- TODO 
-
-
--->
-
+Edit the `.gitlab-ci.yml`, commit and push your changes and then verify the output of the pipeline run.

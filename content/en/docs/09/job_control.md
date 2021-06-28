@@ -59,11 +59,9 @@ Now the pipeline should run again and we can see the newly created job. After th
 ![manual_job](../manual_trigger.png)
 
 
-## Task {{% param sectionnumber %}}.5: Job control solution
-
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=46-52" >}}{{< readfile file="manifests/09.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=52-58" >}}{{< readfile file="manifests/09.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
