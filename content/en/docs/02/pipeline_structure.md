@@ -27,7 +27,7 @@ There exist two basic concepts within the pipeline, jobs ans stages.
 
 **Stages**, which define when to run the jobs. For example, stages that run tests after stages that compile the code. Beware taht every job in the same stage is running concurrently.
 
-Let's create a minimal pipeline. First we need to change to the correct directory, the root directory of the cloned repository. (from [Lab 1.3](../../01#))
+Let's create a minimal pipeline. First we need to change to the correct directory, the root directory of the cloned repository. (from [Lab 1.3](../../01/getting_started/#task-13-clone-the-git-repository))
 
 Open GitBash Terminal and change the directory:
 
