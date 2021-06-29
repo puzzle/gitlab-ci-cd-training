@@ -39,6 +39,6 @@ Execute following tasks
 
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=8-10 64-70" >}}{{< readfile file="manifests/10.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=8-10 73-82" >}}{{< readfile file="manifests/10.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}

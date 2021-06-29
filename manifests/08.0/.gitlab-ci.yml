@@ -22,6 +22,9 @@ info:
 
 build_application:
   stage: build
+  tags:
+    - build
+    - mobiliar
   image: registry.access.redhat.com/ubi8/openjdk-11:latest
   script:
     - ./gradlew assemble
@@ -37,6 +40,12 @@ test_application:
       junit: build/test-results/test/**/TEST-*.xml
 
 build_image:
+  image: diemobiliar.azurecr.io/dlp-cicd-dockercli-image:254
+  tags:
+    - build
+    - mobiliar
+  services:
+    - docker:dind
   stage: package
   before_script:
     - docker info

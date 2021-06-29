@@ -13,6 +13,9 @@ info:
 
 build_application:
   stage: build
+  tags:
+    - build
+    - mobiliar
   image: registry.access.redhat.com/ubi8/openjdk-11:latest
   script:
     - ./gradlew assemble

@@ -48,7 +48,7 @@ Did you see the required variables inside the script? Also add the following var
 
 The new stage is defined at the end of our `.gitlab-ci.yml`, we also need to add the package stage to the stage list and define the new variables.
 
-{{< highlight yaml "hl_lines=5 10-12 35-45" >}}{{< readfile file="manifests/07.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=5 10-12 38-52" >}}{{< readfile file="manifests/07.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
