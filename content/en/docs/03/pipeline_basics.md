@@ -4,7 +4,8 @@ weight: 3
 sectionnumber: 3
 ---
 
-Basics on working with GitLab CI/CD pipelines.
+In this section we will tech you the basics on working with GitLab CI/CD pipelines.
+As we learned in the previous chapter, each Job must consist at least a `script` section.
 
 {{% alert color="primary" %}}
 **GitLab References**
