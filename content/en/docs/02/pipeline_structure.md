@@ -27,11 +27,40 @@ There exist two basic concepts within the pipeline, jobs ans stages.
 
 **Stages**, which define when to run the jobs. For example, stages that run tests after stages that compile the code. Beware taht every job in the same stage is running concurrently.
 
-Let's create a minimal pipeline. Add the following content to the `.gitlab-ci.yml` file.
+Let's create a minimal pipeline. First we need to change to the correct directory, the root directory of the cloned repository. (from [Lab 1.3](../../01#))
+
+Open GitBash Terminal and change the directory:
+
+```bash
+cd <root-directory-of-the-git-repo>
+```
+{{% alert title="Info" color="primary" %}}
+Replace `<root-directory-of-the-git-repo>` with the actual path to the cloned repository. eg. `~/gitlabcicd-training/example-spring-boot-helloworld`
+{{% /alert %}}
+
+Create a new file `.gitlab-ci.yml` and add the following content to the it. It must be located directly in the root directory of the repository.
+
+```bash
+vim .gitlab-ci.yml
+```
 
 {{< highlight yaml >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
+{{% alert title="Info" color="primary" %}}
+You can also use your favorite editor instead of `vim`.
+{{% /alert %}}
+
 Commit and push the changes.
+
+{{% details title="hint" mode-switcher="normalexpertmode" %}}
+
+```bash
+git add .
+git commit -m "Add minmal pipeline"
+git push origin master
+```
+
+{{% /details %}}
 
 Our first pipeline is pretty simple, it has one stage with one job, which only executes a script that echos something during the pipeline run.
 
