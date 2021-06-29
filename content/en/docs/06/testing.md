@@ -70,7 +70,7 @@ See also the official documentation: [Unit test reports](https://docs.gitlab.com
 
 This is the final pipeline that includes unit testing and recording of test results.
 
-{{< highlight yaml "hl_lines=4 17-25" >}}{{< readfile file="manifests/06.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=4 24-32" >}}{{< readfile file="manifests/06.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 <!-- TODO variables from the previous Lab are missing-->
 
 Navigate to the newest Pipeline inside GitLab. The Tests tab should now show the executed tests.
@@ -89,7 +89,7 @@ Open the test class `src/test/java/ch/appuio/techlab/controller/PodRestControlle
 
 Commit and push those changes and then check that the pipeline failed and the test results inside the Tests tab have one failure.
 
-{{< highlight yaml "hl_lines=2" >}}
+{{< highlight yaml "hl_lines=2-3" >}}
 java.lang.AssertionError:
 Expected: a string starting with "Hoppla: "
      but: was "Pod: 42"

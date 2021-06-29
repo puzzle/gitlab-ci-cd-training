@@ -40,7 +40,7 @@ The `expire_in` keyword determines how long GitLab keeps the job artifacts. You 
 
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=59-63" >}}{{< readfile file="manifests/12.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=68-72" >}}{{< readfile file="manifests/12.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
