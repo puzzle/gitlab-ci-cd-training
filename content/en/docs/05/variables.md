@@ -23,7 +23,7 @@ In this lab we will talk about the variables in the `gitlab-ci.yml` file only
 {{% /alert %}}
 
 
-## Task {{% param sectionnumber %}}.1: Define and access custom Variables
+## {{% param sectionnumber %}}.1: Define and access custom Variables
 
 To create a custom variable in the `.gitlab-ci.yml` file, define the variable and value with variables keyword in the top level section.
 
@@ -45,7 +45,7 @@ hello Foo Bar
 {{% alert title="Warning" color="secondary" %}}Never store sensitive information like passwords directly in the `.gitlab-ci.yml` file. {{% /alert %}}
 <!-- TODO -->
 
-## Task {{% param sectionnumber %}}.2: Predefined Variables
+## {{% param sectionnumber %}}.2: Predefined Variables
 
 
 There is a set of predefined GitLab Variables which you can reference in your `.gitlab-ci.yml` script
