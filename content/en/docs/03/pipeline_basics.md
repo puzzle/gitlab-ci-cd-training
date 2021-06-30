@@ -4,7 +4,8 @@ weight: 3
 sectionnumber: 3
 ---
 
-Basics on working with GitLab CI/CD pipelines.
+In this section we will tech you the basics on working with GitLab CI/CD pipelines.
+As we learned in the previous chapter, each Job must consist at least a `script` section.
 
 {{% alert color="primary" %}}
 **GitLab References**
@@ -17,19 +18,19 @@ Basics on working with GitLab CI/CD pipelines.
 {{% /alert %}}
 
 
-## Task {{% param sectionnumber %}}.1: Implicit data import
+## {{% param sectionnumber %}}.1: Implicit data import
 
 The content of the git repository is implicit imported into the pipeline's workspace. So you don't have to clone anything.
 
 
-## Task {{% param sectionnumber %}}.2: Execute single commands
+## {{% param sectionnumber %}}.2: Execute single commands
 
 Inside a job we want to define the work that is done. The easiest way is to add a command. You already used a command inside the `info` job.
 
 {{< highlight yaml "hl_lines=7" >}}{{< readfile file="manifests/03.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 
-## Task {{% param sectionnumber %}}.3: Define scripts
+## {{% param sectionnumber %}}.3: Define scripts
 
 You can split long commands into multiline commands to improve readability with `|` (literal) and `>` (folded)
 For example:
@@ -46,19 +47,19 @@ job:
 See more details on the [GitLab CI/CD script syntax](https://docs.gitlab.com/ee/ci/yaml/script.html) documentation.
 
 
-## Task {{% param sectionnumber %}}.4: Before and after scripts
+## {{% param sectionnumber %}}.4: Before and after scripts
 
 Add additional behavior executed before or after the main script.
 
 
-### Task {{% param sectionnumber %}}.4.1: Before Script execution
+### {{% param sectionnumber %}}.4.1: Before Script execution
 
 Use `before_script` to define an array of commands that should run before each job, but after artifacts are restored.
 
 Scripts you specify in `before_script` are concatenated with any scripts you specify in the main script. The combine scripts execute together in a single shell.
 
 
-### Task {{% param sectionnumber %}}.4.2: After Script execution
+### {{% param sectionnumber %}}.4.2: After Script execution
 
 Use `after_script` to define an array of commands that run after each job, including failed jobs.
 
