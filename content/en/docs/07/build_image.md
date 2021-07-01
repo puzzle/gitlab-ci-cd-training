@@ -14,6 +14,17 @@ Image builds are done inside a package stage.
 Create a new job with the following configuration which runs inside the new `package` stage:
 
 * job name: `build_image`
+* Add a tag block to select a suitable Runner
+  ```yaml
+  tags:
+    - build
+    - mobiliar
+  ```
+* Add a service block to enable the Docker in Docker builds
+  ```yaml
+  services:
+    - docker:dind
+  ```
 * before_script: `docker info`
 * script:
   ```yaml
