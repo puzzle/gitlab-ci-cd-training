@@ -47,7 +47,7 @@ Use `allow_failure` when you want to let a job fail without impacting the rest o
 
 ## Task {{% param sectionnumber %}}.4: Job control lab
 
-* Add a new Job named `deploy_to_prod` in the `deploy` stage
+* Add a new Job named `deploy_to_prod` to a new `deploy` stage
 * Add a new Job execution rule, the job should run only on the `release` branch
 * Add a manual pipeline gate to make sure a manual action is required to execute this job
 * Add a script block with a simple `echo` command
@@ -61,7 +61,7 @@ Now the pipeline should run again and we can see the newly created job. After th
 
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=61-67" >}}{{< readfile file="manifests/09.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=6 61-67" >}}{{< readfile file="manifests/09.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
