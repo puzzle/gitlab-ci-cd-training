@@ -12,7 +12,7 @@ variables:
   IMAGE_NAME: 'example-spring-boot'
 
 default:
-  timeout: 5 minutes
+  timeout: 15 minutes
 
 info:
   stage: info
