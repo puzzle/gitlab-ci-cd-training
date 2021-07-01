@@ -8,13 +8,13 @@ menu:
 
 {{< blocks/section color="light">}}
 
-{{% blocks/feature icon="fa-chalkboard-teacher" url="https://changeme" title="Slide 1" %}}
+{{% blocks/feature icon="fa-chalkboard-teacher" url="01_CICD.pdf" title="CI/CD introduction" %}}
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-chalkboard-teacher" url="https://changeme" title="Slide 12" %}}
+{{% blocks/feature icon="fa-chalkboard-teacher" url="02_Testing.pdf" title="Testing basics" %}}
 {{% /blocks/feature %}}
 
-{{% blocks/feature icon="fa-chalkboard-teacher" url="https://changeme" title="Slide 3" %}}
+{{% blocks/feature icon="fa-chalkboard-teacher" url="03_GitOps.pdf" title="GitOps introduction" %}}
 {{% /blocks/feature %}}
 
 {{< /blocks/section >}}
