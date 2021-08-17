@@ -66,7 +66,7 @@ url = "https://www.acend.ch"
   # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
   style = "tango"
   # Uncomment if you want your chosen highlight style used for code blocks without a specified language
-  guessSyntax = "false"
+  # guessSyntax = "true"
 
 [params]
 copyright = "acend gmbh"
@@ -75,7 +75,6 @@ github_branch = "main"
 
 enabledModule = "base"
 modeSwitcher = "true"
-
 
 # Enable Lunr.js offline search
 offlineSearch = true
