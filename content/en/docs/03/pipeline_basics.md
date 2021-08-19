@@ -15,6 +15,9 @@ As we learned in the previous chapter, each Job must consist at least a `script`
 [GitLab before_script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#before_script)
 
 [GitLab after_script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#after_script)
+
+[GitLab tags keyword](https://docs.gitlab.com/ee/ci/yaml/index.html#tags)
+
 {{% /alert %}}
 
 
