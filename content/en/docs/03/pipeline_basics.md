@@ -15,6 +15,9 @@ As we learned in the previous chapter, each Job must consist at least a `script`
 [GitLab before_script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#before_script)
 
 [GitLab after_script keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#after_script)
+
+[GitLab tags keyword](https://docs.gitlab.com/ee/ci/yaml/index.html#tags)
+
 {{% /alert %}}
 
 
@@ -91,3 +94,29 @@ This script executes before the script block
 This script executes first. When it completes, the job's `after_script` executes.
 Execute this script after the normal script.
 ```
+
+
+### {{% param sectionnumber %}}.5: Runner Tags
+
+What is a GitLab runner? A runner is an isolated (virtual) machine that picks up builds through the coordinator API of GitLab CI. A runner can be specific to a certain project or serve any project in GitLab CI. A runner that serves all projects is called a shared runner. You can setup multiple runners with different capabilities for different use-cases. Use tags to select a specific runner from the list of all runners that are available for the project. For example, if you have an OS X runner with tag osx and a Windows runner with tag windows, you can run a job on each platform:
+
+```yaml
+windows job:
+  stage:
+  - build
+  tags:
+  - windows
+  script:
+  - echo Hello, %USERNAME%!
+
+osx job:
+  stage:
+  - build
+  tags:
+  - osx
+  script:
+  - echo "Hello, $USER!"
+```
+
+{{% alert title="Warning" color="secondary" %}}In the following labs you need set the correct tags to choose a suitable runner. This will vary from environment to environment. Please ask your instructor for the matching runner tags.
+{{% /alert %}}
