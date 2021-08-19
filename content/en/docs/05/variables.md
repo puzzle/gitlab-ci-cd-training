@@ -76,3 +76,10 @@ To define global variables within a pipeline, add the variables block to the `.g
 {{< highlight yaml "hl_lines=5-7" >}}{{< readfile file="manifests/05.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
+
+
+## Task {{% param sectionnumber %}}.3: Secret and protected Variables Lab
+
+In some cases you need to store sensitive informations into a variable. 
+
+Navigate in the main menu to `Settings` --> `CI/CD` --> `Variables`
