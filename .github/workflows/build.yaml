@@ -71,36 +71,39 @@ jobs:
           tags: |
             quay.io/puzzle/gitlab-ci-cd-training:pr-${{ github.event.pull_request.number }}-puzzle
       -
-        name: 'Deploy Helm Release'
-        uses: 'deliverybot/helm@v1'
+        name: 'Install Helm'
+        uses: azure/setup-helm@v1
         with:
-          release: 'pr-${{ github.event.pull_request.number }}'
-          namespace: 'pitc-gitlab-ci-cd-training-test'
-          version: '${{ github.sha }}'
-          repository: 'https://acend.github.io/helm-charts/'
-          chart: 'acend-training-chart'
-          token: '${{ github.token }}'
-          helm: 'helm3'
-          value-files: |
-            [
-              "helm-chart/values.yaml"
-            ]
-        env:
-          KUBECONFIG_FILE: '${{ secrets.KUBECONFIG_TEST }}'
+          version: v3.6.2
       -
-        name: Redeploy acend Deployment
-        uses: actions-hub/kubectl@master
-        env:
-          KUBE_CONFIG: ${{ secrets.KUBECONFIG_TEST_BASE64 }}
+        name: Install Kubectl
+        uses: azure/setup-kubectl@v1
         with:
-          args: rollout restart deployment/pr-${{ github.event.pull_request.number }}-puzzle-gitlab-ci-cd-training-acend --namespace pitc-gitlab-ci-cd-training-test
+          version: v1.21.2
       -
-        name: Redeploy Puzzle Deployment
-        uses: actions-hub/kubectl@master
+        name: Create KUBECONFIG
         env:
-          KUBE_CONFIG: ${{ secrets.KUBECONFIG_TEST_BASE64 }}
-        with:
-          args: rollout restart deployment/pr-${{ github.event.pull_request.number }}-puzzle-gitlab-ci-cd-training-puzzle --namespace pitc-gitlab-ci-cd-training-test
+          KUBE_CONFIG: '${{ secrets.KUBECONFIG_TEST }}'
+        run: |
+          mkdir -p $HOME/.kube
+          echo "$KUBE_CONFIG" > $HOME/.kube/config
+      -
+        name: Deploy Helm Release
+        env:
+          TRAINING_HELM_RELEASE: 'pr-${{ github.event.pull_request.number }}'
+          TRAINING_NAMESPACE: 'pitc-gitlab-ci-cd-training-test'
+          TRAINING_VERSION: '${{ github.sha }}'
+        run: |
+          helm upgrade $TRAINING_HELM_RELEASE acend-training-chart --install --wait --kubeconfig $HOME/.kube/config  --namespace=$TRAINING_NAMESPACE --set=app.name=$HELM_RELEASE --set=app.version=$TRAINING_VERSION --repo=https://acend.github.io/helm-charts/ --values=helm-chart/values.yaml --atomic
+      -
+        name: Redeploy Deployments
+        env:
+          TRAINING_HELM_RELEASE: 'pr-${{ github.event.pull_request.number }}'
+          TRAINING_HELM_NAME: 'puzzle-gitlab-ci-cd-training'
+          TRAINING_NAMESPACE: 'pitc-gitlab-ci-cd-training-test'
+        run: |
+          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME}-acend --kubeconfig $HOME/.kube/config --namespace $TRAINING_NAMESPACE
+          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME}-puzzle --kubeconfig $HOME/.kube/config --namespace $TRAINING_NAMESPACE
       -
         name: Comment PR Environments in PR
         uses: marocchino/sticky-pull-request-comment@v2
