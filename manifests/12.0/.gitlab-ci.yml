@@ -61,14 +61,14 @@ build_image:
   script:
     - docker build --no-cache -t $IMAGE_NAME .
     - mkdir -p reports
-    - ./trivy --exit-code=0 --severity CRITICAL -o reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.json $IMAGE_NAME
+    - ./trivy --exit-code=0 --severity CRITICAL -o reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.txt $IMAGE_NAME
     - IMAGE_PATH=$IMAGE_HOST/$IMAGE_REPOSITORY/$IMAGE_NAME:${CI_COMMIT_SHA:0:8}
     - echo "docker image path is - $IMAGE_PATH"
     - docker tag $IMAGE_NAME $IMAGE_PATH
   artifacts:
-    name: "container-scanning-report_$CI_COMMIT_SHORT_SHA.json"
+    name: "container-scanning-report_$CI_COMMIT_SHORT_SHA.txt"
     paths:
-      - reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.json
+      - reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.txt
     expire_in: 30 day
 
 
