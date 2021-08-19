@@ -78,8 +78,35 @@ To define global variables within a pipeline, add the variables block to the `.g
 {{% /details %}}
 
 
-## Task {{% param sectionnumber %}}.3: Secret and protected Variables Lab
+## Task {{% param sectionnumber %}}.3: Secret and protected Variables
 
-In some cases you need to store sensitive informations into a variable. 
+In some cases you need to store sensitive informations into a variable. Instead of defining the variable directly in the `.gitlab-ci.yml` you can create a secret variable in the GitLab project settings.
 
-Navigate in the main menu to `Settings` --> `CI/CD` --> `Variables`
+To add a new secret variable, navigate in the main menu to `Settings` --> `CI/CD` --> `Variables` --> `Expand` --> `Add variable`
+
+Flags:
+
+* **Protected variable** You can protect a project, group or instance CI/CD variable so it is only passed to pipelines running on protected branches or protected tags
+* **Mask variable** You can mask a variable so the value of the variable doesn't display in job logs.
+
+
+## Task {{% param sectionnumber %}}.4: Secret and protected Variables Lab
+
+Define following two secret variables in your project
+
+* USERNAME = fooser
+* PASSWORD = bassword as a masked variable
+
+Then add a new script line at the end of the info job with following command `echo "Username is ${USERNAME} with password ${PASSWORD}"`
+
+Run the pipeline again and navigate to the info job log output. You should see following line
+
+`Username is fooser with password [MASKED]`
+
+{{% details title="solution" mode-switcher="normalexpertmode" %}}
+
+To define secret variables within a pipeline, add the variables within the project settings and add the script block to the `.gitlab-ci.yml`.
+
+{{< highlight yaml "hl_lines=13" >}}{{< readfile file="manifests/05.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+
+{{% /details %}}
