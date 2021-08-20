@@ -1,0 +1,24 @@
+stages:
+  - info
+  - build
+
+info:
+  stage: info
+  script:
+    - echo "This is your first stage (ツ)"
+
+build_application:
+  stage: build
+  tags:
+    - build
+    - mobiliar
+  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  script:
+    - ./gradlew assemble
+
+deploy_application:
+  stage: build
+  image: registry.puzzle.ch/puzzle/k8-custom-tools:latest
+  script:
+    - kubectl version
+    - helm version
