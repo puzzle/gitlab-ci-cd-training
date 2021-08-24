@@ -1,0 +1,24 @@
+stages:
+  - deploy
+
+.download_kubectl: &download_kubectl
+  - wget https://storage.googleapis.com/kubernetes-release/release/v1.20.0/bin/linux/amd64/kubectl
+  - chmod +x ./kubectl
+  - mv ./kubectl /usr/local/bin/kubectl
+  
+deploy_to_k8s_dev:
+  image: registry.puzzle.ch/docker.io/alpine:latest
+  stage: deploy
+  before_script:
+    - *download_kubectl
+  script:
+    - echo "deploy your stuff here with kubectl commands"
+    - kubectl version --client --short
+
+deploy_to_k8s_prod:
+  image: registry.puzzle.ch/docker.io/alpine:latest
+  stage: deploy
+  script:
+    - *download_kubectl
+    - echo "deploy your stuff here with kubectl commands"
+    - kubectl version --client --short
