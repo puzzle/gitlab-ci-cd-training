@@ -10,6 +10,7 @@ info:
   stage: info
   script:
     - echo "This is your first stage (ツ)"
+    - echo "Username is ${USERNAME} with ${PASSWORD}"
 
 build_application:
   stage: build
