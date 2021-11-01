@@ -38,10 +38,10 @@ Explore the different elements in the webconsole:
 
 ## Task {{% param sectionnumber %}}.2: Create the GitLab Project
 
-Open GitLab click `New Project` --> `Import project/repository` and select `Repo by URL`
+Open GitLab click `New project/repository` --> `Import Project` and select **`Repo by URL`**.
 
 {{% alert title="Hint" color="primary" %}}
-You can also use the main navigation. `Menu` --> `Projects` --> `Create new project`
+You can also use the main navigation. `Menu` --> `Projects` --> `Create new project` --> `Import Project`
 {{% /alert %}}
 
 * **Git repository URL**: https://github.com/appuio/example-spring-boot-helloworld.git
