@@ -30,7 +30,7 @@ Updated `.gitlab-ci.yml` file for this lab:
 {{% /details %}}
 
 
-## Task {{% param sectionnumber %}}.3 Let the pipeline fail
+## Task {{% param sectionnumber %}}.3: Let the pipeline fail
 
 To test the Secret Detection template we add a secret in our sample project. Create a new file in the root directory called `private_key` and copy following content in it.
 
@@ -81,14 +81,14 @@ Now the pipeline should fail because the GitLab Secret Analyzer will find a priv
 
 ![security_pipeline_fail](../security_pipeline_fail.png)
 
-Here you see the failed pipeline. By clicking the three dots on the right side you can download the job artifacts. To get the report of the failed job, click on `Download secret_detection_default_branch:secret_detection artifact`
+Here you see the failed pipeline. By clicking ⋮ on the right side you can download the job artifacts. To get the report of the failed job, click on `Download secret_detection_default_branch:secret_detection artifact`. We will learn more on artifacts in the next lab.
 
 {{% alert title="Warning" color="secondary" %}}If you ever push a secret into a repository, **YOU MUST CONSIDER THIS SECRET AS INSECURE**. Remove the secret from the repository and change all related secrets!{{% /alert %}}
 
 Now remove the private key from the repository to execute the next steps.
 
 
-## Task {{% param sectionnumber %}}.4 Custom security tooling
+## Task {{% param sectionnumber %}}.4: Custom security tooling
 
 In this section we'll show you how to use custom security tools in your pipeline. For this example we use [Trivy](https://github.com/aquasecurity/trivy), a local Docker image security scanner.
 
