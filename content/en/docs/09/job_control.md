@@ -58,7 +58,7 @@ Now the pipeline should run again and we can see the newly created job. After th
 
 ![manual_job](../manual_trigger.png)
 
-{{% alert title="Warn" color="primary" %}}
+{{% alert title="Warning" color="primary" %}}
 Switch back to the `main` or `master` branch before beginning the next labs.
 {{% /alert %}}
 
