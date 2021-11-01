@@ -14,6 +14,7 @@ Image builds are done inside a package stage.
 Create a new job with the following configuration which runs inside the new `package` stage:
 
 * job name: `build_image`
+* image: `diemobiliar.azurecr.io/dlp-cicd-dockercli-image:254`
 * Add a tag block to select a suitable Runner
   ```yaml
   tags:
@@ -35,6 +36,11 @@ Create a new job with the following configuration which runs inside the new `pac
   # - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
   # - docker push $IMAGE_PATH
   ```
+
+
+<!-- TODO 
+Mobi builder Image hier und im .gitlab-ci.yml raus nehmen und vom Teacher angeben lassen.
+-->
 
   This Job builds the container image defined by the Dockerfile in your source code. In the real world, the resulting container image would now be pushed into a container registry for simplicity reasons, whe skip this step in our pipeline.
 
@@ -59,7 +65,7 @@ Did you see the required variables inside the script? Also add the following var
 
 The new stage is defined at the end of our `.gitlab-ci.yml`, we also need to add the package stage to the stage list and define the new variables.
 
-{{< highlight yaml "hl_lines=5 10-12 38-52" >}}{{< readfile file="manifests/07.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=5 10-12 39-53" >}}{{< readfile file="manifests/07.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
