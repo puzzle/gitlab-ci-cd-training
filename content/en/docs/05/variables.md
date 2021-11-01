@@ -59,7 +59,7 @@ Under following link you can find a full list of all available predefined GitLab
 https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
 
 
-## Task {{% param sectionnumber %}}.2: Variables Lab
+## Task {{% param sectionnumber %}}.3: Variables Lab
 
 Define following two global variables in your `.gitlab-ci.yml`
 
@@ -73,12 +73,14 @@ The `COMPILE` variable disable project compilation and dependency fetching for t
 
 To define global variables within a pipeline, add the variables block to the `.gitlab-ci.yml`.
 
-{{< highlight yaml "hl_lines=5-7" >}}{{< readfile file="manifests/05.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=5-7" >}}{{< readfile file="manifests/05.0/05.3/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
+Commit and push your changes. Check that the pipeline finishes without problems. The output is the same as in the previous lab.
 
-## Task {{% param sectionnumber %}}.3: Secret and protected Variables
+
+## {{% param sectionnumber %}}.4: Secret and protected Variables
 
 In some cases you need to store sensitive informations into a variable. Instead of defining the variable directly in the `.gitlab-ci.yml` you can create a secret variable in the GitLab project settings.
 
@@ -90,12 +92,13 @@ Flags:
 * **Mask variable** You can mask a variable so the value of the variable doesn't display in job logs.
 
 
-## Task {{% param sectionnumber %}}.4: Secret and protected Variables Lab
+## Task {{% param sectionnumber %}}.5: Secret and protected Variables Lab
 
 Define following two secret variables in your project
 
 * USERNAME = fooser
-* PASSWORD = bassword as a masked variable
+* PASSWORD = bassword
+  * as a masked variable
 
 Then add a new script line at the end of the info job with following command `echo "Username is ${USERNAME} with password ${PASSWORD}"`
 
@@ -107,6 +110,10 @@ Run the pipeline again and navigate to the info job log output. You should see f
 
 To define secret variables within a pipeline, add the variables within the project settings and add the script block to the `.gitlab-ci.yml`.
 
-{{< highlight yaml "hl_lines=13" >}}{{< readfile file="manifests/05.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=13" >}}{{< readfile file="manifests/05.0/05.5/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
+
+Commit and push your changes.
+
+How is the protected variable masked in the job log?

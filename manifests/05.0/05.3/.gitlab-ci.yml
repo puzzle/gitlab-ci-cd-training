@@ -1,0 +1,21 @@
+stages:
+  - info
+  - build
+  
+variables:
+  GIT_STRATEGY: "clone"
+  COMPILE: "false"
+
+info:
+  stage: info
+  script:
+    - echo "This is your first stage (ツ)"
+
+build_application:
+  stage: build
+  tags:
+    - build
+    - mobiliar
+  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  script:
+    - ./gradlew assemble
