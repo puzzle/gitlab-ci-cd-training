@@ -64,7 +64,7 @@ Execute this script after the normal script.
 In this task you're going to configure several things for your pipeline.
 
 * Create the default section
-* Create a global timeout of 15 minutes.
+* Create a global timeout of 5 minutes.
 * Add a retry number of 2 times to the `info` job, this means, that the job will be retried to succeed twice.
 
 
