@@ -67,12 +67,15 @@ In this task you're going to configure several things for your pipeline.
 * Create a global timeout of 5 minutes.
 * Add a retry number of 2 times to the `info` job, this means, that the job will be retried to succeed twice.
 
+Edit the `.gitlab-ci.yml`, commit and push your changes and then verify the output of the pipeline run.
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
+
+## Solution
+
+Updated `.gitlab-ci.yml` file for this lab:
+
+{{% details title="show solution" mode-switcher="normalexpertmode" %}}
 
 {{< highlight yaml "hl_lines=14-15 19" >}}{{< readfile file="manifests/08.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
-
-
-Edit the `.gitlab-ci.yml`, commit and push your changes and then verify the output of the pipeline run.
