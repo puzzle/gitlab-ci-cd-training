@@ -12,13 +12,14 @@ variables:
   IMAGE_NAME: 'example-spring-boot'
 
 default:
-  timeout: 15 minutes
+  timeout: 5 minutes
 
 info:
   stage: info
   retry: 2
   script:
     - echo "This is your first stage (ツ)"
+    - echo "Username is ${USERNAME} with ${PASSWORD}"
 
 build_application:
   stage: build
@@ -54,5 +55,5 @@ build_image:
     - IMAGE_PATH=$IMAGE_HOST/$IMAGE_REPOSITORY/$IMAGE_NAME:${CI_COMMIT_SHA:0:8}
     - echo "docker image path is - $IMAGE_PATH"
     - docker tag $IMAGE_NAME $IMAGE_PATH
-    #- docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
+    # - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
     # - docker push $IMAGE_PATH

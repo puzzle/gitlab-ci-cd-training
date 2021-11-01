@@ -1,7 +1,7 @@
 stages:
   - info
   - build
-  
+
 variables:
   GIT_STRATEGY: "clone"
   COMPILE: "false"

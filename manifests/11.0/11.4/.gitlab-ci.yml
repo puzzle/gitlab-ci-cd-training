@@ -14,16 +14,21 @@ include:
   - template: Security/License-Scanning.gitlab-ci.yml
 
 variables:
+  GIT_STRATEGY: "clone"
+  COMPILE: "false"
   IMAGE_HOST: 'quay.io'
   IMAGE_REPOSITORY: 'puzzle'
   IMAGE_NAME: 'example-spring-boot'
-  GIT_STRATEGY: "clone"
-  COMPILE: "false"
+
+default:
+  timeout: 5 minutes
 
 info:
   stage: info
+  retry: 2
   script:
     - echo "This is your first stage (ツ)"
+    - echo "Username is ${USERNAME} with ${PASSWORD}"
 
 build_application:
   stage: build
@@ -60,12 +65,11 @@ build_image:
   script:
     - docker build --no-cache -t $IMAGE_NAME .
     - mkdir -p reports
-    - ./trivy --exit-code=0 --severity CRITICAL -o reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.json $IMAGE_NAME
+    - ./trivy --exit-code=0 --severity CRITICAL -o reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.txt $IMAGE_NAME
     - IMAGE_PATH=$IMAGE_HOST/$IMAGE_REPOSITORY/$IMAGE_NAME:${CI_COMMIT_SHA:0:8}
     - echo "docker image path is - $IMAGE_PATH"
     - docker tag $IMAGE_NAME $IMAGE_PATH
-
-    #- docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
+    # - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
     # - docker push $IMAGE_PATH
 
 deploy_to_prod:

@@ -8,7 +8,7 @@ In this section we'll talk about how to include GitLab templates and other code 
 This helps you to avoid code duplications and gives you the ability to store, share and reuse your pipeline code. Even across different projects.
 
 
-## Task {{% param sectionnumber %}}.1: Include keyword
+## {{% param sectionnumber %}}.1: Include keyword
 
 Use `include` to include external YAML files in your CI/CD configuration. You can break down one long gitlab-ci.yml file into multiple files to increase readability, or reduce duplication of the same configuration in multiple places.
 
@@ -30,15 +30,23 @@ You can’t use YAML anchors across different YAML files sourced by include. You
 ## Task {{% param sectionnumber %}}.2: Shared functionality Lab
 
 In this lab we will show you how to extend a job with an other job from a shared template.
-Execute following tasks
+
+Execute following tasks:
 
 * Define a new job named `deploy_to_k8s`
 * Include the repository template with the local keyword. Use the predefined Gitlab Enviorments variable to set the `project` field value
 * Extend the job with `.kubectl` from the template.
-* Add a script section in the job with following command `kubectl version`  
+* Add a script section in the job with following command `kubectl version`
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
+Commit and push your changes and then verify the output of the pipeline run.
 
-{{< highlight yaml "hl_lines=8-10 73-82" >}}{{< readfile file="manifests/10.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+
+## Solution
+
+Updated `.gitlab-ci.yml` file for this lab:
+
+{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+
+{{< highlight yaml "hl_lines=8-10 74-83" >}}{{< readfile file="manifests/10.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}

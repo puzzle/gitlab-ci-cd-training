@@ -7,7 +7,7 @@ sectionnumber: 11
 GitLab offers a wide support for security issues. In this lab we will cover the GitLabs internal security templates first, and then we will show you how to include custom security tools into your pipeline.
 
 
-## Task {{% param sectionnumber %}}.2: Security Template Lab
+## Task {{% param sectionnumber %}}.1: Security Template Lab
 
 In this lab we will show you how to extend a job with an other job from a shared template.
 Execute following tasks
@@ -16,19 +16,25 @@ Execute following tasks
 * Include the template `templates/Secret-Detection.yml` from the same repository
 * Include the template `Security/License-Scanning.gitlab-ci.yml`
 
+Go to your GitLab project and check the pipeline for this lab. You should find the additional Jobs on the pipeline overview.
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=11-14" >}}{{< readfile file="manifests/11.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+## {{% param sectionnumber %}}.2: Security Template Lab Solution
+
+Updated `.gitlab-ci.yml` file for this lab:
+
+{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+
+{{< highlight yaml "hl_lines=11-14" >}}{{< readfile file="manifests/11.0/11.1/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
 
-## Task {{% param sectionnumber %}}.3 Let the pipeline fail
+## Task {{% param sectionnumber %}}.3: Let the pipeline fail
 
 To test the Secret Detection template we add a secret in our sample project. Create a new file in the root directory called `private_key` and copy following content in it.
 
-```
+```txt
 -----BEGIN OPENSSH PRIVATE KEY-----
 b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
 NhAAAAAwEAAQAAAYEAvb++s4axnx+7TFZCpGn5IdYQ+cERXQN2h4T6+uvpzroXEUSy6zh9
@@ -69,23 +75,26 @@ nfMi31SimZmWG9AAAAHWNzY2hsYXR0ZXJAYy5zY2hsYXR0ZXItcHV6emxlAQIDBAU=
 -----END OPENSSH PRIVATE KEY-----
 ```
 
-Commit and push the changes to trigger the pipeline
+Commit and push the changes to trigger the pipeline.
 
 Now the pipeline should fail because the GitLab Secret Analyzer will find a private key inside our repository.
-<!-- TODO Check for ouput -->
+
+![security_pipeline_fail](../security_pipeline_fail.png)
+
+Here you see the failed pipeline. By clicking ⋮ on the right side you can download the job artifacts. To get the report of the failed job, click on `Download secret_detection_default_branch:secret_detection artifact`. We will learn more on artifacts in the next lab.
 
 {{% alert title="Warning" color="secondary" %}}If you ever push a secret into a repository, **YOU MUST CONSIDER THIS SECRET AS INSECURE**. Remove the secret from the repository and change all related secrets!{{% /alert %}}
 
-Now remove the private key from the repository th execute the next steps.
+Now remove the private key from the repository to execute the next steps.
 
 
-## Task {{% param sectionnumber %}}.4 Custom security tooling
+## Task {{% param sectionnumber %}}.4: Custom security tooling
 
 In this section we'll show you how to use custom security tools in your pipeline. For this example we use [Trivy](https://github.com/aquasecurity/trivy), a local Docker image security scanner.
 
 Extend the existing `build_image` job inside `.gitlab-ci.yml` with the following configuration:
 
-Add following script into the `before_script` block to download Tryvi
+Add following commands into the `before_script` block to download Tryvi:
 
 ```bash
 export TRIVY_VERSION=$(wget -qO - "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
@@ -93,18 +102,24 @@ echo $TRIVY_VERSION
 wget --no-verbose https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz -O - | tar  -zxvf -
 ```
 
-Then call Tryvi in the `script` block
+Then call Tryvi in the `script` block (after the build command):
 
 ```bash
 mkdir -p reports
-./trivy --exit-code=0 --severity CRITICAL -o reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.json $IMAGE_NAME 
+./trivy --exit-code=0 --severity CRITICAL -o reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.txt $IMAGE_NAME
 ```
 
-And commit and push the code to rerun the pipeline.
+Commit and push the code to rerun the pipeline.
+
+Check the Tryvi log output of the `build_image` Job.
 
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
+## {{% param sectionnumber %}}.5: Custom security tooling Solution
 
-{{< highlight yaml "hl_lines=57-59 62-63" >}}{{< readfile file="manifests/11.0/.gitlab-ci-complete.yml" >}}{{< /highlight >}}
+Updated `.gitlab-ci.yml` file for this lab:
+
+{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+
+{{< highlight yaml "hl_lines=62-64 67-68" >}}{{< readfile file="manifests/11.0/11.4/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}

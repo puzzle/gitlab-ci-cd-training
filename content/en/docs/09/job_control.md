@@ -18,7 +18,7 @@ In this section wel show you different options how to control the job execution.
 {{% /alert %}}
 
 
-## Task {{% param sectionnumber %}}.1: Job control
+## {{% param sectionnumber %}}.1: Job control
 
 You can use `only` and `except` to control when to add jobs to pipelines.
 
@@ -28,7 +28,7 @@ Use except to define when a job does not run.
 Use the only:refs and except:refs keywords to control when to add jobs to a pipeline based on branch names or pipeline types.
 
 
-## Task {{% param sectionnumber %}}.2: Execution control
+## {{% param sectionnumber %}}.2: Execution control
 
 | Keyword    | Method                                                                                                                                    |
 |------------|-------------------------------------------------------------------------------------------------------------------------------------------|
@@ -40,7 +40,7 @@ Use the only:refs and except:refs keywords to control when to add jobs to a pipe
 | never      | Don’t execute job.                                                                                                                        |
 
 
-## Task {{% param sectionnumber %}}.3: Failure control
+## {{% param sectionnumber %}}.3: Failure control
 
 Use `allow_failure` when you want to let a job fail without impacting the rest of the CI suite. The default value is false, except for manual jobs that use the `when: manual` syntax.
 
@@ -48,20 +48,27 @@ Use `allow_failure` when you want to let a job fail without impacting the rest o
 ## Task {{% param sectionnumber %}}.4: Job control lab
 
 * Add a new Job named `deploy_to_prod` to a new `deploy` stage
-* Add a new Job execution rule, the job should run only on the `release` branch
 * Add a manual pipeline gate to make sure a manual action is required to execute this job
+* Add a new Job execution rule, the job should run only on the `release` branch
 * Add a script block with a simple `echo` command
 
 Commit and push these changes to the main branch and go to `CI/CD` --> `Pipelines` and check the pipeline status. You may notice that the job `deploy_to_prod` is not visible. This is because we add an execution rule for the `release` branch only. To fix this, we need to switch back to `Repository` --> `Branches` and create a new branch called `release`.
 
-Now the pipeline should run again and we can see the newly created job. After the pipeline executed successfully, you may notive that the `deploy` step wasn't executet yet and isn't marked with a green tick. This is because we configured the job as a manual action. To trigger this job, we need to select the job and do it manually.
+Now the pipeline should run again and we can see the newly created job. After the pipeline executed successfully, you may notice that the `deploy` step wasn't executed yet and isn't marked with a green tick. This is because we configured the job as a manual action. To trigger this job, we need to select the job and do it manually.
 
 ![manual_job](../manual_trigger.png)
 
+{{% alert title="Warning" color="primary" %}}
+Switch back to the `main` or `master` branch before beginning the next labs.
+{{% /alert %}}
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=6 61-67" >}}{{< readfile file="manifests/09.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+## Solution
+
+Updated `.gitlab-ci.yml` file for this lab:
+
+{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+
+{{< highlight yaml "hl_lines=6 62-68" >}}{{< readfile file="manifests/09.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
-

@@ -9,7 +9,7 @@ In this section we'll talk about global pipeline configuration.
 There are different options for global pipeline configuration. This helps to reduce code duplication in your pipeline.
 
 
-## Task {{% param sectionnumber %}}.1: Global pipeline configuration default
+## {{% param sectionnumber %}}.1: Global pipeline configuration default
 
 You can set global defaults for some keywords. Jobs that do not define one or more of the listed keywords use the value defined in the `default` section, therefore you can simply overwrite default values, by specifying the values explicitly in a job.
 
@@ -64,15 +64,18 @@ Execute this script after the normal script.
 In this task you're going to configure several things for your pipeline.
 
 * Create the default section
-* Create a global timeout of 15 minutes.
+* Create a global timeout of 5 minutes.
 * Add a retry number of 2 times to the `info` job, this means, that the job will be retried to succeed twice.
 
+Edit the `.gitlab-ci.yml`, commit and push your changes and then verify the output of the pipeline run.
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
+
+## Solution
+
+Updated `.gitlab-ci.yml` file for this lab:
+
+{{% details title="show solution" mode-switcher="normalexpertmode" %}}
 
 {{< highlight yaml "hl_lines=14-15 19" >}}{{< readfile file="manifests/08.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
-
-
-Edit the `.gitlab-ci.yml`, commit and push your changes and then verify the output of the pipeline run.
