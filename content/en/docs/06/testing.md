@@ -70,8 +70,7 @@ See also the official documentation: [Unit test reports](https://docs.gitlab.com
 
 This is the final pipeline that includes unit testing and recording of test results.
 
-{{< highlight yaml "hl_lines=4 24-32" >}}{{< readfile file="manifests/06.0/.gitlab-ci.yml" >}}{{< /highlight >}}
-<!-- TODO variables from the previous Lab are missing-->
+{{< highlight yaml "hl_lines=4 25-33" >}}{{< readfile file="manifests/06.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 Navigate to the newest Pipeline inside GitLab. The Tests tab should now show the executed tests.
 
