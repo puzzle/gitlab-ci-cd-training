@@ -9,7 +9,7 @@ In this section we'll talk about global pipeline configuration.
 There are different options for global pipeline configuration. This helps to reduce code duplication in your pipeline.
 
 
-## Task {{% param sectionnumber %}}.1: Global pipeline configuration default
+## {{% param sectionnumber %}}.1: Global pipeline configuration default
 
 You can set global defaults for some keywords. Jobs that do not define one or more of the listed keywords use the value defined in the `default` section, therefore you can simply overwrite default values, by specifying the values explicitly in a job.
 
