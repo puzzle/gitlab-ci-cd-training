@@ -113,6 +113,10 @@ Commit and push the code to rerun the pipeline.
 
 Check the Tryvi log output of the `build_image` Job.
 
+{{% alert title="Info" color="secondary" %}}
+You would do the the security scanning in a separate job. Here we do not have an Image Registry to store the Container Image. This would be uses to retrieve the Container Image in the next Job to do the scanning.
+{{% /alert %}}
+
 
 ## {{% param sectionnumber %}}.5: Custom security tooling Solution
 
