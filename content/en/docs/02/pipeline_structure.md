@@ -97,7 +97,7 @@ Clicking on the status or the pipeline number brings you to the pipeline detail 
 Do you find the expected echo string?
 
 
-## Task {{% param sectionnumber %}}.4: Lab contents
+## {{% param sectionnumber %}}.4: Lab contents
 
 At the end of this day you should have an fully working pipeline with several stages and jobs
 
