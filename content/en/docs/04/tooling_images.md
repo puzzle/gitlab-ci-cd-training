@@ -74,7 +74,7 @@ Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
 
 The Java 11 application is built using the [Gradle Build Tool](https://gradle.org/)
 
-Check the Gradle build log and verify whether the build succeded or not.
+Check the Gradle build log and verify whether the build succeeded or not.
 
 ```s
 Starting a Gradle Daemon (subsequent builds will be faster)
