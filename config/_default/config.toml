@@ -74,10 +74,12 @@ github_repo = "https://github.com/puzzle/gitlab-ci-cd-training"
 github_branch = "main"
 
 enabledModule = "base"
-modeSwitcher = "true"
 
 # Enable Lunr.js offline search
 offlineSearch = true
+
+# Enable expert mode switch
+modeSwitcher = "true"
 
 [params.ui]
 # Enable to show the side bar menu in its compact state.
