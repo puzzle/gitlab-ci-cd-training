@@ -25,7 +25,7 @@ There exist two basic concepts within the pipeline, jobs ans stages.
 
 **Jobs**, which define what to do. For example, jobs that compile or test code.
 
-**Stages**, which define when to run the jobs. For example, stages that run tests after stages that compile the code. Beware taht every job in the same stage is running concurrently.
+**Stages**, which define when to run the jobs. For example, stages that run tests after stages that compile the code. Beware that every job in the same stage is running concurrently.
 
 Let's create a minimal pipeline. First we need to change to the correct directory, the root directory of the cloned repository. (from [Lab 1.3](../../01/getting_started/#task-13-clone-the-git-repository))
 
