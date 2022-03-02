@@ -71,7 +71,7 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 {{% details title="show solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=6 62-68" >}}{{< readfile file="manifests/09.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=6 62-68" >}}{{< readfile file="manifests/09.0/09.4/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
@@ -96,20 +96,17 @@ Rules are evaluated in the specified order - until the first one matches. Depend
 
 ## Task {{% param sectionnumber %}}.6: Job control using rules
 
-* Implement the same rule using `rules` instead.
+* Change the `deploy_to_prod` job to use `rules` instead.
 
 Commit and push these changes to the `release` branch. It should behave exactly the same as in the previous excercise.
 
 
 ## Solution
 
-```yaml
+Updated `.gitlab-ci.yml` file for this lab:
 
-deploy_to_prod:
-  stage: deploy
-  rules:
-    - if: '$CI_COMMIT_BRANCH == "release"'
-      when: manual
-  script:
-    - echo "Deployment triggered"
-```
+{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+
+{{< highlight yaml "hl_lines=62-68" >}}{{< readfile file="manifests/09.0/09.6/.gitlab-ci.yml" >}}{{< /highlight >}}
+
+{{% /details %}}
