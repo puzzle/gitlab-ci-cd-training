@@ -4,8 +4,8 @@ weight: 3
 sectionnumber: 3
 ---
 
-In this section we will tech you the basics on working with GitLab CI/CD pipelines.
-As we learned in the previous chapter, each Job must consist at least a `script` section.
+In this section, we will teach you the basics on working with GitLab CI/CD pipelines.
+As we learned in the previous chapter, each Job must consist of at least one `script` section.
 
 {{% alert color="primary" %}}
 **GitLab References**
@@ -59,7 +59,7 @@ Add additional behavior executed before or after the main script.
 
 Use `before_script` to define an array of commands that should run before each job, but after artifacts are restored.
 
-Scripts you specify in `before_script` are concatenated with any scripts you specify in the main script. The combine scripts execute together in a single shell.
+Scripts you specify in `before_script` are concatenated with any scripts you specify in the main script. The combined scripts execute together in a single shell.
 
 
 ### {{% param sectionnumber %}}.4.2: After Script execution
@@ -68,14 +68,14 @@ Use `after_script` to define an array of commands that run after each job, inclu
 
 If a job times out or is cancelled, the `after_script` commands do not execute.
 
-Scripts you specify in `after_script` execute in a new shell, separate from any before_script or script scripts. As a result, they:
+Scripts you specify in `after_script` execute in a new shell, separated from any `before_script` or `script` scripts. As a result, they:
 
 * Have a current working directory set back to the default.
-* Have no access to changes done by scripts defined in before_script or script, including:
-  * Command aliases and variables exported in script scripts.
-  * Changes outside of the working tree (depending on the runner executor), like software installed by a before_script or script script.
+* Have no access to changes done by scripts defined in `before_script` or `script`, including:
+  * Command aliases and variables exported in `script` scripts.
+  * Changes outside of the working tree (depending on the runner executor), like software installed by a `before_script` or `script` script.
 * Have a separate timeout, which is hard coded to 5 minutes. See the related issue for details.
-* Don’t affect the job’s exit code. If the script section succeeds and the after_script times out or fails, the job exits with code 0 (Job Succeeded).
+* Don’t affect the job’s exit code. If the script section succeeds and the `after_script` times out or fails, the job exits with code 0 (Job Succeeded).
 
 ```yaml
 job:
