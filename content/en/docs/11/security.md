@@ -25,7 +25,7 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 {{% details title="show solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=11-14" >}}{{< readfile file="manifests/11.0/11.1/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=10-14" >}}{{< readfile file="manifests/11.0/11.1/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
