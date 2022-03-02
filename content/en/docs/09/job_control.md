@@ -83,12 +83,13 @@ Available since GitLab 12.3.
 Rules are evaluated in the specified order - until the first one matches. Depending on the configuration, the job is then either in- or excluded from the pipeline.
 
 `rules` accepts an array of rules defined with:
- * `if`
- * `changes`
- * `exists`
- * `allow_failure`
- * `variables`
- * `when` 
+
+* `if`
+* `changes`
+* `exists`
+* `allow_failure`
+* `variables`
+* `when`
 
 **Important**: `rules` replaces `only/except`. Thus they can not be used together in the same job. If you configure a job using both keywords, GitLab will return a `key may not be used with rules` error!
 
