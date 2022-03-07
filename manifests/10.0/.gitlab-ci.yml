@@ -10,8 +10,8 @@ include:
     file: 'templates/k8s.yml'
 
 variables:
-  GIT_STRATEGY: "clone"
-  COMPILE: "false"
+  GIT_STRATEGY: 'clone'
+  COMPILE: 'false'
   IMAGE_HOST: 'quay.io'
   IMAGE_REPOSITORY: 'puzzle'
   IMAGE_NAME: 'example-spring-boot'
