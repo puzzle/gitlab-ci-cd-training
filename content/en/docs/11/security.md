@@ -106,7 +106,7 @@ Then call Tryvi in the `script` block (after the build command):
 
 ```bash
 mkdir -p reports
-./trivy --exit-code=0 --severity CRITICAL -o reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.txt $IMAGE_NAME
+./trivy i --exit-code 0 --severity CRITICAL -o reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.txt $IMAGE_NAME
 ```
 
 Commit and push the code to rerun the pipeline.
