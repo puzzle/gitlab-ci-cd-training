@@ -12,6 +12,8 @@ In this section wel show you different options how to control the job execution.
 
 [GitLab `only` / `except` keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#only--except)
 
+[GitLab `rules`keyword](https://docs.gitlab.com/ee/ci/yaml/index.html#rules)
+
 [GitLab `when` keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#when)
 
 [GitLab `allow_failure` keyword](https://docs.gitlab.com/ee/ci/yaml/README.html#allow_failure)
@@ -20,7 +22,7 @@ In this section wel show you different options how to control the job execution.
 
 ## {{% param sectionnumber %}}.1: Job control
 
-You can use `only` and `except` to control when to add jobs to pipelines.
+You can use `only` and `except` **or** `rules` to control when to add jobs to pipelines.
 
 Use only to define when a job runs.
 Use except to define when a job does not run.
@@ -69,6 +71,42 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 {{% details title="show solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=6 62-68" >}}{{< readfile file="manifests/09.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=6 62-68" >}}{{< readfile file="manifests/09.0/09.4/.gitlab-ci.yml" >}}{{< /highlight >}}
+
+{{% /details %}}
+
+
+## {{% param sectionnumber %}}.5: Rules
+
+Available since GitLab 12.3.
+
+Rules are evaluated in the specified order - until the first one matches. Depending on the configuration, the job is then either in- or excluded from the pipeline.
+
+`rules` accepts an array of rules defined with:
+
+* `if`
+* `changes`
+* `exists`
+* `allow_failure`
+* `variables`
+* `when`
+
+**Important**: `rules` replaces `only/except`. Thus they can not be used together in the same job. If you configure a job using both keywords, GitLab will return a `key may not be used with rules` error!
+
+
+## Task {{% param sectionnumber %}}.6: Job control using rules
+
+* Change the `deploy_to_prod` job to use `rules` instead.
+
+Commit and push these changes to the `release` branch. It should behave exactly the same as in the previous excercise.
+
+
+## Solution
+
+Updated `.gitlab-ci.yml` file for this lab:
+
+{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+
+{{< highlight yaml "hl_lines=62-68" >}}{{< readfile file="manifests/09.0/09.6/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
