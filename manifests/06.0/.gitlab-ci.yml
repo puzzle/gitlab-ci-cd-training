@@ -4,8 +4,8 @@ stages:
   - test
 
 variables:
-  GIT_STRATEGY: "clone"
-  COMPILE: "false"
+  GIT_STRATEGY: 'clone'
+  COMPILE: 'false'
 
 info:
   stage: info
