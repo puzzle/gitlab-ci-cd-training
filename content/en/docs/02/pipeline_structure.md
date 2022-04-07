@@ -57,7 +57,7 @@ Commit and push the changes.
 ```bash
 git add .
 git commit -m "Add minmal pipeline"
-git push origin master
+git push origin main
 ```
 
 {{% /details %}}
