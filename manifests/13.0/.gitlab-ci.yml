@@ -5,6 +5,14 @@ stages:
   - package
   - deploy
 
+include:
+  - project: '${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}'
+    file:
+      - 'templates/k8s.yml'
+      - 'templates/Secret-Detection.yml'
+  - template: Security/SAST.gitlab-ci.yml
+  - template: Security/License-Scanning.gitlab-ci.yml
+
 variables:
   GIT_STRATEGY: 'clone'
   COMPILE: 'false'
@@ -27,6 +35,11 @@ build_application:
   image: registry.access.redhat.com/ubi8/openjdk-11:latest
   script:
     - ./gradlew assemble
+  cache:
+    key: "$CI_COMMIT_SHA"
+    paths:
+      - build/
+      - .gradle/
 
 test_application:
   stage: test
@@ -37,6 +50,11 @@ test_application:
     when: always
     reports:
       junit: build/test-results/test/**/TEST-*.xml
+  cache:
+    key: "$CI_COMMIT_SHA"
+    paths:
+      - build/
+      - .gradle/
 
 build_image:
   image: diemobiliar.azurecr.io/dlp-cicd-dockercli-image:254
@@ -52,13 +70,23 @@ build_image:
     IMAGE_NAME: 'example-spring-boot'
   before_script:
     - docker info
+    - export TRIVY_VERSION=$(wget -qO - "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
+    - echo $TRIVY_VERSION
+    - wget --no-verbose https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz -O - | tar  -zxvf -
   script:
     - docker build --no-cache -t $IMAGE_NAME .
+    - mkdir -p reports
+    - ./trivy i --exit-code 0 --severity CRITICAL -o reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.txt $IMAGE_NAME
     - IMAGE_PATH=$IMAGE_HOST/$IMAGE_REPOSITORY/$IMAGE_NAME:${CI_COMMIT_SHA:0:8}
     - echo "docker image path is - $IMAGE_PATH"
     - docker tag $IMAGE_NAME $IMAGE_PATH
     # - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
     # - docker push $IMAGE_PATH
+  artifacts:
+    name: "container-scanning-report_$CI_COMMIT_SHORT_SHA.txt"
+    paths:
+      - reports/container-scanning-report_$CI_COMMIT_SHORT_SHA.txt
+    expire_in: 30 day
 
 deploy_to_prod:
   stage: deploy
@@ -67,3 +95,14 @@ deploy_to_prod:
    - release
   script:
     - echo "Deployment triggered"
+
+deploy_to_k8s:
+  stage: deploy
+  extends: .kubectl
+  tags:
+    - build
+    - mobiliar
+  script:
+    - echo "deploy your stuff here with kubectl commands"
+    - kubectl version --client --short
+

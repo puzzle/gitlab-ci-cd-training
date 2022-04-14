@@ -16,9 +16,6 @@ include:
 variables:
   GIT_STRATEGY: 'clone'
   COMPILE: 'false'
-  IMAGE_HOST: 'quay.io'
-  IMAGE_REPOSITORY: 'puzzle'
-  IMAGE_NAME: 'example-spring-boot'
 
 default:
   timeout: 5 minutes
@@ -57,6 +54,10 @@ build_image:
   services:
     - docker:dind
   stage: package
+  variables:
+    IMAGE_HOST: 'quay.io'
+    IMAGE_REPOSITORY: 'puzzle'
+    IMAGE_NAME: 'example-spring-boot'
   before_script:
     - docker info
     - export TRIVY_VERSION=$(wget -qO - "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')

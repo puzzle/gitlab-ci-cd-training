@@ -71,7 +71,7 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 {{% details title="show solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=6 62-68" >}}{{< readfile file="manifests/09.0/09.4/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=6 63-69" >}}{{< readfile file="manifests/09.0/09.4/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 
@@ -107,6 +107,6 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 {{% details title="show solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=62-68" >}}{{< readfile file="manifests/09.0/09.6/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=63-69" >}}{{< readfile file="manifests/09.0/09.6/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}

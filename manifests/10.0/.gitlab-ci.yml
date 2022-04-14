@@ -12,9 +12,6 @@ include:
 variables:
   GIT_STRATEGY: 'clone'
   COMPILE: 'false'
-  IMAGE_HOST: 'quay.io'
-  IMAGE_REPOSITORY: 'puzzle'
-  IMAGE_NAME: 'example-spring-boot'
 
 default:
   timeout: 5 minutes
@@ -53,6 +50,10 @@ build_image:
   services:
     - docker:dind
   stage: package
+  variables:
+    IMAGE_HOST: 'quay.io'
+    IMAGE_REPOSITORY: 'puzzle'
+    IMAGE_NAME: 'example-spring-boot'
   before_script:
     - docker info
   script:
@@ -80,4 +81,3 @@ deploy_to_k8s:
   script:
     - echo "deploy your stuff here with kubectl commands"
     - kubectl version --client --short
-

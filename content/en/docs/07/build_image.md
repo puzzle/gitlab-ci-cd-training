@@ -55,7 +55,7 @@ Mobi builder Image hier und im .gitlab-ci.yml raus nehmen und vom Teacher angebe
 
 -->
 
-Did you see the required variables inside the script? Also add the following variables to the variables block:
+Did you see the required variables inside the script? Also add the following variables to a variables block in the new **build_image** job:
 
 * IMAGE_HOST: 'quay.io'
 * IMAGE_REPOSITORY: 'puzzle'
@@ -65,7 +65,7 @@ Did you see the required variables inside the script? Also add the following var
 
 The new stage is defined at the end of our `.gitlab-ci.yml`, we also need to add the package stage to the stage list and define the new variables.
 
-{{< highlight yaml "hl_lines=5 10-12 39-53" >}}{{< readfile file="manifests/07.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=5 36-54" >}}{{< readfile file="manifests/07.0/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
 

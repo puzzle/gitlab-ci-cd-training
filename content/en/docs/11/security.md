@@ -124,6 +124,6 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 {{% details title="show solution" mode-switcher="normalexpertmode" %}}
 
-{{< highlight yaml "hl_lines=62-64 67-68" >}}{{< readfile file="manifests/11.0/11.4/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< highlight yaml "hl_lines=63-65 68-69" >}}{{< readfile file="manifests/11.0/11.4/.gitlab-ci.yml" >}}{{< /highlight >}}
 
 {{% /details %}}
