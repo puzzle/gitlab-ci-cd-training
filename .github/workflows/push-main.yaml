@@ -75,7 +75,7 @@ jobs:
             quay.io/puzzle/gitlab-ci-cd-training:latest-puzzle
       -
         name: 'Install Helm'
-        uses: azure/setup-helm@v1
+        uses: azure/setup-helm@v3
         with:
           version: v3.6.2
       -
