@@ -22,7 +22,7 @@ Create a new job inside `.gitlab-ci.yml` with the following configuration:
 
 This is how the new job `test_application` is defined in the `.gitlab-ci.yml`.
 
-{{< highlight yaml >}}{{< readfile file="manifests/06.0/test-job-base.yml" >}}{{< /highlight >}}
+{{< readfile file="manifests/06.0/test-job-base.yml" code="true" lang="yaml" >}}
 
 {{% /details %}}
 
@@ -63,7 +63,7 @@ The job can be extended with an `artifacts` configuration. Dev's know that the u
 
 This is the configuration that makes GitLab CI/CD store the test results.
 
-{{< highlight yaml >}}{{< readfile file="manifests/06.0/test-job-reports.yml" >}}{{< /highlight >}}
+{{< readfile file="manifests/06.0/test-job-reports.yml" code="true" lang="yaml" >}}
 
 See also the official documentation: [Unit test reports](https://docs.gitlab.com/ee/ci/unit_test_reports.html#unit-test-reports)
 
