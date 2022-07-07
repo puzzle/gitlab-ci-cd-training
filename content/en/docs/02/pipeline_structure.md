@@ -44,7 +44,7 @@ Create a new file `.gitlab-ci.yml` and add the following content to the it. It m
 vim .gitlab-ci.yml
 ```
 
-{{< highlight yaml >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< readfile file="manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" >}}
 
 {{% alert title="Info" color="primary" %}}
 You can also use your favorite editor instead of `vim`.
