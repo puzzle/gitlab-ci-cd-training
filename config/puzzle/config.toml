@@ -1,10 +1,6 @@
-theme = ["docsy-puzzle", "docsy-plus", "docsy"]
-
 [params]
 copyright = "Puzzle ITC GmbH"
 imagePrefix = "puzzle_"
-
-
 
 [[Languages.en.menu.main]]
 copyright = "Puzzle ITC GmbH"
@@ -26,3 +22,21 @@ url = "https://twitter.com/puzzleitc"
 name = "LinkedIn"
 icon = "fab fa-linkedin-in"
 url = "https://linkedin.com/company/puzzle-itc/"
+
+# puzzle design
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = "0.100.0"
+  [[module.imports]]
+    path = "github.com/puzzle/docsy-puzzle"
+    disable = false
+  [[module.imports]]
+    path = "github.com/acend/docsy-plus"
+    disable = false
+  [[module.imports]]
+    path = "github.com/google/docsy"
+    disable = false
+  [[module.imports]]
+    path = "github.com/google/docsy/dependencies"
+    disable = false
