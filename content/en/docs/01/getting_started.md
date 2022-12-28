@@ -25,7 +25,7 @@ The first thing, we're going to do is to login into the Gitlab Webconsole and ve
 
 {{% alert title="Info" color="primary" %}}
 Your Trainer will provide you the correct URL.
-Also if you need help logging in to gitlab as the Trainers for help.
+Also if you need help logging in to gitlab ask the Trainers for help.
 {{% /alert %}}
 
 Explore the different elements in the webconsole:

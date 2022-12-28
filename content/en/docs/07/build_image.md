@@ -38,13 +38,13 @@ Create a new job with the following configuration which runs inside the new `pac
   ```
 
 
-<!-- TODO 
+<!-- TODO
 Mobi builder Image hier und im .gitlab-ci.yml raus nehmen und vom Teacher angeben lassen.
 -->
 
   This Job builds the container image defined by the Dockerfile in your source code. In the real world, the resulting container image would now be pushed into a container registry for simplicity reasons, whe skip this step in our pipeline.
 
-<!-- TODO 
+<!-- TODO
 
 * [ ] mobi specific tags!!
 
@@ -80,7 +80,7 @@ Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
 
 Check that the image build job was successful.
 
-<!-- TODO 
+<!-- TODO
 
 * [ ] docker login und push als Theorie erklären?
 

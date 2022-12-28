@@ -20,7 +20,7 @@ GitLab CI reference: <https://docs.gitlab.com/ee/ci/yaml/>
 
 The pipeline has basically two parts, the header with global settings followed by the stages.
 
-There exist two basic concepts within the pipeline, jobs ans stages.
+There exist two basic concepts within the pipeline, jobs and stages.
 
 
 **Jobs**, which define what to do. For example, jobs that compile or test code.
@@ -38,7 +38,7 @@ cd <root-directory-of-the-git-repo>
 Replace `<root-directory-of-the-git-repo>` with the actual path to the cloned repository. eg. `~/gitlabcicd-training/example-spring-boot-helloworld`
 {{% /alert %}}
 
-Create a new file `.gitlab-ci.yml` and add the following content to the it. It must be located directly in the root directory of the repository.
+Create a new file `.gitlab-ci.yml` and add the following content to it. It must be located directly in the root directory of the repository.
 
 ```bash
 vim .gitlab-ci.yml

@@ -37,7 +37,7 @@ default:
 job1:
   script:
     - echo "This script executes first. When it completes, the job's `after_script` executes."
-  
+
 job2:
   before_script:
     - echo "This script executes before the script block"

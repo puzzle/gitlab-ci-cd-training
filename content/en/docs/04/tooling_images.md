@@ -31,7 +31,7 @@ For tools and languages it is a good starting point to check the [Pre-Built Circ
 Using freely available Container Images is risky. Be aware of the security constraints.
 {{% /alert %}}
 
-<!-- TODO 
+<!-- TODO
 * [ ] how to check Images?
 -->
 
@@ -50,7 +50,7 @@ Create a new job inside `.gitlab-ci.yml` with the following configuration:
 Don't forget to add the `build` stage to the stages list.
 
 
-<!-- TODO 
+<!-- TODO
 
 * [ ] mobi specific tags!!
 
