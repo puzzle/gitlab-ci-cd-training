@@ -10,7 +10,10 @@ acendTraining:
         tag: ""
         tagsuffix: ""
       ingress:
-        emptyTLS: true
+        annotations:
+          route.openshift.io/termination: edge
+          kubernetes.io/ingress.class: nginx-public
+        emptyTLS: false
         secretOverride: acend-wildcard
         appname: gitlab-ci-cd-training
         domain: training.acend.ch
