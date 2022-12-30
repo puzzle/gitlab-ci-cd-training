@@ -10,8 +10,7 @@ acendTraining:
         tag: ""
         tagsuffix: ""
       ingress:
-        annotations: 
-          kubernetes.io/ingress.class: nginx-public
+        emptyTLS: true
         secretOverride: acend-wildcard
         appname: gitlab-ci-cd-training
         domain: training.acend.ch
@@ -24,12 +23,11 @@ acendTraining:
         tag: ""
         tagsuffix: "-puzzle"
       ingress:
-        annotations: 
-          kubernetes.io/ingress.class: nginx-public
+        emptyTLS: true
         useDefaultSecret: true
         appname: gitlab-ci-cd-training
-        domain: k8s.puzzle.ch
-
+        domainmain: puzzle.ch
+        domain: ocp-internal.cloudscale.puzzle.ch
 
 
 nameOverride: "puzzle-gitlab-ci-cd-training"
