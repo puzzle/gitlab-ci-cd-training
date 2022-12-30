@@ -10,7 +10,7 @@ acendTraining:
         tag: ""
         tagsuffix: ""
       ingress:
-        emptyTLS: true
+        emptyTLS: false
         secretOverride: acend-wildcard
         appname: gitlab-ci-cd-training
         domain: training.acend.ch
