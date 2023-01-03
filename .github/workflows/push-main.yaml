@@ -41,6 +41,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          build-args: |
+            TRAINING_HUGO_ENV=puzzle
           push: true
           tags: |
             quay.io/puzzle/gitlab-ci-cd-training:latest
@@ -61,17 +63,6 @@ jobs:
         with:
           name: trivy-results-main
           path: trivy-results.txt
-      -
-        name: Build Puzzle Version
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./Dockerfile
-          build-args: |
-            TRAINING_HUGO_ENV=puzzle
-          push: true
-          tags: |
-            quay.io/puzzle/gitlab-ci-cd-training:latest-puzzle
       -
         name: 'Install Helm'
         uses: azure/setup-helm@v3
@@ -112,10 +103,7 @@ jobs:
           TRAINING_HELM_NAME: 'puzzle-gitlab-ci-cd-training'
           TRAINING_NAMESPACE: 'pitc-gitlab-ci-cd-training-prod'
         run: |
-          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME}-acend \
-            --kubeconfig $HOME/.kube/config \
-            --namespace $TRAINING_NAMESPACE
-          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME}-puzzle \
+          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME} \
             --kubeconfig $HOME/.kube/config \
             --namespace $TRAINING_NAMESPACE
 
