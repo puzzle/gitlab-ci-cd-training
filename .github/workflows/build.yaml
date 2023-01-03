@@ -97,7 +97,7 @@ jobs:
         name: Redeploy Deployments
         env:
           TRAINING_HELM_RELEASE: 'pr-${{ github.event.pull_request.number }}'
-          TRAINING_HELM_NAME: 'puzzle-gitlab-ci-cd-training'
+          TRAINING_HELM_NAME: 'gitlab-ci-cd-training-puzzle'
           TRAINING_NAMESPACE: 'pitc-gitlab-ci-cd-training-test'
         run: |
           kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME} \
