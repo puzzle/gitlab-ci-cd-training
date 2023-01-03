@@ -17,7 +17,7 @@ acendTraining:
         domain: ocp-internal.cloudscale.puzzle.ch
 
 
-nameOverride: "puzzle-gitlab-ci-cd-training"
+nameOverride: "gitlab-ci-cd-training"
 fullnameOverride: ""
 
 serviceAccount:
