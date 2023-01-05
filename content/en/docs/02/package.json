@@ -1,0 +1,23 @@
+{
+  "name": "gitlab-ci-cd-training",
+  "version": "0.0.9",
+  "description": "GitLab CI/CD Training",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puzzle/gitlab-ci-cd-training.git"
+  },
+  "author": "Puzzle ITC",
+  "scripts": {
+    "start": "bash -c \"docker run --rm --interactive --publish 8080:8080 -v $(pwd):/src:Z klakegg/hugo:$(grep \"FROM klakegg/hugo\" Dockerfile | sed 's/FROM klakegg\\/hugo://g' | sed 's/ AS builder//g') server -p 8080 --bind 0.0.0.0\"",
+    "mdlint": "markdownlint --config .markdownlint.json content *.md",
+    "prepare": "husky install"
+  },
+  "bugs": {
+    "url": "https://github.com/puzzle/gitlab-ci-cd-training/issues"
+  },
+  "homepage": "https://github.com/puzzle/gitlab-ci-cd-training#readme",
+  "devDependencies": {
+    "husky": "8.0.1",
+    "markdownlint-cli": "0.32.2"
+  }
+}
