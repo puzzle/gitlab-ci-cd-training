@@ -44,7 +44,8 @@ Create a new file `.gitlab-ci.yml` and add the following content to it. It must 
 vim .gitlab-ci.yml
 ```
 
-{{< highlight yaml >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< readfile file="manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" >}}
+
 
 {{% alert title="Info" color="primary" %}}
 You can also use your favorite editor instead of `vim`.
@@ -56,7 +57,7 @@ Commit and push the changes.
 
 ```bash
 git add .
-git commit -m "Add minmal pipeline"
+git commit -m "Add minimal pipeline"
 git push origin master
 ```
 
@@ -69,7 +70,7 @@ Our first pipeline is pretty simple, it has one stage with one job, which only e
 
 The global settings part contains stage definition.
 
-{{< highlight yaml "hl_lines=1-2" >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< readAndHighlight file="manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=1 2">}}
 
 
 ### Jobs
@@ -77,7 +78,7 @@ The global settings part contains stage definition.
 Jobs are the most fundamental element of a GitLab pipeline.
 You just defined your first job. It's name is `info`.
 
-{{< highlight yaml "hl_lines=4-7" >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< readAndHighlight file="manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=4-7">}}
 
 Jobs are ...
 

@@ -65,7 +65,7 @@ Don't forget to add the `build` stage to the stages list.
 
 The pipeline should now look like this:
 
-{{< highlight yaml "hl_lines=3 10-17" >}}{{< readfile file="manifests/04.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< readAndHighlight file="manifests/04.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=3 10-17">}}
 
 After committing the changes a new pipeline starts using the updated configuration.
 
