@@ -59,7 +59,7 @@ When you see them, tell us please. We only have the return value of the test scr
 
 ## Task {{% param sectionnumber %}}.3: Show test reports
 
-The job can be extended with an `artifacts` configuration. Dev's know that the unit test reports are stored inside the `build/test-results/` folder.
+The job can be extended with an `artifacts` configuration. Devs know that the unit test reports are stored inside the `build/test-results/` folder.
 
 This is the configuration that makes GitLab CI/CD store the test results.
 

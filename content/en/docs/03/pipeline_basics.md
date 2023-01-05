@@ -23,7 +23,7 @@ As we learned in the previous chapter, each Job must consist of at least one `sc
 
 ## {{% param sectionnumber %}}.1: Implicit data import
 
-The content of the git repository is implicit imported into the pipeline's workspace. So you don't have to clone anything.
+The content of the git repository is implicit imported into the pipeline's work space. So you don't have to clone anything.
 
 
 ## {{% param sectionnumber %}}.2: Execute single commands
@@ -35,7 +35,7 @@ Inside a job we want to define the work that is done. The easiest way is to add 
 
 ## {{% param sectionnumber %}}.3: Define scripts
 
-You can split long commands into multiline commands to improve readability with `|` (literal) and `>` (folded)
+You can split long commands into multi line commands to improve readability with `|` (literal) and `>` (folded)
 For example:
 
 ```yaml
@@ -66,7 +66,7 @@ Scripts you specify in `before_script` are concatenated with any scripts you spe
 
 Use `after_script` to define an array of commands that run after each job, including failed jobs.
 
-If a job times out or is cancelled, the `after_script` commands do not execute.
+If a job times out or is canceled, the `after_script` commands do not execute.
 
 Scripts you specify in `after_script` execute in a new shell, separated from any `before_script` or `script` scripts. As a result, they:
 

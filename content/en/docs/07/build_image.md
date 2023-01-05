@@ -42,7 +42,7 @@ Create a new job with the following configuration which runs inside the new `pac
 Mobi builder Image hier und im .gitlab-ci.yml raus nehmen und vom Teacher angeben lassen.
 -->
 
-  This Job builds the container image defined by the Dockerfile in your source code. In the real world, the resulting container image would now be pushed into a container registry for simplicity reasons, whe skip this step in our pipeline.
+  This Job builds the container image defined by the Dockerfile in your source code. In the real world, the resulting container image would now be pushed into a container registry for simplicity reasons, we skip this step in our pipeline.
 
 <!-- TODO
 
@@ -70,7 +70,7 @@ The new stage is defined at the end of our `.gitlab-ci.yml`, we also need to add
 {{% /details %}}
 
 {{% alert title="Warning" color="secondary" %}}
-As mentioned in the variables Lab sensitive Data like for example `DOCKER_USERNAME` and `DOCKER_PASSWORD` should never be stored as plain variable within a pipeline definition. Such variables can be defined on Projects, Groups and Instances in the Gitlab Webconsole (eg. Project Settings --> CICD --> Variables). During a pipeline run Gitlab will take care that sensitive data never shows up in logs and can be leaked in such a way.
+As mentioned in the variables Lab sensitive Data like for example `DOCKER_USERNAME` and `DOCKER_PASSWORD` should never be stored as plain variable within a pipeline definition. Such variables can be defined on Projects, Groups and Instances in the Gitlab Web Console (e.g. Project Settings --> CI/CD --> Variables). During a pipeline run Gitlab will take care that sensitive data never shows up in logs and can be leaked in such a way.
 {{% /alert %}}
 
 

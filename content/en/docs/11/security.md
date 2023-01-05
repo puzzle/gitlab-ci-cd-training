@@ -94,7 +94,7 @@ In this section we'll show you how to use custom security tools in your pipeline
 
 Extend the existing `build_image` job inside `.gitlab-ci.yml` with the following configuration:
 
-Add following commands into the `before_script` block to download Tryvi:
+Add following commands into the `before_script` block to download Trivy:
 
 ```bash
 export TRIVY_VERSION=$(wget -qO - "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
@@ -102,7 +102,7 @@ echo $TRIVY_VERSION
 wget --no-verbose https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz -O - | tar  -zxvf -
 ```
 
-Then call Tryvi in the `script` block (after the build command):
+Then call Trivy in the `script` block (after the build command):
 
 ```bash
 mkdir -p reports
@@ -111,7 +111,7 @@ mkdir -p reports
 
 Commit and push the code to rerun the pipeline.
 
-Check the Tryvi log output of the `build_image` Job.
+Check the Trivy log output of the `build_image` Job.
 
 {{% alert title="Info" color="secondary" %}}
 You would do the the security scanning in a separate job. Here we do not have an Image Registry to store the Container Image. This would be uses to retrieve the Container Image in the next Job to do the scanning.
