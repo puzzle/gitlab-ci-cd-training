@@ -65,7 +65,7 @@ Next have a look at the newly created project and explore the repository view:
 
 The new created repository is the base for the following labs. During the hands-on part, we'll create a CI/CD Pipeline step by step and we'll have to create and edit files in the repository.
 
-Therefore we recommend you clone the repository to your local machine and make the changes locally, then commit and push them like you learned in the git training yesterday.
+Therefore, we recommend you clone the repository to your local machine and make the changes locally, then commit and push them like you learned in the git training yesterday.
 
 1. Open the Repository / Project view and click the blue `Clone` button.
 1. Copy the `Https` url to your Clipboard (eg. `https://gitlab.com/<group>/example-spring-boot-helloworld.git`)

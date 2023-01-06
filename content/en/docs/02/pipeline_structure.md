@@ -76,7 +76,7 @@ The global settings part contains stage definition.
 ### Jobs
 
 Jobs are the most fundamental element of a GitLab pipeline.
-You just defined your first job. It's name is `info`.
+You just defined your first job. Its name is `info`.
 
 {{< readAndHighlight file="manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=4-7">}}
 
