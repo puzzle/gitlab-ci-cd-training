@@ -75,7 +75,6 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 {{< /details >}}
 
-
 ## {{% param sectionnumber %}}.5: Rules
 
 Available since GitLab 12.3.

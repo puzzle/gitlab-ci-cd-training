@@ -54,7 +54,6 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 {{< /details >}}
 
-
 ### Download Job Artifacts
 
 The defined artifact can be found on the `build_image` Job detail page of this Pipeline. Find the `Job artifacts` section on the right side beside the `Job log`.

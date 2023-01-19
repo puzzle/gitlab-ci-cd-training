@@ -29,7 +29,6 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 {{< /details >}}
 
-
 ## Task {{% param sectionnumber %}}.3: Let the pipeline fail
 
 To test the Secret Detection template we add a secret in our sample project. Create a new file in the root directory called `private_key` and copy the following content into it.
