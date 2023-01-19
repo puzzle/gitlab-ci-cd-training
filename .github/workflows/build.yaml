@@ -39,6 +39,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          build-args: |
+            TRAINING_HUGO_ENV=puzzle
           push: true
           tags: |
             quay.io/puzzle/gitlab-ci-cd-training:pr-${{ github.event.pull_request.number }}
@@ -59,17 +61,6 @@ jobs:
         with:
           name: trivy-results-build
           path: trivy-results.txt
-      -
-        name: Build Puzzle Version
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./Dockerfile
-          build-args: |
-            TRAINING_HUGO_ENV=puzzle
-          push: true
-          tags: |
-            quay.io/puzzle/gitlab-ci-cd-training:pr-${{ github.event.pull_request.number }}-puzzle
       -
         name: 'Install Helm'
         uses: azure/setup-helm@v3
@@ -94,16 +85,24 @@ jobs:
           TRAINING_NAMESPACE: 'pitc-gitlab-ci-cd-training-test'
           TRAINING_VERSION: '${{ github.sha }}'
         run: |
-          helm upgrade $TRAINING_HELM_RELEASE acend-training-chart --install --wait --kubeconfig $HOME/.kube/config  --namespace=$TRAINING_NAMESPACE --set=app.name=$HELM_RELEASE --set=app.version=$TRAINING_VERSION --repo=https://acend.github.io/helm-charts/ --values=helm-chart/values.yaml --atomic
+          helm upgrade $TRAINING_HELM_RELEASE acend-training-chart --install --wait \
+            --kubeconfig $HOME/.kube/config \
+            --namespace=$TRAINING_NAMESPACE \
+            --set=app.name=$HELM_RELEASE \
+            --set=app.version=$TRAINING_VERSION \
+            --repo=https://acend.github.io/helm-charts/ \
+            --values=helm-chart/values.yaml \
+            --atomic
       -
         name: Redeploy Deployments
         env:
           TRAINING_HELM_RELEASE: 'pr-${{ github.event.pull_request.number }}'
-          TRAINING_HELM_NAME: 'puzzle-gitlab-ci-cd-training'
+          TRAINING_HELM_NAME: 'gitlab-ci-cd-training-puzzle'
           TRAINING_NAMESPACE: 'pitc-gitlab-ci-cd-training-test'
         run: |
-          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME}-acend --kubeconfig $HOME/.kube/config --namespace $TRAINING_NAMESPACE
-          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME}-puzzle --kubeconfig $HOME/.kube/config --namespace $TRAINING_NAMESPACE
+          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME} \
+            --kubeconfig $HOME/.kube/config \
+            --namespace $TRAINING_NAMESPACE
       -
         name: Comment PR Environments in PR
         uses: marocchino/sticky-pull-request-comment@v2
@@ -111,5 +110,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           message: |
            PR Environments: 
-           * acend version <https://gitlab-ci-cd-training-pr-${{ github.event.pull_request.number }}.training.acend.ch>
-           * puzzle version <https://gitlab-ci-cd-training-pr-${{ github.event.pull_request.number }}.k8s.puzzle.ch>
+           *  puzzle <https://gitlab-ci-cd-training-pr-${{ github.event.pull_request.number }}.ocp-internal.cloudscale.puzzle.ch>
+

@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - master
 
 jobs:
   build:
@@ -42,6 +41,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          build-args: |
+            TRAINING_HUGO_ENV=puzzle
           push: true
           tags: |
             quay.io/puzzle/gitlab-ci-cd-training:latest
@@ -62,17 +63,6 @@ jobs:
         with:
           name: trivy-results-main
           path: trivy-results.txt
-      -
-        name: Build Puzzle Version
-        uses: docker/build-push-action@v3
-        with:
-          context: .
-          file: ./Dockerfile
-          build-args: |
-            TRAINING_HUGO_ENV=puzzle
-          push: true
-          tags: |
-            quay.io/puzzle/gitlab-ci-cd-training:latest-puzzle
       -
         name: 'Install Helm'
         uses: azure/setup-helm@v3
@@ -97,13 +87,23 @@ jobs:
           TRAINING_NAMESPACE: 'pitc-gitlab-ci-cd-training-prod'
           TRAINING_VERSION: '${{ github.sha }}'
         run: |
-          helm upgrade $TRAINING_HELM_RELEASE acend-training-chart --install --wait --kubeconfig $HOME/.kube/config  --namespace=$TRAINING_NAMESPACE --set=app.name=$HELM_RELEASE --set=app.version=$TRAINING_VERSION --repo=https://acend.github.io/helm-charts/ --values=helm-chart/values.yaml --atomic
+          helm upgrade $TRAINING_HELM_RELEASE acend-training-chart --install --wait \
+            --kubeconfig $HOME/.kube/config \
+            --namespace=$TRAINING_NAMESPACE \
+            --set=app.name=$HELM_RELEASE \
+            --set=app.version=$TRAINING_VERSION \
+            --repo=https://acend.github.io/helm-charts/ \
+            --values=helm-chart/values.yaml \
+            --set-string=acendTraining.deployments[0].ingress.labels.public=true \
+            --atomic
       -
         name: Redeploy Deployments
         env:
           TRAINING_HELM_RELEASE: 'latest'
-          TRAINING_HELM_NAME: 'puzzle-gitlab-ci-cd-training'
+          TRAINING_HELM_NAME: 'gitlab-ci-cd-training-puzzle'
           TRAINING_NAMESPACE: 'pitc-gitlab-ci-cd-training-prod'
         run: |
-          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME}-acend --kubeconfig $HOME/.kube/config --namespace $TRAINING_NAMESPACE
-          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME}-puzzle --kubeconfig $HOME/.kube/config --namespace $TRAINING_NAMESPACE
+          kubectl rollout restart deployment/${TRAINING_HELM_RELEASE}-${TRAINING_HELM_NAME} \
+            --kubeconfig $HOME/.kube/config \
+            --namespace $TRAINING_NAMESPACE
+

@@ -1,8 +1,8 @@
 acendTraining:
   servicePort: 8080
   deployments:
-    - 
-      name: acend
+    -
+      name: puzzle
       replicaCount: 1
       image:
         repository: quay.io/puzzle/gitlab-ci-cd-training
@@ -10,29 +10,14 @@ acendTraining:
         tag: ""
         tagsuffix: ""
       ingress:
-        annotations: 
-          kubernetes.io/ingress.class: nginx-public
-        secretOverride: acend-wildcard
-        appname: gitlab-ci-cd-training
-        domain: training.acend.ch
-    - 
-      name: puzzle
-      replicaCount: 1
-      image:
-        repository: quay.io/puzzle/gitlab-ci-cd-training
-        pullPolicy: Always
-        tag: ""
-        tagsuffix: "-puzzle"
-      ingress:
-        annotations: 
-          kubernetes.io/ingress.class: nginx-public
+        emptyTLS: true
         useDefaultSecret: true
         appname: gitlab-ci-cd-training
-        domain: k8s.puzzle.ch
+        domainmain: puzzle.ch
+        domain: ocp-internal.cloudscale.puzzle.ch
 
 
-
-nameOverride: "puzzle-gitlab-ci-cd-training"
+nameOverride: "gitlab-ci-cd-training"
 fullnameOverride: ""
 
 serviceAccount:
