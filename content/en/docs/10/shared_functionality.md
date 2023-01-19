@@ -29,7 +29,7 @@ You can’t use YAML anchors across different YAML files sourced by include. You
 
 ## Task {{% param sectionnumber %}}.2: Shared functionality Lab
 
-In this lab we will show you how to extend a job with an other job from a shared template.
+In this lab we will show you how to extend a job with another job from a shared template.
 
 Execute following tasks:
 

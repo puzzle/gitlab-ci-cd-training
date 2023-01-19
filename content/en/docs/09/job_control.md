@@ -4,7 +4,7 @@ weight: 9
 sectionnumber: 9
 ---
 
-In this section we will show you different options how to control the job execution. Sometimes some jobs will be used only in certain branches, or for example you will execute a stage only if the commit is tagged with a [Semver number](https://semver.org/).
+In this section we will show you different options how to control the job execution. Sometimes some jobs will be used only in certain branches, or for example you will execute a stage only if the commit is tagged with a [Semver number](https://semver.org/) (Semantic Versioning number).
 
 
 {{% alert color="primary" %}}
@@ -22,12 +22,12 @@ In this section we will show you different options how to control the job execut
 
 ## {{% param sectionnumber %}}.1: Job control
 
-You can use `only` and `except` **or** `rules` to control when to add jobs to pipelines.
+You can use `only` and `except`, **or** `rules` to control when to add jobs to pipelines.
 
-Use only to define when a job runs.
-Use except to define when a job does not run.
+Use `only` to define when a job runs.
+Use `except` to define when a job does not run.
 
-Use the only:refs and except:refs keywords to control when to add jobs to a pipeline based on branch names or pipeline types.
+Use the `only:refs` and `except:refs` keywords to control when to add jobs to a pipeline based on branch names or pipeline types.
 
 
 ## {{% param sectionnumber %}}.2: Execution control
