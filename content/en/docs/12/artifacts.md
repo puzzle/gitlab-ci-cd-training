@@ -52,7 +52,6 @@ Updated `.gitlab-ci.yml` file for this lab:
 {{< readAndHighlight file="manifests/12.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=74-78">}}
 
 
-
 ### Download Job Artifacts
 
 The defined artifact can be found on the `build_image` Job detail page of this Pipeline. Find the `Job artifacts` section on the right side beside the `Job log`.

@@ -73,7 +73,6 @@ Updated `.gitlab-ci.yml` file for this lab:
 {{< readAndHighlight file="manifests/09.0/09.4/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=6 62-68">}}
 
 
-
 ## {{% param sectionnumber %}}.5: Rules
 
 Available since GitLab 12.3.
@@ -102,7 +101,6 @@ Commit and push these changes to the `release` branch. It should behave exactly 
 ## Solution
 
 Updated `.gitlab-ci.yml` file for this lab:
-
 
 {{< readAndHighlight file="manifests/09.0/09.6/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-68">}}
 

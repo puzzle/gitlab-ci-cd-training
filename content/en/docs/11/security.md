@@ -27,7 +27,6 @@ Updated `.gitlab-ci.yml` file for this lab:
 {{< readAndHighlight file="manifests/11.0/11.1/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=10-14">}}
 
 
-
 ## Task {{% param sectionnumber %}}.3: Let the pipeline fail
 
 To test the Secret Detection template we add a secret in our sample project. Create a new file in the root directory called `private_key` and copy the following content into it.
@@ -119,7 +118,6 @@ You would do the security scanning in a separate job. Here we do not have an Ima
 ## {{% param sectionnumber %}}.5: Custom security tooling Solution
 
 Updated `.gitlab-ci.yml` file for this lab:
-
 
 {{< readAndHighlight file="manifests/11.0/11.4/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-64 67-68">}}
 
