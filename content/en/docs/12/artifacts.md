@@ -32,13 +32,13 @@ The `expire_in` keyword determines how long GitLab keeps the job artifacts. You 
 
 ## Task {{% param sectionnumber %}}.1: Artifacts Lab
 
-* Add a `artifacts` section to the `build_image` job
-* Add a artifact with the name `container-scanning-report_<identifier>.txt`
+* Add an `artifacts` section to the `build_image` job
+* Add an artifact with the name `container-scanning-report_<identifier>.txt`
 * Define the artifact `paths` pointing to file that the Trivy command writes.
 * Set a retention time of 30 days for the artifacts
 
 {{% alert title="Hint" color="primary" %}}
-For the identifier use the Short Commit SHA from the predefined GitLab variables.
+For the identifier, use the Short Commit SHA from the predefined GitLab variables.
 
 For the `paths` file path see the output flag (-o) of the Trivy command of the previous lab.
 {{% /alert %}}
@@ -57,7 +57,7 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 ### Download Job Artifacts
 
-The defined artifact can be found on the `build_image` Job detail page of this Pipeline. Find the `Job artifacts` section on the right side beside the Job log.
+The defined artifact can be found on the `build_image` Job detail page of this Pipeline. Find the `Job artifacts` section on the right side beside the `Job log`.
 
 Click on `Download` to get the Trivy report file and open it to see the report.
 
@@ -66,6 +66,6 @@ Click on `Download` to get the Trivy report file and open it to see the report.
 
 Go to your pipeline `CI/CD` --> `Pipeline` and click on the ⋮ to see the downloadable artifacts.
 
-Then download and open the JUnit test report.
+Then download them and open the JUnit test report.
 
 ![Download artifacts](../download_artifacts.png)

@@ -4,12 +4,12 @@ weight: 11
 sectionnumber: 11
 ---
 
-GitLab offers a wide support for security issues. In this lab we will cover the GitLabs internal security templates first, and then we will show you how to include custom security tools into your pipeline.
+GitLab offers a wide support for security issues. In this lab, we will cover the GitLabs internal security templates first, and then we will show you how to include custom security tools into your pipeline.
 
 
 ## Task {{% param sectionnumber %}}.1: Security Template Lab
 
-In this lab we will show you how to extend a job with an other job from a shared template.
+In this lab we will show you how to extend a job with another job from a shared template.
 Execute following tasks
 
 * Include the template `Security/SAST.gitlab-ci.yml`
@@ -32,7 +32,7 @@ Updated `.gitlab-ci.yml` file for this lab:
 
 ## Task {{% param sectionnumber %}}.3: Let the pipeline fail
 
-To test the Secret Detection template we add a secret in our sample project. Create a new file in the root directory called `private_key` and copy following content in it.
+To test the Secret Detection template we add a secret in our sample project. Create a new file in the root directory called `private_key` and copy the following content into it.
 
 ```txt
 -----BEGIN OPENSSH PRIVATE KEY-----
@@ -114,7 +114,7 @@ Commit and push the code to rerun the pipeline.
 Check the Trivy log output of the `build_image` Job.
 
 {{% alert title="Info" color="secondary" %}}
-You would do the the security scanning in a separate job. Here we do not have an Image Registry to store the Container Image. This would be uses to retrieve the Container Image in the next Job to do the scanning.
+You would do the security scanning in a separate job. Here we do not have an Image Registry to store the Container Image. This would be used to retrieve the Container Image in the next Job to do the scanning.
 {{% /alert %}}
 
 

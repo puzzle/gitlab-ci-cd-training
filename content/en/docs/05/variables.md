@@ -66,7 +66,7 @@ Define the following two global variables in your `.gitlab-ci.yml`
 * GIT_STRATEGY = clone
 * COMPILE = false
 
-The `GIT_STRATEGY` defines how the git repository is fetched during a pipeline run; valid options are `clone`, `fetch` or `none`
+The `GIT_STRATEGY` defines how the git repository is fetched during a pipeline run; valid options are `clone`, `fetch` or `none`.
 The `COMPILE` variable disable project compilation and dependency fetching for the security analyser.
 
 {{% details title="solution" mode-switcher="normalexpertmode" %}}
@@ -82,7 +82,7 @@ Commit and push your changes. Check that the pipeline finishes without problems.
 
 ## {{% param sectionnumber %}}.4: Secret and protected Variables
 
-In some cases you need to store sensitive information into a variable. Instead of defining the variable directly in the `.gitlab-ci.yml` you can create a secret variable in the GitLab project settings.
+In some cases you need to store sensitive information in a variable. Instead of defining the variable directly in the `.gitlab-ci.yml` you can create a secret variable in the GitLab project settings.
 
 To add a new secret variable, navigate in the main menu to `Settings` --> `CI/CD` --> `Variables` --> `Expand` --> `Add variable`
 

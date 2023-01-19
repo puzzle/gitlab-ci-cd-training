@@ -70,7 +70,7 @@ The new stage is defined at the end of our `.gitlab-ci.yml`, we also need to add
 {{% /details %}}
 
 {{% alert title="Warning" color="secondary" %}}
-As mentioned in the variables Lab sensitive Data like for example `DOCKER_USERNAME` and `DOCKER_PASSWORD` should never be stored as plain variable within a pipeline definition. Such variables can be defined on Projects, Groups and Instances in the Gitlab Web Console (e.g. Project Settings --> CI/CD --> Variables). During a pipeline run Gitlab will take care that sensitive data never shows up in logs and can be leaked in such a way.
+As mentioned in the variables Lab sensitive data, for example `DOCKER_USERNAME` and `DOCKER_PASSWORD` should never be stored as plain variable within a pipeline definition. Such variables can be defined on Projects, Groups and Instances in the Gitlab Web Console (e.g. Project Settings --> CI/CD --> Variables). During a pipeline run Gitlab will take care that sensitive data never shows up in logs and can be leaked in such a way.
 {{% /alert %}}
 
 

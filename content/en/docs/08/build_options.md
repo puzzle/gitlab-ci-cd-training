@@ -47,7 +47,7 @@ job2:
     - echo "Execute this script after the normal script."
 ```
 
-This produces following output:
+This produces the following output:
 
 ```bash
 This will be executed as default if no other before script is set

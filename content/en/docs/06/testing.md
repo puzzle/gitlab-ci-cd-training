@@ -4,7 +4,7 @@ weight: 6
 sectionnumber: 6
 ---
 
-In this lab we will edit our pipeline so that the Java application will be tested automatically every time the pipeline runs. Our Java example application contains a set of JUnit tests, which will be executed during a run. You can think as it of a quality-gate that the pipeline must go through, to pass successfully. When tests fail, due to a change, the pipeline also fails.
+In this lab we will edit our pipeline so that the Java application will be tested automatically every time the pipeline runs. Our Java example application contains a set of JUnit tests, which will be executed during a run. You can think of it as a quality-gate that the pipeline must go through, to pass successfully. When tests fail, due to a change, the pipeline also fails.
 
 
 ## Task {{% param sectionnumber %}}.1: Create test stage
