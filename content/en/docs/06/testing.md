@@ -22,7 +22,7 @@ Create a new job inside `.gitlab-ci.yml` with the following configuration:
 
 This is how the new job `test_application` is defined in the `.gitlab-ci.yml`.
 
-{{< readfile file="manifests/06.0/test-job-base.yml" code="true" lang="yaml" >}}
+{{< readfile file="/manifests/06.0/test-job-base.yml" code="true" lang="yaml" >}}
 
 {{% /details %}}
 
@@ -63,14 +63,14 @@ The job can be extended with an `artifacts` configuration. Devs know that the un
 
 This is the configuration that makes GitLab CI/CD store the test results.
 
-{{< readfile file="manifests/06.0/test-job-reports.yml" code="true" lang="yaml" >}}
+{{< readfile file="/manifests/06.0/test-job-reports.yml" code="true" lang="yaml" >}}
 
 See also the official documentation: [Unit test reports](https://docs.gitlab.com/ee/ci/unit_test_reports.html#unit-test-reports)
 
 
 This is the final pipeline that includes unit testing and recording of test results.
 
-{{< readAndHighlight file="manifests/06.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=4 25-33">}}
+{{< readAndHighlight file="/manifests/06.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=4 25-33">}}
 
 Navigate to the newest Pipeline inside GitLab. The Tests tab should now show the executed tests.
 

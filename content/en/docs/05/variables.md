@@ -72,7 +72,7 @@ The `COMPILE` variable disable project compilation and dependency fetching for t
 
 To define global variables within a pipeline, add the variables block to the `.gitlab-ci.yml`.
 
-{{< readAndHighlight file="manifests/05.0/05.3/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=5-7">}}
+{{< readAndHighlight file="/manifests/05.0/05.3/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=5-7">}}
 
 
 Commit and push your changes. Check that the pipeline finishes without problems. The output is the same as in the previous lab.
@@ -107,7 +107,7 @@ Run the pipeline again and navigate to the info job log output. You should see t
 
 To define secret variables within a pipeline, add the variables within the project settings and add the script block to the `.gitlab-ci.yml`.
 
-{{< readAndHighlight file="manifests/05.0/05.5/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=13">}}
+{{< readAndHighlight file="/manifests/05.0/05.5/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=13">}}
 
 
 Commit and push your changes.

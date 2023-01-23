@@ -24,7 +24,7 @@ Go to your GitLab project and check the pipeline for this lab. You should find t
 Updated `.gitlab-ci.yml` file for this lab:
 
 
-{{< readAndHighlight file="manifests/11.0/11.1/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=10-14">}}
+{{< readAndHighlight file="/manifests/11.0/11.1/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=10-14">}}
 
 
 ## Task {{% param sectionnumber %}}.3: Let the pipeline fail
@@ -119,5 +119,5 @@ You would do the security scanning in a separate job. Here we do not have an Ima
 
 Updated `.gitlab-ci.yml` file for this lab:
 
-{{< readAndHighlight file="manifests/11.0/11.4/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-64 67-68">}}
+{{< readAndHighlight file="/manifests/11.0/11.4/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-64 67-68">}}
 

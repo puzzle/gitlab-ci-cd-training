@@ -49,7 +49,7 @@ For the `paths` file path see the output flag (-o) of the Trivy command of the p
 Updated `.gitlab-ci.yml` file for this lab:
 
 
-{{< readAndHighlight file="manifests/12.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=74-78">}}
+{{< readAndHighlight file="/manifests/12.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=74-78">}}
 
 
 ### Download Job Artifacts

@@ -44,7 +44,7 @@ Create a new file `.gitlab-ci.yml` and add the following content to it. It must 
 vim .gitlab-ci.yml
 ```
 
-{{< readfile file="manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" >}}
+{{< readfile file="/manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" >}}
 
 
 {{% alert title="Info" color="primary" %}}
@@ -70,7 +70,7 @@ Our first pipeline is pretty simple, it has one stage with one job, which only e
 
 The global settings part contains stage definition.
 
-{{< readAndHighlight file="manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=1 2">}}
+{{< readAndHighlight file="/manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=1 2">}}
 
 
 ### Jobs
@@ -78,7 +78,7 @@ The global settings part contains stage definition.
 Jobs are the most fundamental element of a GitLab pipeline.
 You just defined your first job. Its name is `info`.
 
-{{< readAndHighlight file="manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=4-7">}}
+{{< readAndHighlight file="/manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=4-7">}}
 
 Jobs are ...
 

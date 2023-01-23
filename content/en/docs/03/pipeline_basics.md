@@ -30,7 +30,7 @@ The content of the git repository is implicit imported into the pipeline's work 
 
 Inside a job we want to define the work that is done. The easiest way is to add a command. You already used a command inside the `info` job.
 
-{{< readAndHighlight file="manifests/03.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=7">}}
+{{< readAndHighlight file="/manifests/03.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=7">}}
 
 
 ## {{% param sectionnumber %}}.3: Define scripts
