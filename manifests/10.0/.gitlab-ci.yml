@@ -1,0 +1,83 @@
+stages:
+  - info
+  - build
+  - test
+  - package
+  - deploy
+
+include:
+  - project: '${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}'
+    file: 'templates/k8s.yml'
+
+variables:
+  GIT_STRATEGY: 'clone'
+  COMPILE: 'false'
+  IMAGE_HOST: 'quay.io'
+  IMAGE_REPOSITORY: 'puzzle'
+  IMAGE_NAME: 'example-spring-boot'
+
+default:
+  timeout: 5 minutes
+
+info:
+  stage: info
+  retry: 2
+  script:
+    - echo "This is your first stage (ツ)"
+    - echo "Username is ${USERNAME} with ${PASSWORD}"
+
+build_application:
+  stage: build
+  tags:
+    - build
+    - mobiliar
+  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  script:
+    - ./gradlew assemble
+
+test_application:
+  stage: test
+  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  script:
+    - ./gradlew check
+  artifacts:
+    when: always
+    reports:
+      junit: build/test-results/test/**/TEST-*.xml
+
+build_image:
+  image: diemobiliar.azurecr.io/dlp-cicd-dockercli-image:254
+  tags:
+    - build
+    - mobiliar
+  services:
+    - docker:dind
+  stage: package
+  before_script:
+    - docker info
+  script:
+    - docker build --no-cache -t $IMAGE_NAME .
+    - IMAGE_PATH=$IMAGE_HOST/$IMAGE_REPOSITORY/$IMAGE_NAME:${CI_COMMIT_SHA:0:8}
+    - echo "docker image path is - $IMAGE_PATH"
+    - docker tag $IMAGE_NAME $IMAGE_PATH
+    # - docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD} ${IMAGE_HOST}
+    # - docker push $IMAGE_PATH
+
+deploy_to_prod:
+  stage: deploy
+  when: manual
+  only:
+   - release
+  script:
+    - echo "Deployment triggered"
+
+deploy_to_k8s:
+  stage: deploy
+  extends: .kubectl
+  tags:
+    - build
+    - mobiliar
+  script:
+    - echo "deploy your stuff here with kubectl commands"
+    - kubectl version --client --short
+
