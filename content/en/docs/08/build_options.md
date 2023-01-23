@@ -74,5 +74,8 @@ Edit the `.gitlab-ci.yml`, commit and push your changes and then verify the outp
 
 Updated `.gitlab-ci.yml` file for this lab:
 
+{{% details title="show solution" mode-switcher="normalexpertmode" %}}
 
 {{< readAndHighlight file="/manifests/08.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=14-15 19">}}
+
+{{% /details %}}
