@@ -105,12 +105,8 @@ Commit and push these changes to the `release` branch. It should behave exactly 
 
 Updated `.gitlab-ci.yml` file for this lab:
 
-<<<<<<< HEAD
-{{< readAndHighlight file="/manifests/09.0/09.6/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-68">}}
-=======
 {{% details title="show solution" mode-switcher="normalexpertmode" %}}
 
-{{< readAndHighlight file="manifests/09.0/09.6/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-68">}}
->>>>>>> parent of 88007dd (Remove expert-mode option to fix html rendering)
+{{< readAndHighlight file="/manifests/09.0/09.6/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-68">}}
 
 {{% /details %}}

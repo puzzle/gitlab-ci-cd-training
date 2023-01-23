@@ -110,7 +110,16 @@ Run the pipeline again and navigate to the info job log output. You should see t
 
 To define secret variables within a pipeline, add the variables within the project settings and add the script block to the `.gitlab-ci.yml`.
 
-{{< readAndHighlight file="/manifests/05.0/05.5/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=13">}}
+{{< highlight html >}}
+<section id="main">
+  <div>
+    <h1 id="title">{{ .Title }}</h1>
+    {{ range .Data.Pages }}
+      {{ .Render "summary"}}
+    {{ end }}
+  </div>
+</section>
+{{< /highlight >}}
 
 {{% /details %}}
 
