@@ -69,13 +69,13 @@ Define the following two global variables in your `.gitlab-ci.yml`
 The `GIT_STRATEGY` defines how the git repository is fetched during a pipeline run; valid options are `clone`, `fetch` or `none`.
 The `COMPILE` variable disable project compilation and dependency fetching for the security analyser.
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
+{{< details title="solution" mode-switcher="normalexpertmode" >}}
 
 To define global variables within a pipeline, add the variables block to the `.gitlab-ci.yml`.
 
-{{< readAndHighlight file="/manifests/05.0/05.3/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=5-7">}}
+{{% readAndHighlight file="/manifests/05.0/05.3/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=5-7"%}}
 
-{{% /details %}}
+{{< /details >}}
 
 Commit and push your changes. Check that the pipeline finishes without problems. The output is the same as in the previous lab.
 
@@ -106,22 +106,13 @@ Run the pipeline again and navigate to the info job log output. You should see t
 
 `Username is fooser with password [MASKED]`
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
+{{< details title="solution" mode-switcher="normalexpertmode" >}}
 
 To define secret variables within a pipeline, add the variables within the project settings and add the script block to the `.gitlab-ci.yml`.
 
-{{< highlight html >}}
-<section id="main">
-  <div>
-    <h1 id="title">{{ .Title }}</h1>
-    {{ range .Data.Pages }}
-      {{ .Render "summary"}}
-    {{ end }}
-  </div>
-</section>
-{{< /highlight >}}
+{{% readAndHighlight file="/manifests/05.0/05.5/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=13" %}}
 
-{{% /details %}}
+{{< /details >}}
 
 Commit and push your changes.
 

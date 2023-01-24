@@ -45,8 +45,8 @@ Commit and push your changes and then verify the output of the pipeline run.
 
 Updated `.gitlab-ci.yml` file for this lab:
 
-{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+{{< details title="show solution" mode-switcher="normalexpertmode" >}}
 
-{{< readAndHighlight file="/manifests/10.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=8-10 74-83">}}
+{{% readAndHighlight file="/manifests/10.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=8-10 74-83" %}}
 
-{{% /details %}}
+{{< /details >}}

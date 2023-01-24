@@ -69,11 +69,11 @@ Switch back to the `main` or `master` branch before beginning the next labs.
 
 Updated `.gitlab-ci.yml` file for this lab:
 
-{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+{{< details title="show solution" mode-switcher="normalexpertmode" >}}
 
-{{< readAndHighlight file="/manifests/09.0/09.4/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=6 62-68">}}
+{{% readAndHighlight file="/manifests/09.0/09.4/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=6 62-68" %}}
 
-{{% /details %}}
+{{< /details >}}
 
 
 ## {{% param sectionnumber %}}.5: Rules
@@ -105,8 +105,8 @@ Commit and push these changes to the `release` branch. It should behave exactly 
 
 Updated `.gitlab-ci.yml` file for this lab:
 
-{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+{{< details title="show solution" mode-switcher="normalexpertmode" >}}
 
-{{< readAndHighlight file="/manifests/09.0/09.6/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-68">}}
+{{% readAndHighlight file="/manifests/09.0/09.6/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-68" %}}
 
-{{% /details %}}
+{{< /details >}}
