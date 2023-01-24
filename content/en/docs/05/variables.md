@@ -25,7 +25,7 @@ In this lab we will talk about the variables in the `gitlab-ci.yml` file only.
 
 ## {{% param sectionnumber %}}.1: Define and access custom Variables
 
-To create a custom variable in the `.gitlab-ci.yml` file, define the variable and value with variable keywords in the top level section.
+To create a custom variable in the `.gitlab-ci.yml` file, define the variable and value with `variables keyword` in the top level section.
 
 Global variables can be defined in the variables section:
 ```yaml
