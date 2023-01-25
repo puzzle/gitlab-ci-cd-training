@@ -37,7 +37,7 @@ default:
 job1:
   script:
     - echo "This script executes first. When it completes, the job's `after_script` executes."
-  
+
 job2:
   before_script:
     - echo "This script executes before the script block"
@@ -47,7 +47,7 @@ job2:
     - echo "Execute this script after the normal script."
 ```
 
-This produces following output:
+This produces the following output:
 
 ```bash
 This will be executed as default if no other before script is set
@@ -74,8 +74,8 @@ Edit the `.gitlab-ci.yml`, commit and push your changes and then verify the outp
 
 Updated `.gitlab-ci.yml` file for this lab:
 
-{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+{{< details title="show solution" mode-switcher="normalexpertmode" >}}
 
-{{< highlight yaml "hl_lines=14-15 19" >}}{{< readfile file="manifests/08.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{% readAndHighlight file="/manifests/08.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=14-15 19" %}}
 
-{{% /details %}}
+{{< /details >}}

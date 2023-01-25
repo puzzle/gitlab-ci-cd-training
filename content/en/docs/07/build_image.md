@@ -38,13 +38,13 @@ Create a new job with the following configuration which runs inside the new `pac
   ```
 
 
-<!-- TODO 
+<!-- TODO
 Mobi builder Image hier und im .gitlab-ci.yml raus nehmen und vom Teacher angeben lassen.
 -->
 
-  This Job builds the container image defined by the Dockerfile in your source code. In the real world, the resulting container image would now be pushed into a container registry for simplicity reasons, whe skip this step in our pipeline.
+  This Job builds the container image defined by the Dockerfile in your source code. In the real world, the resulting container image would now be pushed into a container registry for simplicity reasons, we skip this step in our pipeline.
 
-<!-- TODO 
+<!-- TODO
 
 * [ ] mobi specific tags!!
 
@@ -61,16 +61,16 @@ Did you see the required variables inside the script? Also add the following var
 * IMAGE_REPOSITORY: 'puzzle'
 * IMAGE_NAME: 'example-spring-boot'
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
+{{< details title="solution" mode-switcher="normalexpertmode" >}}
 
 The new stage is defined at the end of our `.gitlab-ci.yml`, we also need to add the package stage to the stage list and define the new variables.
 
-{{< highlight yaml "hl_lines=5 10-12 39-53" >}}{{< readfile file="manifests/07.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{% readAndHighlight file="/manifests/07.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=5 10-12 39-53" %}}
 
-{{% /details %}}
+{{< /details >}}
 
 {{% alert title="Warning" color="secondary" %}}
-As mentioned in the variables Lab sensitive Data like for example `DOCKER_USERNAME` and `DOCKER_PASSWORD` should never be stored as plain variable within a pipeline definition. Such variables can be defined on Projects, Groups and Instances in the Gitlab Webconsole (eg. Project Settings --> CICD --> Variables). During a pipeline run Gitlab will take care that sensitive data never shows up in logs and can be leaked in such a way.
+As mentioned in the variables Lab sensitive data, for example `DOCKER_USERNAME` and `DOCKER_PASSWORD` should never be stored as plain variable within a pipeline definition. Such variables can be defined on Projects, Groups and Instances in the Gitlab Web Console (e.g. Project Settings --> CI/CD --> Variables). During a pipeline run Gitlab will take care that sensitive data never shows up in logs and can be leaked in such a way.
 {{% /alert %}}
 
 
@@ -80,7 +80,7 @@ Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
 
 Check that the image build job was successful.
 
-<!-- TODO 
+<!-- TODO
 
 * [ ] docker login und push als Theorie erklären?
 

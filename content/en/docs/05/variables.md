@@ -12,7 +12,7 @@ As pointed out before, you can define variables in your `gitlab-ci.yml`. You can
 
 If you want to reuse a variable across different Projects or Groups, you can define them through your GitLab instance (`Settings` --> `CI/CD` --> `Variables`)
 
-In this lab we will talk about the variables in the `gitlab-ci.yml` file only
+In this lab we will talk about the variables in the `gitlab-ci.yml` file only.
 
 {{% alert color="primary" %}}
 **GitLab References**
@@ -25,7 +25,7 @@ In this lab we will talk about the variables in the `gitlab-ci.yml` file only
 
 ## {{% param sectionnumber %}}.1: Define and access custom Variables
 
-To create a custom variable in the `.gitlab-ci.yml` file, define the variable and value with variables keyword in the top level section.
+To create a custom variable in the `.gitlab-ci.yml` file, define the variable and value with `variables keyword` in the top level section.
 
 Global variables can be defined in the variables section:
 ```yaml
@@ -48,41 +48,41 @@ hello Foo Bar
 ## {{% param sectionnumber %}}.2: Predefined Variables
 
 
-There is a set of predefined GitLab Variables which you can reference in your `.gitlab-ci.yml` script
-Each of this variable has the `CI_` prefix, such as:
+There is a set of predefined GitLab Variables which you can reference in your `.gitlab-ci.yml` script.
+Each of these variables has the `CI_` prefix, such as:
 
 * `CI_COMMIT_BRANCH` The commit branch name. Available in branch pipelines, including pipelines for the default branch. Not available in merge request pipelines or tag pipelines.
 * `CI_PROJECT_NAME` The name of the directory for the project. For example if the project URL is gitlab.example.com/group-name/project-1, CI_PROJECT_NAME is project-1.
 * `CI_COMMIT_MESSAGE` The full commit message.
 
-Under following link you can find a full list of all available predefined GitLab variables.
+Under the following link you can find a full list of all available predefined GitLab variables.
 https://docs.gitlab.com/ee/ci/variables/predefined_variables.html
 
 
 ## Task {{% param sectionnumber %}}.3: Variables Lab
 
-Define following two global variables in your `.gitlab-ci.yml`
+Define the following two global variables in your `.gitlab-ci.yml`
 
 * GIT_STRATEGY = clone
 * COMPILE = false
 
-The `GIT_STRATEGY` defines how the git repository is fetched during a pipeline run; valid options are `clone`, `fetch` or `none`
+The `GIT_STRATEGY` defines how the git repository is fetched during a pipeline run; valid options are `clone`, `fetch` or `none`.
 The `COMPILE` variable disable project compilation and dependency fetching for the security analyser.
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
+{{< details title="solution" mode-switcher="normalexpertmode" >}}
 
 To define global variables within a pipeline, add the variables block to the `.gitlab-ci.yml`.
 
-{{< highlight yaml "hl_lines=5-7" >}}{{< readfile file="manifests/05.0/05.3/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{% readAndHighlight file="/manifests/05.0/05.3/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=5-7"%}}
 
-{{% /details %}}
+{{< /details >}}
 
 Commit and push your changes. Check that the pipeline finishes without problems. The output is the same as in the previous lab.
 
 
 ## {{% param sectionnumber %}}.4: Secret and protected Variables
 
-In some cases you need to store sensitive informations into a variable. Instead of defining the variable directly in the `.gitlab-ci.yml` you can create a secret variable in the GitLab project settings.
+In some cases you need to store sensitive information in a variable. Instead of defining the variable directly in the `.gitlab-ci.yml` you can create a secret variable in the GitLab project settings.
 
 To add a new secret variable, navigate in the main menu to `Settings` --> `CI/CD` --> `Variables` --> `Expand` --> `Add variable`
 
@@ -102,17 +102,17 @@ Define following two secret variables in your project
 
 Then add a new script line at the end of the info job with following command `echo "Username is ${USERNAME} with password ${PASSWORD}"`
 
-Run the pipeline again and navigate to the info job log output. You should see following line
+Run the pipeline again and navigate to the info job log output. You should see the following line
 
 `Username is fooser with password [MASKED]`
 
-{{% details title="solution" mode-switcher="normalexpertmode" %}}
+{{< details title="solution" mode-switcher="normalexpertmode" >}}
 
 To define secret variables within a pipeline, add the variables within the project settings and add the script block to the `.gitlab-ci.yml`.
 
-{{< highlight yaml "hl_lines=13" >}}{{< readfile file="manifests/05.0/05.5/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{% readAndHighlight file="/manifests/05.0/05.5/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=13" %}}
 
-{{% /details %}}
+{{< /details >}}
 
 Commit and push your changes.
 

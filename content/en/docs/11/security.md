@@ -4,12 +4,12 @@ weight: 11
 sectionnumber: 11
 ---
 
-GitLab offers a wide support for security issues. In this lab we will cover the GitLabs internal security templates first, and then we will show you how to include custom security tools into your pipeline.
+GitLab offers a wide support for security issues. In this lab, we will cover the GitLabs internal security templates first, and then we will show you how to include custom security tools into your pipeline.
 
 
 ## Task {{% param sectionnumber %}}.1: Security Template Lab
 
-In this lab we will show you how to extend a job with an other job from a shared template.
+In this lab we will show you how to extend a job with another job from a shared template.
 Execute following tasks
 
 * Include the template `Security/SAST.gitlab-ci.yml`
@@ -23,16 +23,16 @@ Go to your GitLab project and check the pipeline for this lab. You should find t
 
 Updated `.gitlab-ci.yml` file for this lab:
 
-{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+{{< details title="show solution" mode-switcher="normalexpertmode" >}}
 
-{{< highlight yaml "hl_lines=10-14" >}}{{< readfile file="manifests/11.0/11.1/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{% readAndHighlight file="/manifests/11.0/11.1/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=10-14" %}}
 
-{{% /details %}}
+{{< /details >}}
 
 
 ## Task {{% param sectionnumber %}}.3: Let the pipeline fail
 
-To test the Secret Detection template we add a secret in our sample project. Create a new file in the root directory called `private_key` and copy following content in it.
+To test the Secret Detection template we add a secret in our sample project. Create a new file in the root directory called `private_key` and copy the following content into it.
 
 ```txt
 -----BEGIN OPENSSH PRIVATE KEY-----
@@ -94,7 +94,7 @@ In this section we'll show you how to use custom security tools in your pipeline
 
 Extend the existing `build_image` job inside `.gitlab-ci.yml` with the following configuration:
 
-Add following commands into the `before_script` block to download Tryvi:
+Add following commands into the `before_script` block to download Trivy:
 
 ```bash
 export TRIVY_VERSION=$(wget -qO - "https://api.github.com/repos/aquasecurity/trivy/releases/latest" | grep '"tag_name":' | sed -E 's/.*"v([^"]+)".*/\1/')
@@ -102,7 +102,7 @@ echo $TRIVY_VERSION
 wget --no-verbose https://github.com/aquasecurity/trivy/releases/download/v${TRIVY_VERSION}/trivy_${TRIVY_VERSION}_Linux-64bit.tar.gz -O - | tar  -zxvf -
 ```
 
-Then call Tryvi in the `script` block (after the build command):
+Then call Trivy in the `script` block (after the build command):
 
 ```bash
 mkdir -p reports
@@ -111,10 +111,10 @@ mkdir -p reports
 
 Commit and push the code to rerun the pipeline.
 
-Check the Tryvi log output of the `build_image` Job.
+Check the Trivy log output of the `build_image` Job.
 
 {{% alert title="Info" color="secondary" %}}
-You would do the the security scanning in a separate job. Here we do not have an Image Registry to store the Container Image. This would be uses to retrieve the Container Image in the next Job to do the scanning.
+You would do the security scanning in a separate job. Here we do not have an Image Registry to store the Container Image. This would be used to retrieve the Container Image in the next Job to do the scanning.
 {{% /alert %}}
 
 
@@ -122,8 +122,8 @@ You would do the the security scanning in a separate job. Here we do not have an
 
 Updated `.gitlab-ci.yml` file for this lab:
 
-{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+{{< details title="show solution" mode-switcher="normalexpertmode" >}}
 
-{{< highlight yaml "hl_lines=62-64 67-68" >}}{{< readfile file="manifests/11.0/11.4/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{% readAndHighlight file="/manifests/11.0/11.4/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-64 67-68" %}}
 
-{{% /details %}}
+{{< /details >}}

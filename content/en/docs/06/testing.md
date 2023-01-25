@@ -4,7 +4,7 @@ weight: 6
 sectionnumber: 6
 ---
 
-In this lab we will edit our pipeline so that the Java application will be tested automatically every time the pipeline runs. Our Java example application contains a set of JUnit tests, which will be executed during a run. You can think as it of a quality-gate that the pipeline must go through, to pass successfully. When tests fail, due to a change, the pipeline also fails.
+In this lab we will edit our pipeline so that the Java application will be tested automatically every time the pipeline runs. Our Java example application contains a set of JUnit tests, which will be executed during a run. You can think of it as a quality-gate that the pipeline must go through, to pass successfully. When tests fail, due to a change, the pipeline also fails.
 
 
 ## Task {{% param sectionnumber %}}.1: Create test stage
@@ -22,7 +22,7 @@ Create a new job inside `.gitlab-ci.yml` with the following configuration:
 
 This is how the new job `test_application` is defined in the `.gitlab-ci.yml`.
 
-{{< highlight yaml >}}{{< readfile file="manifests/06.0/test-job-base.yml" >}}{{< /highlight >}}
+{{< readfile file="/manifests/06.0/test-job-base.yml" code="true" lang="yaml" >}}
 
 {{% /details %}}
 
@@ -35,7 +35,7 @@ stages:
   - test
 ```
 
-<!-- TODO 
+<!-- TODO
 
 * [ ] mobi specific tags!!
 
@@ -59,18 +59,18 @@ When you see them, tell us please. We only have the return value of the test scr
 
 ## Task {{% param sectionnumber %}}.3: Show test reports
 
-The job can be extended with an `artifacts` configuration. Dev's know that the unit test reports are stored inside the `build/test-results/` folder.
+The job can be extended with an `artifacts` configuration. Devs know that the unit test reports are stored inside the `build/test-results/` folder.
 
 This is the configuration that makes GitLab CI/CD store the test results.
 
-{{< highlight yaml >}}{{< readfile file="manifests/06.0/test-job-reports.yml" >}}{{< /highlight >}}
+{{< readfile file="/manifests/06.0/test-job-reports.yml" code="true" lang="yaml" >}}
 
 See also the official documentation: [Unit test reports](https://docs.gitlab.com/ee/ci/unit_test_reports.html#unit-test-reports)
 
 
 This is the final pipeline that includes unit testing and recording of test results.
 
-{{< highlight yaml "hl_lines=4 25-33" >}}{{< readfile file="manifests/06.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< readAndHighlight file="/manifests/06.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=4 25-33">}}
 
 Navigate to the newest Pipeline inside GitLab. The Tests tab should now show the executed tests.
 

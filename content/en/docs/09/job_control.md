@@ -4,7 +4,7 @@ weight: 9
 sectionnumber: 9
 ---
 
-In this section wel show you different options how to control the job execution. Sometimes some jobs will be used only in certain branches, or for example you will execute a stage only if the commit is tagged with a [Semver number](https://semver.org/).
+In this section we will show you different options how to control the job execution. Sometimes some jobs will be used only in certain branches, or for example you will execute a stage only if the commit is tagged with a [Semver number](https://semver.org/).
 
 
 {{% alert color="primary" %}}
@@ -69,18 +69,18 @@ Switch back to the `main` or `master` branch before beginning the next labs.
 
 Updated `.gitlab-ci.yml` file for this lab:
 
-{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+{{< details title="show solution" mode-switcher="normalexpertmode" >}}
 
-{{< highlight yaml "hl_lines=6 62-68" >}}{{< readfile file="manifests/09.0/09.4/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{% readAndHighlight file="/manifests/09.0/09.4/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=6 62-68" %}}
 
-{{% /details %}}
+{{< /details >}}
 
 
 ## {{% param sectionnumber %}}.5: Rules
 
 Available since GitLab 12.3.
 
-Rules are evaluated in the specified order - until the first one matches. Depending on the configuration, the job is then either in- or excluded from the pipeline.
+Rules are evaluated in the specified order - until the first one matches. Depending on the configuration, the job is then either in - or excluded from the pipeline.
 
 `rules` accepts an array of rules defined with:
 
@@ -98,15 +98,15 @@ Rules are evaluated in the specified order - until the first one matches. Depend
 
 * Change the `deploy_to_prod` job to use `rules` instead.
 
-Commit and push these changes to the `release` branch. It should behave exactly the same as in the previous excercise.
+Commit and push these changes to the `release` branch. It should behave exactly the same as in the previous exercise.
 
 
 ## Solution
 
 Updated `.gitlab-ci.yml` file for this lab:
 
-{{% details title="show solution" mode-switcher="normalexpertmode" %}}
+{{< details title="show solution" mode-switcher="normalexpertmode" >}}
 
-{{< highlight yaml "hl_lines=62-68" >}}{{< readfile file="manifests/09.0/09.6/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{% readAndHighlight file="/manifests/09.0/09.6/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=62-68" %}}
 
-{{% /details %}}
+{{< /details >}}

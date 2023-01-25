@@ -20,7 +20,7 @@ GitLab CI reference: <https://docs.gitlab.com/ee/ci/yaml/>
 
 The pipeline has basically two parts, the header with global settings followed by the stages.
 
-There exist two basic concepts within the pipeline, jobs ans stages.
+There exist two basic concepts within the pipeline, jobs and stages.
 
 
 **Jobs**, which define what to do. For example, jobs that compile or test code.
@@ -38,13 +38,14 @@ cd <root-directory-of-the-git-repo>
 Replace `<root-directory-of-the-git-repo>` with the actual path to the cloned repository. eg. `~/gitlabcicd-training/example-spring-boot-helloworld`
 {{% /alert %}}
 
-Create a new file `.gitlab-ci.yml` and add the following content to the it. It must be located directly in the root directory of the repository.
+Create a new file `.gitlab-ci.yml` and add the following content to it. It must be located directly in the root directory of the repository.
 
 ```bash
 vim .gitlab-ci.yml
 ```
 
-{{< highlight yaml >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< readfile file="/manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" >}}
+
 
 {{% alert title="Info" color="primary" %}}
 You can also use your favorite editor instead of `vim`.
@@ -56,7 +57,7 @@ Commit and push the changes.
 
 ```bash
 git add .
-git commit -m "Add minmal pipeline"
+git commit -m "Add minimal pipeline"
 git push origin master
 ```
 
@@ -69,15 +70,15 @@ Our first pipeline is pretty simple, it has one stage with one job, which only e
 
 The global settings part contains stage definition.
 
-{{< highlight yaml "hl_lines=1-2" >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< readAndHighlight file="/manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=1 2">}}
 
 
 ### Jobs
 
 Jobs are the most fundamental element of a GitLab pipeline.
-You just defined your first job. It's name is `info`.
+You just defined your first job. Its name is `info`.
 
-{{< highlight yaml "hl_lines=4-7" >}}{{< readfile file="manifests/02.0/.gitlab-ci.yml" >}}{{< /highlight >}}
+{{< readAndHighlight file="/manifests/02.0/.gitlab-ci.yml" code="true" lang="yaml" highlight="hl_lines=4-7">}}
 
 Jobs are ...
 
