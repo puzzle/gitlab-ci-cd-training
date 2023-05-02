@@ -12,6 +12,8 @@ acendTraining:
       ingress:
         emptyTLS: true
         ingressClassName: openshift-public
+        labels:
+          public: "true"
         useDefaultSecret: true
         appname: gitlab-ci-cd-training
         domainmain: puzzle.ch
