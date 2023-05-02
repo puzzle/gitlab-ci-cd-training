@@ -11,10 +11,13 @@ acendTraining:
         tagsuffix: ""
       ingress:
         emptyTLS: true
+        ingressClassName: openshift-public
+        labels:
+          public: "true"
         useDefaultSecret: true
         appname: gitlab-ci-cd-training
         domainmain: puzzle.ch
-        domain: ocp-internal.cloudscale.puzzle.ch
+        domain: ocp.cloudscale.puzzle.ch
 
 
 nameOverride: "gitlab-ci-cd-training"
