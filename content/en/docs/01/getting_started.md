@@ -19,13 +19,13 @@ The lab covers several topics such as:
 To get started we create a [git](https://git-scm.com/) repository holding an example application.
 
 
-## Task {{% param sectionnumber %}}.1: Open the Gitlab Webconsole
+## Task {{% param sectionnumber %}}.1: Open the GitLab Webconsole
 
-The first thing, we're going to do is to login into the Gitlab Webconsole and verify whether you have access to the correct group or not.
+The first thing, we're going to do is to login into the GitLab Webconsole and verify whether you have access to the correct group or not.
 
 {{% alert title="Info" color="primary" %}}
 Your Trainer will provide you the correct URL.
-Also if you need help logging in to gitlab ask the Trainers for help.
+Also if you need help logging into GitLab ask the trainers for help.
 {{% /alert %}}
 
 Explore the different elements in the web console:
@@ -49,9 +49,9 @@ You can also use the main navigation. `Menu` --> `Projects` --> `Create new proj
 * **Project URL**: <!-- TODO -->
 * **Visibility Level**: Private
 
-![Gitlab Import](../import_project.png)
+![GitLab Import](../import_project.png)
 
-And then click on `Create project` and wait until the Project was imported.
+And then click on `Create project` and wait until the Project is imported.
 
 Next have a look at the newly created project and explore the repository view:
 
@@ -80,5 +80,5 @@ Therefore, we recommend you clone the repository to your local machine and make 
 If you have trouble logging in via command line, ask your Trainer for help.
 {{% /alert %}}
 
-As an alternative you can also edit files in the repository directly via the gitlab web console.
+As an alternative, you can also edit files in the repository directly via the GitLab web console.
 Simply click the `Web IDE` button and commit your changes directly from the Web IDE.
