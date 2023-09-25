@@ -81,7 +81,7 @@ Starting a Gradle Daemon (subsequent builds will be faster)
 > Task :compileJava
 > Task :processResources
 > Task :classes
-> Task :bootJarMainClassName
+> Task :resolveMainClassName
 > Task :bootJar
 > Task :jar
 > Task :assemble

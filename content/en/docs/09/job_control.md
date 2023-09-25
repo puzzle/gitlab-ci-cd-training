@@ -29,6 +29,8 @@ Use `except` to define when a job does not run.
 
 Use the `only:refs` and `except:refs` keywords to control when to add jobs to a pipeline based on branch names or pipeline types.
 
+{{% alert title="Warning" color="secondary" %}}`only` and `except` are not being actively developed. To control when to add jobs to pipelines, use rules instead.
+{{% /alert %}}
 
 ## {{% param sectionnumber %}}.2: Execution control
 
