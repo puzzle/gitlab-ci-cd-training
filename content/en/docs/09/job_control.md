@@ -32,6 +32,7 @@ Use the `only:refs` and `except:refs` keywords to control when to add jobs to a 
 {{% alert title="Warning" color="secondary" %}}`only` and `except` are not being actively developed. To control when to add jobs to pipelines, use rules instead.
 {{% /alert %}}
 
+
 ## {{% param sectionnumber %}}.2: Execution control
 
 | Keyword    | Method                                                                                                                                    |
