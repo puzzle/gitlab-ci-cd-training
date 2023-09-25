@@ -15,7 +15,7 @@ Create a new job inside `.gitlab-ci.yml` with the following configuration:
 
 * job name: `test_application`
 * stage: `test`
-* image: `registry.access.redhat.com/ubi8/openjdk-11:latest`
+* image: `registry.access.redhat.com/ubi9/openjdk-17:latest`
 * script:`./gradlew check`
 
 {{% details title="test job solution" mode-switcher="normalexpertmode" %}}

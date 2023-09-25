@@ -38,13 +38,13 @@ Using freely available Container Images is risky. Be aware of the security const
 
 ## Task {{% param sectionnumber %}}.2: Build the application
 
-The example source is a Java 11 application. For that we use the [openjdk-11](https://catalog.redhat.com/software/containers/ubi8/openjdk-11/5dd6a4b45a13461646f677f4) Image from Red Hat.
+The example source is a Java 17 application. For that we use the [openjdk-17](https://catalog.redhat.com/software/containers/ubi9/openjdk-17/61ee7c26ed74b2ffb22b07f6) Image from Red Hat.
 
 Create a new job inside `.gitlab-ci.yml` with the following configuration:
 
 * job name: `build_application`
 * stage: `build`
-* image: `registry.access.redhat.com/ubi8/openjdk-11:latest`
+* image: `registry.access.redhat.com/ubi9/openjdk-17:latest`
 * script:`./gradlew assemble`
 
 Don't forget to add the `build` stage to the stages list.
@@ -72,7 +72,7 @@ After committing the changes a new pipeline starts using the updated configurati
 
 Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
 
-The Java 11 application is built using the [Gradle Build Tool](https://gradle.org/)
+The Java application is built using the [Gradle Build Tool](https://gradle.org/)
 
 Check the Gradle build log and verify whether the build succeeded or not.
 
