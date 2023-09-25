@@ -35,13 +35,13 @@ build_application:
   tags:
     - build
     - mobiliar
-  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  image: registry.access.redhat.com/ubi9/openjdk-17:latest
   script:
     - ./gradlew assemble
 
 test_application:
   stage: test
-  image: registry.access.redhat.com/ubi8/openjdk-11:latest
+  image: registry.access.redhat.com/ubi9/openjdk-17:latest
   script:
     - ./gradlew check
   artifacts:

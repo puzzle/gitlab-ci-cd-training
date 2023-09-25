@@ -81,7 +81,7 @@ Now the pipeline should fail because the GitLab Secret Analyzer will find a priv
 
 ![security_pipeline_fail](../security_pipeline_fail.png)
 
-Here you see the failed pipeline. By clicking ⋮ on the right side you can download the job artifacts. To get the report of the failed job, click on `Download secret_detection_default_branch:secret_detection artifact`. We will learn more on artifacts in the next lab.
+Here you see the failed pipeline. By clicking the download menu ⍗ on the right side you can download the job artifacts. To get the report of the failed job, click on `Download artifacts` and `secret_detection_default_branch:secret_detection`. We will learn more on artifacts in the next lab.
 
 {{% alert title="Warning" color="secondary" %}}If you ever push a secret into a repository, **YOU MUST CONSIDER THIS SECRET AS INSECURE**. Remove the secret from the repository and change all related secrets!{{% /alert %}}
 

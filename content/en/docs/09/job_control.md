@@ -29,6 +29,9 @@ Use `except` to define when a job does not run.
 
 Use the `only:refs` and `except:refs` keywords to control when to add jobs to a pipeline based on branch names or pipeline types.
 
+{{% alert title="Warning" color="secondary" %}}`only` and `except` are not being actively developed. To control when to add jobs to pipelines, use rules instead.
+{{% /alert %}}
+
 
 ## {{% param sectionnumber %}}.2: Execution control
 
@@ -54,7 +57,7 @@ Use `allow_failure` when you want to let a job fail without impacting the rest o
 * Add a new Job execution rule, the job should run only on the `release` branch
 * Add a script block with a simple `echo` command
 
-Commit and push these changes to the main branch and go to `CI/CD` --> `Pipelines` and check the pipeline status. You may notice that the job `deploy_to_prod` is not visible. This is because we add an execution rule for the `release` branch only. To fix this, we need to switch back to `Repository` --> `Branches` and create a new branch called `release`.
+Commit and push these changes to the main branch and go to `Build` --> `Pipelines` and check the pipeline status. You may notice that the job `deploy_to_prod` is not visible. This is because we add an execution rule for the `release` branch only. To fix this, we need to switch back to `Repository` --> `Branches` and create a new branch called `release`.
 
 Now the pipeline should run again and we can see the newly created job. After the pipeline executed successfully, you may notice that the `deploy` step wasn't executed yet and isn't marked with a green tick. This is because we configured the job as a manual action. To trigger this job, we need to select the job and do it manually.
 

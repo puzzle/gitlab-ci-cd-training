@@ -46,6 +46,7 @@ You can also use the main navigation. `Menu` --> `Projects` --> `Create new proj
 
 * **Git repository URL**: https://github.com/appuio/example-spring-boot-helloworld.git
 * **Username & Password**: Leave empty
+* **Project name**: Choose a unique name, e.g. prefix with your username
 * **Project URL**: <!-- TODO -->
 * **Visibility Level**: Private
 

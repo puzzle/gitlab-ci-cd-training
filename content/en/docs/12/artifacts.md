@@ -64,7 +64,7 @@ Click on `Download` to get the Trivy report file and open it to see the report.
 
 ## Task {{% param sectionnumber %}}.3: Pipeline Artifacts Lab
 
-Go to your pipeline `CI/CD` --> `Pipeline` and click on the ⋮ to see the downloadable artifacts.
+Go to your pipeline `Build` --> `Pipelines` and click on the download menu ⍗ to see the downloadable artifacts.
 
 Then download them and open the JUnit test report.
 

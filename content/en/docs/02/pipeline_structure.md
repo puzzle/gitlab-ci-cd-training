@@ -58,7 +58,7 @@ Commit and push the changes.
 ```bash
 git add .
 git commit -m "Add minimal pipeline"
-git push origin master
+git push origin main
 ```
 
 {{% /details %}}
@@ -89,7 +89,7 @@ Jobs are ...
 
 ## Task {{% param sectionnumber %}}.3: Check pipeline execution
 
-Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
+Go to your GitLab project and check the pipelines under `Build` --> `Pipelines`.
 
 The pipeline at the top of the table is the one that has been triggered by your latest commit.
 
