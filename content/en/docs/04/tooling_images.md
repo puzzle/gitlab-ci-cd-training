@@ -70,7 +70,7 @@ The pipeline should now look like this:
 After committing the changes a new pipeline starts using the updated configuration.
 
 
-Go to your GitLab project and check the pipelines under `CI/CD` --> `Pipelines`.
+Go to your GitLab project and check the pipelines under `Build` --> `Pipelines`.
 
 The Java application is built using the [Gradle Build Tool](https://gradle.org/)
 
