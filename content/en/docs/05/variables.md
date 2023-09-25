@@ -6,6 +6,8 @@ sectionnumber: 5
 
 In GitLab CI/CD, variables can be used to customize jobs by defining and storing values. When using variables there is no need to hard code values. In GitLab, CI/CD variables can be defined by going to `Settings` --> `CI/CD` --> `Variables`  or by simply defining them in the .gitlab-ci.yml file.
 
+![GitLab Variables](../variable.png)
+
 Variables are useful for configuring third-party services for different environments, such as testing, staging, production, etc. Modify the services attached to those environments by simply changing the variable that points to the API endpoint the services need to use. Also use variables to configure jobs and then make them available as environment variables within the jobs when they run.
 
 As pointed out before, you can define variables in your `gitlab-ci.yml`. You can reuse this variable within your pipeline across different jobs and stages.

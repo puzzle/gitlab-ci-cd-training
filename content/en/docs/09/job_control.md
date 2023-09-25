@@ -24,10 +24,10 @@ In this section we will show you different options how to control the job execut
 
 You can use `only` and `except` **or** `rules` to control when to add jobs to pipelines.
 
-Use only to define when a job runs.
-Use except to define when a job does not run.
+Use `only` to define when a job runs.
+Use `except` to define when a job does not run.
 
-Use the only:refs and except:refs keywords to control when to add jobs to a pipeline based on branch names or pipeline types.
+Use the `only:refs` and `except:refs` keywords to control when to add jobs to a pipeline based on branch names or pipeline types.
 
 
 ## {{% param sectionnumber %}}.2: Execution control
