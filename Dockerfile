@@ -19,14 +19,18 @@ COPY --from=builder /src/public /
 
 RUN wkhtmltopdf --outline-depth 4 --enable-internal-links --enable-local-file-access  ./pdf/index.html /pdf.pdf
 
-FROM nginxinc/nginx-unprivileged:1.27-alpine
+FROM docker.io/nginxinc/nginx-unprivileged:1.28-alpine
 
-LABEL maintainer puzzle.ch
-LABEL org.opencontainers.image.title "puzzle.ch's Application Migration and Modernization Techlab"
-LABEL org.opencontainers.image.description "Container with puzzle.ch's Application Migration and Modernization Techlab content"
-LABEL org.opencontainers.image.authors puzzle.ch
-LABEL org.opencontainers.image.source https://github.com/puzzle/amm-techlab/
-LABEL org.opencontainers.image.licenses CC-BY-SA-4.0
+LABEL maintainer="Puzzle ITC <https://www.puzzle.ch/>"
+LABEL org.opencontainers.image.authors="Puzzle ITC <https://www.puzzle.ch/>"
+LABEL org.opencontainers.image.title="puzzle.ch's Application Migration and Modernization Techlab"
+LABEL org.opencontainers.image.description="Container with puzzle.ch's Application Migration and Modernization Techlab content"
+LABEL org.opencontainers.image.source="https://github.com/puzzle/amm-techlab/"
+LABEL org.opencontainers.image.licenses="CC-BY-SA-4.0"
+
+USER root
+COPY nginx.conf /etc/nginx/nginx.conf
+USER 101
 
 EXPOSE 8080
 
