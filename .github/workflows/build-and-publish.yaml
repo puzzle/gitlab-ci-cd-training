@@ -1,4 +1,4 @@
-name: Dagger Techlab Puzzle Build and Publish
+name: Gitlab CI/CD Training Puzzle Build and Publish
 
 permissions:
   contents: read
