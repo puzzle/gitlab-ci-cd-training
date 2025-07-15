@@ -1,4 +1,4 @@
-FROM klakegg/hugo:0.111.3-ext-ubuntu AS builder
+FROM docker.io/floryn90/hugo:0.146.6-ext-ubuntu AS builder
 
 ARG TRAINING_HUGO_ENV=default
 
@@ -19,8 +19,8 @@ COPY --from=builder /src/public /
 
 RUN wkhtmltopdf --outline-depth 4 --enable-internal-links --enable-local-file-access  ./pdf/index.html /pdf.pdf
 
-
 FROM docker.io/nginxinc/nginx-unprivileged:1.29-alpine
+
 LABEL maintainer="Puzzle ITC <https://www.puzzle.ch/>"
 LABEL org.opencontainers.image.authors="Puzzle ITC <https://www.puzzle.ch/>"
 LABEL org.opencontainers.image.title="puzzle.ch's Application Migration and Modernization Techlab"
