@@ -1,11 +1,10 @@
 acendTraining:
   servicePort: 8080
   deployments:
-    -
-      name: puzzle
+    - name: puzzle
       replicaCount: 1
       image:
-        repository: quay.io/puzzle/gitlab-ci-cd-training
+        repository: ghcr.io/puzzle/gitlab-ci-cd-training
         pullPolicy: Always
         tag: ""
         tagsuffix: ""
