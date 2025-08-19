@@ -2,6 +2,9 @@
 
 GitLab CI/CD Training Description
 
+## Techlab last given
+
+26.10.2023
 
 ## Content Sections
 
