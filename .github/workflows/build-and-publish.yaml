@@ -77,6 +77,8 @@ jobs:
         with:
           context: .
           file: ./Dockerfile
+          build-args: |
+            TRAINING_HUGO_ENV=puzzle
           push: true
           tags: |
             ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.BUILD_VERSION }}
