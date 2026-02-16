@@ -35,14 +35,14 @@ Use the `only:refs` and `except:refs` keywords to control when to add jobs to a 
 
 ## {{% param sectionnumber %}}.2: Execution control
 
-| Keyword    | Method                                                                                                                                    |
-|------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| on_sucess  | **(default)** - Execute job only when all jobs in earlier stages succeed, or are considered successful because they have allow_failure: true. |
-| on_failure | Execute job only when at least one job in an earlier stage fails.                                                                         |
-| always     | Execute job regardless of the status of jobs in earlier stages.                                                                           |
-| manual     | Execute job manually.                                                                                                                     |
-| delayed    | Delay the execution of a job for a specified duration                                                                                     |
-| never      | Don’t execute job.                                                                                                                        |
+| Keyword | Method |
+| --- | --- |
+| on_sucess | **(default)** - Execute job only when all jobs in earlier stages succeed, or are considered successful because they have allow_failure: true. |
+| on_failure | Execute job only when at least one job in an earlier stage fails. |
+| always | Execute job regardless of the status of jobs in earlier stages. |
+| manual | Execute job manually. |
+| delayed | Delay the execution of a job for a specified duration |
+| never | Don’t execute job. |
 
 
 ## {{% param sectionnumber %}}.3: Failure control
