@@ -13,6 +13,7 @@ github.com/acend/docsy-plus v0.0.0-20230303095323-1af8d88aadc7/go.mod h1:YDHqf+D
 github.com/acend/docsy-plus v1.0.0/go.mod h1:YDHqf+DCZcx5HvKGzaBluPmLfgHQ2GKkYjggvF98jR4=
 github.com/google/docsy v0.4.0 h1:Eyt2aiDC1fnw/Qq/9xnIqUU5n5Yyk4c8gX3nBDdTv/4=
 github.com/google/docsy v0.4.0/go.mod h1:vJjGkHNaw9bO42gpFTWwAUzHZWZEVlK46Kx7ikY5c7Y=
+github.com/google/docsy v0.16.0/go.mod h1:alhAPKceHP14eqO+nJEhYehHeNcPKV8QnduoauTBZhs=
 github.com/google/docsy/dependencies v0.4.0 h1:FXwyjtuFfPIPBauU2t7uIAgS6VYfJf+OD5pzxGvkQsQ=
 github.com/google/docsy/dependencies v0.4.0/go.mod h1:2zZxHF+2qvkyXhLZtsbnqMotxMukJXLaf8fAZER48oo=
 github.com/puzzle/docsy-puzzle v0.0.0-20220406081603-2cd9f7c8d79a h1:ivuXhwliGTmfp4Zn9dqHiIHPUbniLhsbSYKrsQIoFKM=
